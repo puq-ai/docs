@@ -129,7 +129,11 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 
 # External navigation links
 nav_external_links:
-  - title: Visit puq.ai
+  - title: All Integrations
+    url: https://puq.ai/integrations
+  - title: Blog
+    url: https://puq.ai/blog
+  - title: Go to puq.ai
     url: https://puq.ai
 
 # Show navigation error report
