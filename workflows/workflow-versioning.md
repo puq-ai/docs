@@ -1,163 +1,177 @@
 ---
 title: Workflow Versioning
-description: Manage and roll back versions of your workflows safely.
+description: Manage and track workflow versions created during publishing.
 parent: Workflows
 nav_order: 6
 ---
 
 # Workflow Versioning
 
-puq.ai includes a full versioning system that allows you to safely manage, branch, compare, and roll back workflow changes.  
-Every time you publish a workflow, you decide whether to **update the current version** or **create a brand-new version**.
+puq.ai uses an **automatic versioning system** that creates new workflow versions when meaningful changes are published.  
+This allows you to track the evolution of a workflow over time while keeping execution behavior predictable and safe.
 
-This gives you complete control over your automation history and allows you to experiment without breaking production.
+Versioning is tightly coupled with the **Save** and **Publish** process.
 
 ---
 
-# How Versioning Works
+## How Versioning Works
 
-Versioning only occurs when you **Publish** a workflow.
+Versioning happens during **Publish**.
 
-The process:
+The general workflow is:
 
-1. Make changes  
-2. Click **Save**  
+1. Make changes to your workflow  
+2. Click **Save** (optional)  
 3. Click **Publish**  
-4. Choose **how** the new version should be created  
 
-During publishing, you see two options:
+Important behaviors to understand:
 
-## 1. Update Current Version
-Updates the existing version in-place.  
-- Version number does **not** change  
-- The branch stays the same  
-- Good for small fixes  
-- Keeps version tree clean
-
-## 2. Create New Version
-Creates a new version alongside the existing ones.  
-- A *new version number* is created  
-- A *new branch* appears under the version tree  
-- You can switch between branches anytime  
-- Perfect for experimenting, testing, or major changes
-
-After choosing this, you add a **commit message**, which helps track what changed (e.g., *“add trigger”, “fix webhook”, “update mapping”*).
+- Publishing **automatically saves** your changes  
+- Not every publish creates a new version  
+- Versions are created only when changes exist  
 
 ---
 
-# Branch-Based Version Tree
+## When Is a New Version Created?
 
-Workflow versioning in puq.ai works similarly to Git-style branching.
+A **new version is automatically created** when:
 
-Each published version belongs to a **branch**.
+- You make changes to the workflow  
+- Then click **Publish**  
 
-### Example:
+In this case:
+- The workflow is published
+- A **new version entry** appears in the Versions panel
+- That version becomes the **latest version**
+- If the workflow is enabled, this version is immediately used for executions
 
-- You start with **v1**  
-- You publish with *Create New Version* → system creates **v1.1** under the same branch  
-- You publish again → **v1.2**, **v1.3**, etc.
-
-Each branch forms a linear timeline of changes.
-
-![Workflow Versioning]({{ '/assets/images/workflows/workflow-versioning/000001.png' | relative_url }}){: width="360" }
-
-### You can create parallel branches:
-
-- From **v1**, you can branch off into a new version series  
-- From **v1.1**, you can create a sibling branch  
-- From **any version**, you can create a new branch and evolve it separately  
-
-This allows **safe experimentation** while keeping production stable.
+There is **no manual option** to choose between “current” or “new” version anymore.
 
 ---
 
-# Viewing and Switching Versions
+## When Is a New Version *Not* Created?
 
-The **Versions Panel** shows the full version tree.
+A new version is **not created** when:
 
-You can:
+- You click **Publish**  
+- But **no changes** were made since the last publish  
 
-- Click any version to **view** it  
-- Switch branches instantly  
-- Compare commit messages  
-- See timestamps for when each version was created  
-- Identify which version is currently **Published**, **Viewing**, or **Draft**
+In this case:
+- The workflow is marked as **Published**
+- The previously published version remains active
+- No additional version entry is added to the version history
 
-Published versions appear with a green **Published** badge.
-
----
-
-# Rollback to Any Previous Version
-
-Rollback is simple:
-
-1. Open the **Versions Panel**  
-2. Select an older version  
-3. Click **Publish**  
-4. Choose **Update Current Version** or **Create New Version**  
-
-This lets you revert your workflow instantly if:
-
-- A new integration breaks  
-- A test fails  
-- A recent change behaves unexpectedly  
-- You want to return to a known stable state  
-
-Rollback does *not* delete future versions — it simply activates whichever version you choose.
+This prevents unnecessary version clutter.
 
 ---
 
-# Commit Messages
+## Save vs Publish
 
-Each time you publish a new version, you are prompted to add a **Commit Message**.
+Understanding the difference is critical:
+
+### Save
+- Stores your current changes locally
+- Does **not** affect executions
+- Does **not** create a version
+- Workflow continues running the last published version
+
+### Publish
+- Automatically saves the workflow
+- Marks the workflow as published
+- Creates a new version **only if changes exist**
+- Updates the version used by enabled workflows
+
+---
+
+## Enabled Workflows and Active Versions
+
+When a workflow is **enabled**:
+
+- The **latest published version** is always used
+- You do not need to select a version manually
+- Publishing new changes immediately updates the running version
+
+Scenarios:
+
+- Workflow enabled → publish changes → new version created → executions use it
+- Workflow enabled → publish without changes → same version continues running
+- Workflow disabled → publish → version updated, but no executions run
+
+---
+
+## Version History
+
+The **Versions Panel** displays:
+
+- All created versions
+- Version order (newest to oldest)
+- Timestamps
+- Commit messages (if provided)
+- Which version is currently published
+
+You can click any version to:
+- View its configuration
+- Inspect historical logic
+- Understand how the workflow evolved
+
+---
+
+## Rolling Back to a Previous Version
+
+Rollback is done by **republishing an older version**.
+
+Steps:
+
+1. Open the **Versions Panel**
+2. Select a previous version
+3. Click **Publish**
+
+What happens:
+- That version becomes the latest published version
+- If the workflow is enabled, executions immediately use it
+- No data is lost
+- Existing versions remain in history
+
+Rollback does not delete newer versions.
+
+---
+
+## Commit Messages
+
+Each time a new version is created, you can add a **commit message**.
 
 Commit messages help you:
-
-- Describe what changed  
-- Track why you created this version  
-- Understand the purpose of each update  
-- Collaborate with team members more effectively  
+- Describe what changed
+- Track why a version exists
+- Identify important updates quickly
+- Collaborate with teammates
 
 Examples:
 - “Add Slack notification”
-- “Fix CRM contact mapping”
-- “Optimize API calls”
-- “New experiment branch”
-
-![Workflow Versioning]({{ '/assets/images/workflows/workflow-versioning/000001.png' | relative_url }}){: width="360" }
-
-![Workflow Versioning]({{ '/assets/images/workflows/workflow-versioning/000002.png' | relative_url }}){: width="360" }
----
-
-# Practical Example
-
-Let’s walk through a real example based on your screenshots:
-
-### Scenario:
-You modify a workflow and publish it.
-
-1. You click **Publish**  
-2. You choose **Create New Version**  
-3. You add commit message: `test 2v`  
-4. The system creates a new version under the version tree  
-5. The version appears as **Published**  
-6. Older versions (v1, v1.1, etc.) remain accessible  
-7. You can now switch between **test111**, **test 2v**, and **v2** (all branches)
-
-At any time, you can return to **v2** or **test111**, publish them, or continue building on top of them.
+- “Fix payload mapping”
+- “Optimize API request”
+- “Initial production version”
 
 ---
 
-# Summary
+## Key Takeaways
 
-puq.ai’s versioning system provides:
+- Versioning is automatic
+- New versions are created only when changes exist
+- Publishing always saves
+- Enabled workflows always run the latest published version
+- Publishing without changes does not create a new version
+- Rollback is done by republishing an older version
 
-- Safe, Git-like branching  
-- Explicit version publishing  
-- Separate experiment and production versions  
-- Easy rollback  
-- Commit messages for tracking changes  
-- Clear version tree visualization  
-- Ability to switch between branches anytime  
+---
 
-Use versioning to confidently experiment, deploy, and maintain clean automation history.
+## Summary
+
+puq.ai’s workflow versioning is designed to be simple, safe, and predictable.  
+You focus on building and publishing — puq.ai handles version tracking automatically.
+
+This ensures:
+- Clean version history
+- No accidental overwrites
+- Safe production updates
+- Easy rollback when needed
