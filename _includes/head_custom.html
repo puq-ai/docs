@@ -1,0 +1,34 @@
+<style>
+/* Critical CSS - Logo FOUC prevention */
+.site-header {
+  min-height: 3.75rem;
+  display: flex;
+  align-items: center;
+}
+.site-title {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.site-logo {
+  width: 100%;
+  height: 36px;
+  max-height: 36px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+/* Critical CSS - Anchor heading FOUC prevention */
+.anchor-heading svg {
+  visibility: hidden;
+}
+</style>
+<script>
+(function() {
+  var theme = localStorage.getItem('jtd-theme');
+  if (!theme) {
+    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
