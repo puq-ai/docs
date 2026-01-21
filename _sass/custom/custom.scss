@@ -1,1 +1,280 @@
-// custom SCSS (or CSS) goes here
+// Global smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Site Footer Styles
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $sp-3 $gutter-spacing-sm;
+}
+
+.footer-text {
+  font-size: 0.75rem;
+  color: $grey-dk-000;
+  margin: 0;
+
+  a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Theme Toggle Button Styles
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: $sp-2;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $feedback-color;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.theme-icon-light,
+.theme-icon-dark {
+  width: $sp-5;
+  height: $sp-5;
+  color: $body-text-color;
+}
+
+// Light mode: show sun icon, hide moon
+.theme-icon-dark {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-light {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+  display: block;
+}
+
+// ===================================
+// Layout Utility Classes
+// ===================================
+
+.layout-wide .main {
+  max-width: 72rem; // 1152px
+}
+
+.layout-narrow .main {
+  max-width: 48rem; // 768px
+}
+
+.layout-full .main {
+  max-width: none;
+}
+
+// ===================================
+// Table of Contents (On This Page) Styles
+// ===================================
+
+$toc-width: 220px;
+
+// Wrapper - Flexbox layout
+.content-with-toc {
+  display: flex;
+  gap: $sp-6;
+
+  .main-content {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.toc-sidebar {
+  display: none;
+
+  @include mq(xl) {
+    display: block;
+    flex-shrink: 0;
+    width: $toc-width;
+  }
+}
+
+// Sticky navigation
+.toc-nav {
+  position: sticky;
+  top: $header-height;
+  max-height: calc(100vh - #{$header-height} - #{$sp-4});
+  overflow-y: auto;
+  padding-top: $sp-4;
+  padding-right: $sp-3;
+
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $grey-lt-300;
+    border-radius: 2px;
+  }
+}
+
+.toc-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $grey-dk-000;
+  margin-bottom: $sp-3;
+  padding-bottom: $sp-2;
+  border-bottom: 1px solid $border-color;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin: 0;
+  padding: 0;
+}
+
+.toc-link {
+  display: block;
+  padding: $sp-1 0 $sp-1 $sp-3;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: $grey-dk-100;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: $link-color;
+    text-decoration: none;
+  }
+
+  &.active {
+    color: $link-color;
+    border-left-color: $link-color;
+    font-weight: 500;
+  }
+}
+
+.toc-link-h1 {
+  font-weight: 600;
+  padding-left: $sp-2;
+}
+
+.toc-link-h3 {
+  padding-left: $sp-5;
+  font-size: 0.75rem;
+}
+
+.toc-back-to-top {
+  margin-top: $sp-4;
+  padding-top: $sp-3;
+  border-top: 1px solid $border-color;
+}
+
+.toc-link-top {
+  font-size: 0.7rem;
+  color: $grey-dk-000;
+  border-left: none !important;
+
+  &:hover {
+    color: $link-color;
+  }
+}
+
+// Dark mode
+[data-theme="dark"] {
+  .toc-title {
+    color: $grey-lt-100;
+  }
+
+  .toc-link {
+    color: $grey-dk-000;
+
+    &:hover,
+    &.active {
+      color: $link-color;
+    }
+  }
+}
+
+@include mq(xl) {
+  .main {
+    max-width: calc(#{$content-width} + #{$toc-width} + #{$sp-6});
+  }
+  .side-bar + .main {
+    margin-left: Max(
+      #{$nav-width},
+      calc((100% - #{$nav-width} - #{$content-width} - #{$toc-width} - #{$sp-6}) / 2 + #{$nav-width})
+    );
+  }
+}
+
+// Print
+@media print {
+  .toc-sidebar {
+    display: none;
+  }
+
+  .content-with-toc {
+    display: block;
+  }
+}
+
+// ===================================
+// Navigation Active State Styling
+// ===================================
+
+// Light theme - minimal gradient
+.nav-list-link.active {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba($purple-000, 0.06) 50%,
+    rgba($purple-000, 0.14) 100%
+  ) !important;
+  color: $purple-000 !important;
+}
+
+// Dark theme - minimal gradient
+[data-theme="dark"] {
+  .nav-list-link.active {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba($blue-000, 0.08) 50%,
+      rgba($blue-000, 0.18) 100%
+    ) !important;
+    color: $blue-000 !important;
+  }
+}

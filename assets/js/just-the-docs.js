@@ -487,13 +487,17 @@ function searchLoaded(index, docs) {
 // Switch theme
 
 jtd.getTheme = function() {
-  var cssFileHref = document.querySelector('[rel="stylesheet"]').getAttribute('href');
+  var cssFile = document.getElementById('jtd-theme-stylesheet');
+  if (!cssFile) return 'default';
+  var cssFileHref = cssFile.getAttribute('href');
   return cssFileHref.substring(cssFileHref.lastIndexOf('-') + 1, cssFileHref.length - 4);
 }
 
 jtd.setTheme = function(theme) {
-  var cssFile = document.querySelector('[rel="stylesheet"]');
-  cssFile.setAttribute('href', '{{ "assets/css/just-the-docs-" | relative_url }}' + theme + '.css');
+  var cssFile = document.getElementById('jtd-theme-stylesheet');
+  if (cssFile) {
+    cssFile.setAttribute('href', '{{ "assets/css/just-the-docs-" | relative_url }}' + theme + '.css');
+  }
 }
 
 // Note: pathname can have a trailing slash on a local jekyll server

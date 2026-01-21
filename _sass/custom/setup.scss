@@ -1,1 +1,24 @@
-// custom setup code goes here
+// ===================================
+// Layout Width Configuration
+// puq.ai Documentation Site
+// ===================================
+
+// Content Area Width (56rem = 896px)
+$content-width: 56rem;
+
+// Navigation Sidebar Widths
+$nav-width: 18rem;
+$nav-width-md: 16rem;
+
+// Spacing / Gutters
+$gutter-spacing: 2.5rem;     // 40px - Desktop
+$gutter-spacing-sm: 1.25rem; // 20px - Mobile
+
+// Responsive Breakpoints
+$media-queries: (
+  xs: 20rem,     // 320px
+  sm: 31.25rem,  // 500px
+  md: 56rem,     // 896px
+  lg: 74rem,     // 1184px
+  xl: 90rem,     // 1440px
+);
