@@ -14,50 +14,56 @@ Payment workflows need reliability, security, and real-time accuracy — and Pay
 
 ---
 
-# What Problems Do Payment Nodes Solve?
+## What Problems Do Payment Nodes Solve?
 
 Payment Nodes help you automate financial operations by providing tools to:
 
-### ✔ Process Payments in Real-Time  
+**✔ Process Payments in Real-Time**
+
 Capture customer payments, authorize transactions, or trigger workflow logic upon payment success.
 
-### ✔ Manage Subscriptions & Recurring Billing  
+**✔ Manage Subscriptions & Recurring Billing**
+
 Handle renewals, cancellations, upgrades, and retries for subscription-based businesses.
 
-### ✔ Issue Refunds & Payment Adjustments  
+**✔ Issue Refunds & Payment Adjustments**
+
 Automatically refund customers or generate partial reimbursements.
 
-### ✔ Verify Transactions  
+**✔ Verify Transactions**
+
 Check payment status, detect chargebacks, and validate receipts.
 
-### ✔ Sync Payment Data Across Systems  
+**✔ Sync Payment Data Across Systems**
+
 Push updates to CRMs, accounting tools, or databases for unified financial reporting.
 
-### ✔ Automate Financial Notifications  
+**✔ Automate Financial Notifications**
+
 Send confirmation emails, Slack messages, or alerts whenever money moves.
 
 Whether you run an online store or a subscription platform, Payment Nodes help automate and streamline everything around financial transactions.
 
 ---
 
-# What’s Included in Payment Nodes?
+## What’s Included in Payment Nodes?
 
 This node type connects your workflows to universal payment gateways, store-level payment systems, and digital banking services:
 
-### **Payment Gateways**
+### Payment Gateways
 - **Stripe** – global payment processing, subscription billing, invoices, refunds  
 - **PayPal** – transactions, payouts, customer payments  
 
-### **Commerce-Integrated Payments**
+### Commerce-Integrated Payments
 - **Shopify (Payments API)** – order payments, refunds, transactional events  
 - **WooCommerce Payments** – capture orders, manage customer billing  
 
-### **Digital Banking**
+### Digital Banking
 - **Wise** – transfers, balances, payouts, borderless account operations  
 
 ---
 
-# When Should You Use Payment Nodes?
+## When Should You Use Payment Nodes?
 
 Use this category whenever your workflow needs to interact with payments:
 
@@ -75,26 +81,31 @@ Payment Nodes are essential for building dependable financial automation.
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Automated Checkout Flow
+**✔ Automated Checkout Flow**
+
 WooCommerce order → verify payment → update CRM → send onboarding email.
 
-### ✔ Subscription Renewal Workflow
+**✔ Subscription Renewal Workflow**
+
 Stripe subscription renewed → apply feature access → notify customer → log payment.
 
-### ✔ PayPal Refund Automation
+**✔ PayPal Refund Automation**
+
 Support team flags a refund → PayPal refund API → update ticket → notify finance.
 
-### ✔ Multi-Currency Payouts
+**✔ Multi-Currency Payouts**
+
 Workflow triggers → Wise payout to vendor → log transaction → generate report.
 
-### ✔ Shopify Payment Monitoring
+**✔ Shopify Payment Monitoring**
+
 New Shopify payment event → convert to lead in CRM → update marketing tools.
 
 ---
 
-# Benefits of Payment Nodes
+## Benefits of Payment Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -106,7 +117,7 @@ New Shopify payment event → convert to lead in CRM → update marketing tools.
 
 ---
 
-# Summary
+## Summary
 
 Payment Nodes give you full control over financial operations inside your workflows.  
 From capturing payments to managing subscriptions and syncing transaction data, this category helps businesses automate the most critical parts of their revenue pipelines.

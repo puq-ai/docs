@@ -22,11 +22,11 @@ To start parameter mapping:
 2. Select **Visual Mapping** from the context menu  
 3. The **Parameter Mapping Editor** opens
 
-![Parameter Mapping]({{ '/assets/images/data/parameter-mapping/000001.jpeg' | relative_url }}){: width="420" }
+![Parameter Mapping]({{ '/assets/images/data/parameter-mapping/000001.jpeg' | relative_url }}){: width="100%" }
 
 
 
-![Parameter Mapping]({{ '/assets/images/data/parameter-mapping/000002.jpeg' | relative_url }}){: width="420" }
+![Parameter Mapping]({{ '/assets/images/data/parameter-mapping/000002.jpeg' | relative_url }}){: width="100%" }
 
 ---
 
@@ -40,7 +40,7 @@ This panel shows all configurable **input fields of the current node**.
 - Each input represents a value you can manipulate
 - Click on an input to start mapping data for it
 
-![Target Inputs]({{ '/assets/images/data/parameter-mapping/000003.jpeg' | relative_url }}){: width="360" }
+![Target Inputs]({{ '/assets/images/data/parameter-mapping/000003.jpeg' | relative_url }}){: width="40%" }
 
 ---
 
@@ -53,7 +53,7 @@ The left side displays all **available execution data**, including:
 
 This is the data you can use as a source.
 
-![Source Data]({{ '/assets/images/data/parameter-mapping/000004.jpeg' | relative_url }}){: width="360" }
+![Source Data]({{ '/assets/images/data/parameter-mapping/000004.jpeg' | relative_url }}){: width="40%" }
 
 ---
 
@@ -68,7 +68,7 @@ Here you:
 
 The result of this code becomes the value for the selected input.
 
-![Code Editor]({{ '/assets/images/data/parameter-mapping/000005.jpeg' | relative_url }}){: width="360" }
+![Code Editor]({{ '/assets/images/data/parameter-mapping/000005.jpeg' | relative_url }}){: width="100%" }
 
 ---
 

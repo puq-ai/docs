@@ -44,7 +44,7 @@ With these nodes, workflows become **smarter**, **dynamic**, and **context-aware
 
 ---
 
-# Core Categories of Flow Control Nodes
+## Core Categories of Flow Control Nodes
 
 Below are the major groups of Flow Control Nodes and what they allow you to do.
 
@@ -54,7 +54,7 @@ Below are the major groups of Flow Control Nodes and what they allow you to do.
 
 These nodes direct the workflow based on rules or conditions.
 
-### **Router**
+### Router
 Route the workflow into different branches based on:
 - Conditions (e.g., `amount > 100`)
 - Data checks (`status == "success"`)
@@ -72,7 +72,7 @@ Route the workflow into different branches based on:
 
 Loop nodes allow repeating a sequence until a condition is met.
 
-### **Loop**
+### Loop
 Supports:
 - For-each loops  
 - Do-while logic  
@@ -89,10 +89,10 @@ Supports:
 
 ## 3. Delay & Timing Nodes
 
-### **Delay For**
+### Delay For
 Pause the workflow for a specific duration.
 
-### **Delay Until**
+### Delay Until
 Hold the workflow until a specific timestamp.
 
 **Use cases:**
@@ -103,7 +103,7 @@ Hold the workflow until a specific timestamp.
 
 ---
 
-# 4. Service-Based Flow Nodes
+## 4. Service-Based Flow Nodes
 
 Some Flow Control nodes interface with popular platforms and tools.  
 Bunların bir kısmı veri yönetimi veya task yönetimi sağlar, ama workflow’un akışını etkiledikleri için Flow Control kategorisine girer.
@@ -112,7 +112,7 @@ Aşağıdaki liste *tam bir özellik listesi değil*, bu node tipinin neler yapa
 
 ---
 
-## Acuity Scheduling
+### Acuity Scheduling
 Automate scheduling tasks such as:
 
 - Creating appointments  
@@ -126,7 +126,7 @@ Route the workflow based on calendar availability or scheduling results.
 
 ---
 
-## Asana
+### Asana
 Manage teams, tasks, projects, and workflow states.
 
 - Create & update tasks  
@@ -139,7 +139,7 @@ Branch based on task status, due dates, or team assignments.
 
 ---
 
-## AWS SES
+### AWS SES
 Email-based flow controls:
 
 - Send email or template email  
@@ -151,7 +151,7 @@ Trigger branching based on email send success or verification status.
 
 ---
 
-## AWS SNS
+### AWS SNS
 Message-based triggers:
 
 - Create & delete topics  
@@ -162,7 +162,7 @@ Route workflow depending on publish result or topic status.
 
 ---
 
-## AWS SQS
+### AWS SQS
 Queue-based flow logic:
 
 - Send messages into a queue  
@@ -173,7 +173,7 @@ Push control signals into message queues.
 
 ---
 
-## ClickUp
+### ClickUp
 Used for task, list, space, and project operations.
 
 Flow control patterns:
@@ -183,7 +183,7 @@ Flow control patterns:
 
 ---
 
-## GitLab
+### GitLab
 Use GitLab data to control flow:
 
 - Issues  
@@ -195,7 +195,7 @@ Trigger branches when merge request fails or passes review.
 
 ---
 
-## Google Workspace Admin
+### Google Workspace Admin
 Workflow control based on:
 
 - User creation  
@@ -204,7 +204,7 @@ Workflow control based on:
 
 ---
 
-## Jira
+### Jira
 Integrate with issue workflows.
 
 Use cases:
@@ -214,7 +214,7 @@ Use cases:
 
 ---
 
-## Keap, Kommo, Salesforce, Salesmate
+### Keap, Kommo, Salesforce, Salesmate
 CRM systems used for:
 
 - Checking deal stage  
@@ -226,7 +226,7 @@ Branch logic depending on sales pipeline progress.
 
 ---
 
-## Monday, Linear, ServiceMB, ClickUp, QuickBase, Trello, Todoist, Vikunja
+### Monday, Linear, ServiceMB, ClickUp, QuickBase, Trello, Todoist, Vikunja
 Task-management flow:
 
 - Move tasks  
@@ -236,7 +236,7 @@ Task-management flow:
 
 ---
 
-## Slack, Mattermost, TheHive
+### Slack, Mattermost, TheHive
 Chat-based flow control:
 
 - Post messages  
@@ -246,7 +246,7 @@ Chat-based flow control:
 
 ---
 
-## SIGNL4
+### SIGNL4
 Incident-based routing:
 
 - Alert dispatching  
@@ -254,7 +254,7 @@ Incident-based routing:
 
 ---
 
-## UniSender, Xero, Trellix, Onfleet
+### UniSender, Xero, Trellix, Onfleet
 Workflow control examples:
 
 - Email campaign results  
@@ -264,7 +264,7 @@ Workflow control examples:
 
 ---
 
-# What Can You Build With Flow Control Nodes?
+## What Can You Build With Flow Control Nodes?
 
 Flow Control Nodes empower you to build workflows like:
 
@@ -280,7 +280,7 @@ They act as the **logic brain** of your automation.
 
 ---
 
-# Summary
+## Summary
 
 Flow Control Nodes:
 

@@ -25,12 +25,12 @@
   &:focus {
     text-decoration: none;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(blue, 0.25);
+    box-shadow: 0 0 0 3px rgba($accent-000, 0.25);
   }
 
   &:focus:hover,
   &.selected:focus {
-    box-shadow: 0 0 0 3px rgba(blue, 0.25);
+    box-shadow: 0 0 0 3px rgba($accent-000, 0.25);
   }
 
   &:hover,
@@ -91,7 +91,7 @@
     outline: none;
     box-shadow:
       inset 0 0 0 2px $grey-dk-100,
-      0 0 0 3px rgba(blue, 0.25);
+      0 0 0 3px rgba($accent-000, 0.25);
   }
 
   &:focus:hover,

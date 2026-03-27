@@ -73,7 +73,7 @@ Executes a workflow when new information arrives — such as:
 
 ---
 
-# How the Trigger Node Executes the Workflow
+## How the Trigger Node Executes the Workflow
 Once the trigger is activated: 
 1. The Trigger Node generates the initial execution context
 2. This context is passed to the next connected node
@@ -85,24 +85,38 @@ Example flow:
 [Trigger Node] ➜ [Data Fetch] ➜ [Transform] ➜ [Send Email]
 ```
 
-# Creating a Triggered Workflow
-Follow these steps to add a Trigger Node to your workflow: 
-1. **Create a workflow** or open the workflow **editor** (click to edit button).
-2. Click your **trigger node**. If you created a new workflow, this trigger node may be an **Empty Trigger**. If you already have a workflow, the trigger node is the **first node of your workflow**. Click it and change it however you want.
+## Creating a Triggered Workflow
 
-![Empty Trigger]({{ '/assets/images/node_types/trigger_nodes/000001.png' | relative_url }}){: width="360" }
-![Selected Trigger]({{ '/assets/images/node_types/trigger_nodes/000002.png' | relative_url }}){: width="360" }
-![Change Empty Trigger]({{ '/assets/images/node_types/trigger_nodes/000003.png' | relative_url }}){: width="360" }
-![Change Selected Trigger]({{ '/assets/images/node_types/trigger_nodes/000004.png' | relative_url }}){: width="360" }
+Follow these steps to add a Trigger Node to your workflow:
 
-# Best Practices
+### 1. Open Your Workflow
+
+**Create a workflow** or open the workflow **editor** (click to edit button). If you created a new workflow, your trigger node will be an **Empty Trigger**:
+
+![Empty Trigger]({{ '/assets/images/node_types/trigger_nodes/000001.png' | relative_url }}){: width="100%" }
+
+If you already have a workflow, the trigger node is the **first node of your workflow** — for example, a Gmail trigger:
+
+![Selected Trigger]({{ '/assets/images/node_types/trigger_nodes/000002.png' | relative_url }}){: width="100%" }
+
+### 2. Select or Change Your Trigger
+
+Click the trigger node to open the **node picker**. You can browse categories or search for the trigger you need:
+
+![Change Empty Trigger]({{ '/assets/images/node_types/trigger_nodes/000003.png' | relative_url }}){: width="100%" }
+
+If you already have a trigger and want to change it, click the node and select a different one from the picker:
+
+![Change Selected Trigger]({{ '/assets/images/node_types/trigger_nodes/000004.png' | relative_url }}){: width="100%" }
+
+## Best Practices
 - Always test trigger behavior before activating the workflow.
 - Use descriptive names for trigger nodes (e.g., “Daily Reporting Trigger”).
 - Avoid multiple triggers — each workflow should have only one.
 -Validate input data if your trigger accepts external requests (like webhooks).
 - Use environment variables for secure tokens or webhook secrets.
 
-# You're Ready to Build!
+## You're Ready to Build!
 * Now you know:
 * What a Trigger Node is
 * Why it is required

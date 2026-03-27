@@ -13,7 +13,7 @@ This page introduces the main categories of AI Nodes and explains what problems 
 
 ---
 
-# What Are AI Nodes?
+## What Are AI Nodes?
 
 AI Nodes integrate advanced artificial intelligence features into workflows, allowing automated systems to:
 
@@ -31,7 +31,7 @@ AI Nodes are ideal for building intelligent, adaptive workflows that respond to 
 
 ---
 
-# What Problems Do AI Nodes Solve?
+## What Problems Do AI Nodes Solve?
 
 AI Nodes help you:
 
@@ -49,7 +49,7 @@ They enable workflows that “think,” making deeper decisions and context-awar
 
 ---
 
-# Categories of AI Nodes
+## Categories of AI Nodes
 
 Aşağıda her node grubunun kapsadığı özellikler ve kullanım alanları yer alır.
 Verdiğin tüm örnekleri kullanarak dengeli bir şekilde özetledim.
@@ -60,7 +60,7 @@ Verdiğin tüm örnekleri kullanarak dengeli bir şekilde özetledim.
 
 These nodes analyze, classify, or interpret human language.
 
-### **AWS Comprehend**
+### AWS Comprehend
 Capabilities:
 - Detect dominant language  
 - Detect entities  
@@ -73,7 +73,7 @@ Capabilities:
 
 ---
 
-### **Google Cloud Natural Language**
+### Google Cloud Natural Language
 Provides:
 - Entity detection  
 - Syntax analysis  
@@ -87,7 +87,7 @@ Provides:
 
 ---
 
-### **Jira AI**
+### Jira AI
 AI-driven insights for issue classification.
 
 Common patterns:
@@ -99,14 +99,14 @@ Common patterns:
 
 ## 2. Translation Nodes
 
-### **DeepL**
+### DeepL
 Functions:
 - Translate text  
 - Translate documents  
 - Check translation status  
 - Detect usage & supported languages  
 
-### **Google Translate**
+### Google Translate
 Standard text translation across global languages.
 
 **Use cases:**
@@ -120,7 +120,7 @@ Standard text translation across global languages.
 
 These nodes extract structured information from unstructured files.
 
-### **AWS Textract**
+### AWS Textract
 - Analyze receipts or invoices  
 - Extract totals, line items, merchant data  
 
@@ -131,7 +131,7 @@ These nodes extract structured information from unstructured files.
 
 ---
 
-### **Mindee**
+### Mindee
 OCR and document parsing for:
 - Invoices  
 - IDs  
@@ -142,7 +142,7 @@ OCR and document parsing for:
 
 ## 4. Speech & Audio Generation Nodes
 
-### **ElevenLabs**
+### ElevenLabs
 High-quality audio & voice synthesis.
 
 Capabilities:
@@ -163,7 +163,7 @@ Capabilities:
 
 ## 5. Image & Video Generation Nodes
 
-### **fat.ai**
+### fat.ai
 AI-powered visual content generation:
 
 - Generate image (Flux, Schell, etc.)  
@@ -178,11 +178,11 @@ AI-powered visual content generation:
 
 ---
 
-# 6. AI Model Execution Nodes
+## 6. AI Model Execution Nodes
 
 These nodes allow running, prompting, instructing, or querying AI/LLM models.
 
-### **OpenAI**
+### OpenAI
 Includes:
 - Chat messages  
 - Completion models  
@@ -199,7 +199,7 @@ Includes:
 
 ---
 
-### **Claude (Anthropic)**
+### Claude (Anthropic)
 Powerful next-gen LLM features:
 
 - Create message  
@@ -221,7 +221,7 @@ Powerful next-gen LLM features:
 
 ---
 
-### **Mistral AI**
+### Mistral AI
 Efficient open models for:
 
 - Fast text generation  
@@ -229,7 +229,7 @@ Efficient open models for:
 - Chat tasks  
 - Embeddings  
 
-### **Teinynx AI, Straico, Straker Verify**
+### Teinynx AI, Straico, Straker Verify
 Specialized AI APIs for:
 - Verification  
 - Classification  
@@ -237,25 +237,25 @@ Specialized AI APIs for:
 
 ---
 
-# 7. Vector Search & Embeddings Nodes
+## 7. Vector Search & Embeddings Nodes
 
 These nodes store, search, and retrieve information using vector embeddings.
 
-### **Pinecone**
+### Pinecone
 - Store embeddings  
 - Query semantic vectors  
 - Build RAG systems  
 - Retrieve relevant context  
 
-### **Qdrant**
+### Qdrant
 - High-performance vector DB  
 - Similarity search  
 - Hybrid filtering  
 
-### **ScapeGraphAI**
+### ScapeGraphAI
 Graph + vector search hybrid.
 
-### **ScrapingBee**
+### ScrapingBee
 (Not a vector DB, but supports automated scraping feeding the vector pipeline.)
 
 **Use cases:**
@@ -266,9 +266,9 @@ Graph + vector search hybrid.
 
 ---
 
-# 8. Identity & Access AI Nodes
+## 8. Identity & Access AI Nodes
 
-### **AWS IAM**
+### AWS IAM
 Automated identity management:
 
 - Create user  
@@ -285,26 +285,26 @@ Automated identity management:
 
 ---
 
-# What Can You Build With AI Nodes?
+## What Can You Build With AI Nodes?
 
 AI Nodes enable intelligent workflows such as:
 
-### ✔️ Automated content translation  
-### ✔️ OCR → extraction → approval pipelines  
-### ✔️ Smart ticket routing & triage  
-### ✔️ Document validation & data extraction  
-### ✔️ Semantic search & RAG flows  
-### ✔️ Voice assistants  
-### ✔️ Image & video generation  
-### ✔️ Reasoning & decision-making  
-### ✔️ Multi-modal AI systems (text, audio, images)  
-### ✔️ Enterprise process automation using AI  
+**✔ Automated content translation**
+**✔ OCR → extraction → approval pipelines**
+**✔ Smart ticket routing & triage**
+**✔ Document validation & data extraction**
+**✔ Semantic search & RAG flows**
+**✔ Voice assistants**
+**✔ Image & video generation**
+**✔ Reasoning & decision-making**
+**✔ Multi-modal AI systems (text, audio, images)**
+**✔ Enterprise process automation using AI**
 
 With AI Nodes, workflows become not just automated—but **intelligent**.
 
 ---
 
-# Summary
+## Summary
 
 AI Nodes introduce advanced capabilities into your workflows, enabling systems to:
 

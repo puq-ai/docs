@@ -14,7 +14,7 @@ This guide walks you through the essentials of building your first flow and intr
 
 ---
 
-# Getting Started
+## Getting Started
 
 Creating your first workflow takes only a few minutes:
 
@@ -28,7 +28,7 @@ Once your flow is ready, click **Save** and enable **Run Mode** to make it activ
 
 ---
 
-# Understanding the Core Building Blocks
+## Understanding the Core Building Blocks
 
 Workflows consist of three main node types:
 
@@ -48,7 +48,7 @@ Logic nodes help you build dynamic and intelligent workflows.
 
 ---
 
-# Building Your Flow Step-by-Step
+## Building Your Flow Step-by-Step
 
 ### 1. Add a Trigger  
 Choose how your workflow should start:
@@ -102,15 +102,17 @@ This makes debugging extremely fast and visual.
 
 ---
 
-# Designing Clean and Scalable Flows
+## Designing Clean and Scalable Flows
 
 Follow these best practices:
 
-### ✔ Keep flows modular  
+**✔ Keep flows modular**
+
 One workflow should solve one clear problem.  
 For complex systems, break automations into subflows.
 
-### ✔ Name nodes clearly  
+**✔ Name nodes clearly**
+
 Use descriptive titles like:  
 - *“Format Customer Data”*  
 - *“Send Slack Notification”*  
@@ -118,21 +120,25 @@ Use descriptive titles like:
 
 This is especially important when sharing flows with teammates.
 
-### ✔ Use routers to avoid unnecessary steps  
+**✔ Use routers to avoid unnecessary steps**
+
 Instead of stacking actions, route data only to the nodes that need it.
 
-### ✔ Validate input early  
+**✔ Validate input early**
+
 Use validators, JSON parsers, and condition checks to prevent downstream errors.
 
-### ✔ Add delays when interacting with rate-limited APIs  
+**✔ Add delays when interacting with rate-limited APIs**
+
 Avoid throttling or API blocks.
 
-### ✔ Reuse global variables & environment secrets  
+**✔ Reuse global variables & environment secrets**
+
 Never hardcode credentials.
 
 ---
 
-# Example: A Simple Automation
+## Example: A Simple Automation
 
 Let’s design a basic flow:
 
@@ -148,7 +154,7 @@ This simple flow captures new leads, stores them, and notifies your team — all
 
 ---
 
-# Example: A Branching Automation
+## Example: A Branching Automation
 
 **When a new order is received:**
 
@@ -160,7 +166,7 @@ Routers allow your automation to adapt to each situation.
 
 ---
 
-# Using AI Copilot
+## Using AI Copilot
 
 puq.ai includes an AI-powered Copilot to accelerate flow creation.
 
@@ -180,7 +186,7 @@ This is the fastest way to prototype or build standard automations.
 
 ---
 
-# Final Tips
+## Final Tips
 
 - Start small — test frequently  
 - Use AI Copilot when you’re unsure how to begin  

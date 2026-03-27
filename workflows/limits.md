@@ -14,13 +14,13 @@ Below is an overview of the limits associated with each plan:
 
 | Plan | Active Workflows | Monthly Executions | Concurrent Runs |
 |------|------------------|--------------------|-----------------|
-| **Starter** | 1 | 1,000 | 1 |
-| **Professional** | 1 | 10,000 | 1 |
-| **Enterprise** | Unlimited | Unlimited | 5 |
+| **Starter** | 1 | 2,000 | 1 |
+| **Professional** | 5 | 10,000 | 2 |
+| **Enterprise** | Unlimited | 30,000 | 5 |
 
 ---
 
-# Limit Types Explained
+## Limit Types Explained
 
 ## 1. Active Workflows
 This represents the maximum number of **enabled and ready-to-run** workflows you can have at the same time.
@@ -44,11 +44,11 @@ A single execution is counted every time a workflow starts — regardless of:
 
 Examples:
 - If your flow runs 100 times per day → ~3,000 executions/month  
-- Large-scale automations (e.g., CRM syncing or inbound events) may require **Enterprise** limits
+- High-volume automations (e.g., CRM syncing, inbound webhooks, or data pipelines) may require **Enterprise** limits
 
 If you exceed the limit:
 - Executions pause until the next billing cycle  
-- You may upgrade to remove or expand your limits
+- You may upgrade your plan to increase limits
 
 ---
 
@@ -56,66 +56,69 @@ If you exceed the limit:
 Concurrency determines **how many executions can run simultaneously**.
 
 For example:
-- A workflow that processes large files or calls multiple APIs might take 5–10 seconds.
+- A workflow that processes large files or calls multiple APIs might take several seconds.
 - With only **1 concurrent run**, additional executions must wait in queue.
-- With **5 concurrent runs**, five executions can run at the same time while others queue.
+- With **5 concurrent runs**, multiple executions can run in parallel.
 
 Concurrency matters most for:
-- High-volume API/webhook triggers  
+- High-volume API or webhook triggers  
 - Bulk data processing  
 - Loops over large datasets  
-- Operational workflows with time-sensitive logic
+- Time-sensitive operational workflows
 
 ---
 
-# How Limits Affect Automation
+## How Limits Affect Automation
 
-Understanding limits helps you design efficient, scalable workflows.  
-Here’s how limits commonly influence automation behavior:
+Understanding limits helps you design efficient, scalable workflows.
 
-### ✔ High inbound traffic?
-Concurrency and execution limits determine peak performance.
+**✔ High inbound traffic?**
 
-### ✔ Many small workflows?
-Active workflow limits matter more than execution volume.
+Execution and concurrency limits define peak throughput.
 
-### ✔ Heavy integrations (CRM, e-commerce, file processing)?
-Monthly executions could accumulate quickly.
+**✔ Many small workflows?**
 
-### ✔ Batch jobs or cron-based flows?
-Concurrency impacts how jobs run under load.
+Active workflow limits become more important than execution volume.
+
+**✔ Heavy integrations (CRM, file processing, analytics)?**
+
+Monthly executions can accumulate quickly.
+
+**✔ Scheduled or batch workflows?**
+
+Concurrency impacts completion time under load.
 
 ---
 
-# Monitoring Your Usage
+## Monitoring Your Usage
 
-You can track usage from the puq.ai dashboard:
+You can monitor usage directly from the puq.ai dashboard:
 
-- Total executions used this month  
+- Monthly execution usage  
 - Remaining executions  
-- Whether limits are about to be reached  
-- Which workflows consume the most executions  
-- Any queued or delayed runs caused by concurrency limits  
+- Approaching limits  
+- Workflows with the highest execution counts  
+- Queued or delayed runs caused by concurrency limits  
 
-Alerts can notify you when you’re close to your plan’s capacity.
+Alerts notify you when usage approaches plan limits.
 
 ---
 
-# Exceeding Your Limits
+## Exceeding Your Limits
 
-If your automations approach or exceed limits, you have several options:
+If your workflows approach or exceed limits, you can:
 
-- Optimize workflows to reduce unnecessary runs  
-- Merge multiple small workflows into a single, efficient flow  
-- Disable unused flows  
+- Optimize workflows to reduce unnecessary executions  
+- Merge multiple workflows into a single flow  
+- Disable unused workflows  
 - Upgrade your plan  
-- Contact puq.ai for custom scaling
+- Contact puq.ai for custom scaling options
 
 ---
 
-# Need Higher Limits?
+## Need Higher Limits?
 
-If your team requires increased concurrency, higher execution volumes, or unlimited workflows, the **Enterprise** plan offers fully customizable scaling options.
+If your automation needs exceed standard limits, the **Enterprise** plan provides customizable execution volumes and concurrency.
 
 For custom plans, contact:  
 📧 **support@puq.ai**

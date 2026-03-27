@@ -36,7 +36,7 @@ Delays are handled asynchronously and are safe to use in production workflows.
 
 ---
 
-# Delay For
+## Delay For
 
 ### Description
 **Delay For** pauses the workflow for a specified amount of time.
@@ -71,7 +71,7 @@ This is useful when you need to wait for a fixed duration before continuing.
 
 ---
 
-# Delay Until
+## Delay Until
 
 ### Description
 **Delay Until** pauses the workflow until a specific date and time.

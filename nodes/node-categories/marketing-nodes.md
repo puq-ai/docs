@@ -14,40 +14,47 @@ Whether you're sending newsletters, creating segmented campaigns, syncing subscr
 
 ---
 
-# What Problems Do Marketing Nodes Solve?
+## What Problems Do Marketing Nodes Solve?
 
 Marketing Nodes help teams solve key challenges across the entire marketing lifecycle:
 
-### ✔ Subscriber & Audience Management
+**✔ Subscriber & Audience Management**
+
 Automatically create, update, tag, or segment subscribers across all marketing platforms.
 
-### ✔ Multi-Channel Campaign Automation  
+**✔ Multi-Channel Campaign Automation**
+
 Trigger email blasts, SMS notifications, push messages, or in-app marketing workflows.
 
-### ✔ Content Creation & Personalization  
+**✔ Content Creation & Personalization**
+
 Generate banners, images, templates, or branded assets using creative automation tools.
 
-### ✔ Lead Nurturing & Drip Campaigns  
+**✔ Lead Nurturing & Drip Campaigns**
+
 Automatically enroll users in campaigns based on behavior, triggers, or workflow logic.
 
-### ✔ Experimentation & Growth Tracking  
+**✔ Experimentation & Growth Tracking**
+
 Run referral programs, test campaigns, and analyze engagement data.
 
-### ✔ Commerce + Marketing Synergy  
+**✔ Commerce + Marketing Synergy**
+
 Sync customer or order data from platforms like Shopify, WooCommerce, or BigCommerce.
 
-### ✔ Performance Analytics  
+**✔ Performance Analytics**
+
 Push conversion data into analytics tools, dashboards, or reporting suites.
 
 Marketing Nodes transform marketing from manual, repetitive tasks into streamlined, automated systems.
 
 ---
 
-# What’s Included in Marketing Nodes?
+## What’s Included in Marketing Nodes?
 
 This node category includes connectors for email service providers, campaign automation systems, content creation tools, customer engagement suites, marketing CRMs, and growth analytics platforms.
 
-### **Email Marketing & Campaign Automation**
+### Email Marketing & Campaign Automation
 - ActiveCampaign  
 - Mailchimp  
 - MailerLite  
@@ -63,13 +70,13 @@ This node category includes connectors for email service providers, campaign aut
 - Kit (formerly ConvertKit)  
 - Agile CRM  
 
-### **Messaging, Engagement & Chat Marketing**
+### Messaging, Engagement & Chat Marketing
 - ManyChat  
 - Vonage  
 - Pushinator  
 - Vero  
 
-### **Marketing CRM & Lifecycle Platforms**
+### Marketing CRM & Lifecycle Platforms
 - HubSpot  
 - Iterable  
 - Ontraport  
@@ -77,29 +84,29 @@ This node category includes connectors for email service providers, campaign aut
 - UpLead  
 - Referral Factory  
 
-### **E-Commerce & Marketing Synergy**
+### E-Commerce & Marketing Synergy
 - Shopify  
 - WooCommerce  
 - BigCommerce  
 - ThriveCart  
 - Tepfiliate  
 
-### **Brand, Content & Creative Automation**
+### Brand, Content & Creative Automation
 - Bannerbear  
 - Brandfetch  
 - Bravo  
 - SEO Content Machine  
 - Storyblok  
 
-### **Link Management & Tracking**
+### Link Management & Tracking
 - Bitly  
 - ReachKit  
 
-### **Analytics & Insights**
+### Analytics & Insights
 - Mixpanel  
 - Reportei  
 
-### **Other Marketing Integrations**
+### Other Marketing Integrations
 - Skool  
 - SurveyMonkey  
 - Taximail  
@@ -107,7 +114,7 @@ This node category includes connectors for email service providers, campaign aut
 
 ---
 
-# When Should You Use Marketing Nodes?
+## When Should You Use Marketing Nodes?
 
 Use this node type whenever your workflow requires actions related to:
 
@@ -126,29 +133,35 @@ If your goal is to scale communication, improve personalization, or automate mar
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Automated Welcome Campaign  
+**✔ Automated Welcome Campaign**
+
 New user signs up → add to Mailchimp → send welcome email → tag as “new”.
 
-### ✔ Behavior-Based Email Trigger  
+**✔ Behavior-Based Email Trigger**
+
 Customer abandons cart in Shopify → send recovery email → sync event to Mixpanel.
 
-### ✔ Multi-Channel Marketing Flow  
+**✔ Multi-Channel Marketing Flow**
+
 Customer enters a segment → send email via SendGrid → post follow-up message via ManyChat.
 
-### ✔ Campaign Personalization  
+**✔ Campaign Personalization**
+
 Pull brand assets from Brandfetch → generate dynamic banners via Bannerbear → send via MailerLite.
 
-### ✔ Referral Program Automation  
+**✔ Referral Program Automation**
+
 User completes event → create referral link via Referral Factory → notify via email.
 
-### ✔ Marketing Performance Dashboard  
+**✔ Marketing Performance Dashboard**
+
 Aggregate subscriber stats → push data into analytics platforms → create weekly reports.
 
 ---
 
-# Benefits of Marketing Nodes
+## Benefits of Marketing Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -160,7 +173,7 @@ Aggregate subscriber stats → push data into analytics platforms → create wee
 
 ---
 
-# Summary
+## Summary
 
 Marketing Nodes give you the power to automate your full marketing ecosystem — from email and content creation to e-commerce campaigns and audience analytics.  
 They integrate all the essential tools modern marketing teams rely on, helping you deliver personalized, scalable, and data-driven experiences with ease.

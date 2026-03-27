@@ -42,7 +42,7 @@ Most validator nodes follow the same pattern:
 
 ---
 
-# 1) Validate Email
+## 1) Validate Email
 
 ### Input Example
 ```json
@@ -65,7 +65,7 @@ Most validator nodes follow the same pattern:
 
 ---
 
-# 2) Validate Password
+## 2) Validate Password
 
 ### Input Example
 ```json
@@ -86,7 +86,7 @@ Most validator nodes follow the same pattern:
 
 ---
 
-# 3) Validate Phone Number
+## 3) Validate Phone Number
 
 ### Input Example
 ```json
@@ -106,7 +106,7 @@ Most validator nodes follow the same pattern:
 
 ---
 
-# 4) Validate Credit Card
+## 4) Validate Credit Card
 
 ### Input Example
 ```json
@@ -123,7 +123,7 @@ Most validator nodes follow the same pattern:
 
 ---
 
-# 5) Validate Date
+## 5) Validate Date
 
 ### Input Example
 ```json
@@ -142,7 +142,7 @@ Most validator nodes follow the same pattern:
 
 ---
 
-# 6) Validate URL
+## 6) Validate URL
 
 ### Input Example
 ```json
@@ -161,7 +161,7 @@ Most validator nodes follow the same pattern:
 
 ---
 
-# 7) Validate Markdown
+## 7) Validate Markdown
 
 ### Input Example
 ```json

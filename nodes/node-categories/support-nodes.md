@@ -14,49 +14,55 @@ Whether you're assigning support requests, sending automated replies, syncing co
 
 ---
 
-# What Problems Do Support Nodes Solve?
+## What Problems Do Support Nodes Solve?
 
 Support operations often involve high volumes of repetitive tasks and fragmented communication across tools.  
 Support Nodes are designed to automate these challenges:
 
-### ✔ Ticket Creation & Sync
+**✔ Ticket Creation & Sync**
+
 Automatically create, update, tag, or close tickets when users perform certain actions or workflows detect an issue.
 
-### ✔ Multi-Channel Support Automation  
+**✔ Multi-Channel Support Automation**
+
 Connect live chat, email, CRM, and support portals inside a single automated workflow.
 
-### ✔ Customer Context & Enrichment  
+**✔ Customer Context & Enrichment**
+
 Pull customer details from CRM to improve ticket accuracy and response quality.
 
-### ✔ Escalation & Assignment  
+**✔ Escalation & Assignment**
+
 Automatically route tickets to the correct team or agent based on rules or workflow logic.
 
-### ✔ Follow-Up & Lifecycle Actions  
+**✔ Follow-Up & Lifecycle Actions**
+
 Send automated satisfaction checks, reminders, or follow-up messages.
 
-### ✔ Unified Support Experience  
+**✔ Unified Support Experience**
+
 Centralize all customer support events into one automated system for monitoring and reporting.
 
 Support Nodes eliminate manual steps and allow support teams to deliver faster, more personalized service.
 
 ---
 
-# What’s Included in Support Nodes?
+## What’s Included in Support Nodes?
 
 Support Nodes connect workflows to major helpdesk, chat, and support automation platforms.
 
-### **Helpdesk & Ticketing Systems**
+### Helpdesk & Ticketing Systems
 - Freshdesk  
 - Zendesk  
 - Syncro  
 - Zommand  
 
-### **Customer Messaging & Live Chat**
+### Customer Messaging & Live Chat
 - Intercom  
 - LiveChat  
 - ChatWoot  
 
-### **Support-Integrated Marketing & CRM**
+### Support-Integrated Marketing & CRM
 - ActiveCampaign  
 - HubSpot  
 
@@ -64,7 +70,7 @@ These integrations cover both customer-facing support channels and internal tick
 
 ---
 
-# When Should You Use Support Nodes?
+## When Should You Use Support Nodes?
 
 Support Nodes are ideal for workflows that involve:
 
@@ -81,26 +87,31 @@ If your support process needs speed, structure, or consistency, Support Nodes ar
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Automated Ticket Assignment  
+**✔ Automated Ticket Assignment**
+
 New ticket arrives in Zendesk → enrich with HubSpot data → assign to correct agent → notify team.
 
-### ✔ Live Chat → Ticket Conversion  
+**✔ Live Chat → Ticket Conversion**
+
 ChatWoot message received → create ticket in Freshdesk → push conversation into CRM.
 
-### ✔ Support Escalation Workflow  
+**✔ Support Escalation Workflow**
+
 High-priority customer → detect sentiment → escalate to senior support → trigger alert.
 
-### ✔ Customer Follow-Up Flow  
+**✔ Customer Follow-Up Flow**
+
 Ticket closed in Syncro → send satisfaction survey → schedule follow-up email in ActiveCampaign.
 
-### ✔ Unified Support Inbox  
+**✔ Unified Support Inbox**
+
 Aggregate messages from LiveChat, Intercom, and ChatWoot → send into a shared support pipeline.
 
 ---
 
-# Benefits of Support Nodes
+## Benefits of Support Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -112,7 +123,7 @@ Aggregate messages from LiveChat, Intercom, and ChatWoot → send into a shared 
 
 ---
 
-# Summary
+## Summary
 
 Support Nodes bring automation and intelligence to your helpdesk and customer communication workflows.  
 By connecting chat platforms, CRMs, and ticketing systems, they enable your team to deliver efficient, accurate, and proactive support — all while reducing manual work and improving customer satisfaction.

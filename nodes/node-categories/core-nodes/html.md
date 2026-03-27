@@ -20,7 +20,7 @@ puq.ai provides two HTML nodes:
 
 ---
 
-# 1) Extract HTML Content
+## 1) Extract HTML Content
 
 ### Description
 Extract data from an HTML string using simple CSS selectors.
@@ -47,7 +47,7 @@ How many extraction rules to configure (1–10).
 
 ---
 
-# 2) Convert to HTML Table
+## 2) Convert to HTML Table
 
 ### Description
 Render an array of objects into an HTML table.

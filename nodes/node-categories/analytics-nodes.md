@@ -14,64 +14,70 @@ Whether you're tracking product usage, monitoring operational health, measuring 
 
 ---
 
-# What Problems Do Analytics Nodes Solve?
+## What Problems Do Analytics Nodes Solve?
 
 Analytics Nodes are built for workflows that need to:
 
-### ✔ Monitor system or business health  
+**✔ Monitor system or business health**
+
 Track KPIs, service performance, user activity, or operational metrics.
 
-### ✔ Collect and aggregate behavioral data  
+**✔ Collect and aggregate behavioral data**
+
 Capture events from applications and user interactions.
 
-### ✔ Analyze customer or product insights  
+**✔ Analyze customer or product insights**
+
 Understand activation, retention, conversions, or trends.
 
-### ✔ Feed dashboards & BI tools  
+**✔ Feed dashboards & BI tools**
+
 Automatically push updated data to visualization platforms.
 
-### ✔ Connect to financial or market intelligence sources  
+**✔ Connect to financial or market intelligence sources**
+
 Monitor crypto prices, asset trends, and external data signals.
 
-### ✔ Drive automated decisions  
+**✔ Drive automated decisions**
+
 Trigger workflow branches when certain metrics exceed thresholds.
 
 If your automation needs to become **data-aware**, this category provides the essential tools.
 
 ---
 
-# What’s Included in Analytics Nodes?
+## What’s Included in Analytics Nodes?
 
 These are the core platforms integrated under Analytics:
 
-### **Market & Financial Intelligence**
+### Market & Financial Intelligence
 - **CoinGecko** — Cryptocurrency market data, price tracking, and asset insights.
 
-### **Monitoring & Dashboards**
+### Monitoring & Dashboards
 - **Grafana Management** — Dashboard updates, alerting configurations, data source operations.  
 - **Power BI** — BI reporting, dataset updates, dashboard syncing.
 
-### **User & Behavior Analytics**
+### User & Behavior Analytics
 - **Mixpanel** — Event tracking, user profiling, funnel insights.  
 - **Hotjar** — Heatmaps, session data, behavior insights.  
 - **Humanic AI** — Customer segmentation and AI-driven behavioral analysis.
 
-### **Operational & Fleet Analytics**
+### Operational & Fleet Analytics
 - **Onfleet** — Delivery, logistics, and driver analytics.  
 - **Harvest** — Time tracking and productivity metrics.
 
-### **Security & Risk Analysis**
+### Security & Risk Analysis
 - **SecurityScorecard** — Vendor security ratings, risk assessment data.
 
-### **Lead, Company & Enrichment Insights**
+### Lead, Company & Enrichment Insights
 - **Uplead** — Data enrichment, lead intelligence, company metadata.
 
-### **Web Performance & Metrics**
+### Web Performance & Metrics
 - **Webmetric** — Web analytics, uptime, speed metrics, and monitoring.
 
 ---
 
-# When Should You Use Analytics Nodes?
+## When Should You Use Analytics Nodes?
 
 Analytics Nodes are ideal when automation requires:
 
@@ -89,32 +95,39 @@ In short:
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Data-Driven Notifications  
+**✔ Data-Driven Notifications**
+
 Notify Slack if website uptime drops or KPI thresholds are exceeded.
 
-### ✔ Event-Based Automation  
+**✔ Event-Based Automation**
+
 Send Mixpanel events whenever a workflow completes a key action.
 
-### ✔ KPI Feeding  
+**✔ KPI Feeding**
+
 Automatically push new values to Power BI dashboards every hour.
 
-### ✔ Behavioral Enrichment  
+**✔ Behavioral Enrichment**
+
 Use Hotjar or Humanic data to classify high-intent vs low-intent users.
 
-### ✔ Market Tracking  
+**✔ Market Tracking**
+
 Run workflow branches based on CoinGecko crypto price changes.
 
-### ✔ Security Monitoring  
+**✔ Security Monitoring**
+
 Check vendor security ratings regularly and escalate if risk increases.
 
-### ✔ Delivery Operations  
+**✔ Delivery Operations**
+
 Use Onfleet task data to trigger follow-up processes or reports.
 
 ---
 
-# Benefits of Analytics Nodes
+## Benefits of Analytics Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -126,7 +139,7 @@ Use Onfleet task data to trigger follow-up processes or reports.
 
 ---
 
-# Summary
+## Summary
 
 Analytics Nodes transform your workflows into intelligent, insight-driven systems.  
 By integrating with monitoring tools, behavioral analytics platforms, financial data sources, and BI dashboards, this category ensures your automations always operate with the most relevant and up-to-date information.
