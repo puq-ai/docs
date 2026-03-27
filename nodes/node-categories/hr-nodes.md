@@ -14,45 +14,50 @@ Whether you’re managing internal accounts or synchronizing employee data acros
 
 ---
 
-# What Problems Do HR Nodes Solve?
+## What Problems Do HR Nodes Solve?
 
 Human resources processes often involve repetitive tasks and require consistency across multiple tools.  
 HR Nodes streamline these processes by automating user and employee management tasks, eliminating manual steps, and ensuring accurate data synchronization.
 
 With HR Nodes, you can:
 
-### ✔ Automate User Provisioning  
+**✔ Automate User Provisioning**
+
 Create, update, and manage employee accounts without manual work.
 
-### ✔ Keep Organizational Data Consistent  
+**✔ Keep Organizational Data Consistent**
+
 Sync user information across internal systems and prevent data mismatches.
 
-### ✔ Streamline Onboarding & Offboarding  
+**✔ Streamline Onboarding & Offboarding**
+
 Automatically handle account creation, permissions, and cleanup workflows.
 
-### ✔ Enhance Security & Compliance  
+**✔ Enhance Security & Compliance**
+
 Ensure correct access levels, remove outdated accounts, and maintain audit trails.
 
-### ✔ Reduce Administrative Overhead  
+**✔ Reduce Administrative Overhead**
+
 Minimize repetitive tasks like group assignments, profile updates, or role management.
 
 ---
 
-# What’s Included in HR Nodes?
+## What’s Included in HR Nodes?
 
 This category includes two widely used platforms for managing people and organizational data:
 
-### **Google Workspace Admin**
+### Google Workspace Admin
 Tools for managing users, groups, organizational units, and administrative controls within Google Workspace.
 
-### **Odoo**
+### Odoo
 HR-related actions within Odoo, such as employee records, departments, or access control operations depending on configuration.
 
 Together, these nodes support both cloud-based directory management and ERP-driven workforce operations.
 
 ---
 
-# When Should You Use HR Nodes?
+## When Should You Use HR Nodes?
 
 Use HR Nodes when your automation needs to:
 
@@ -66,26 +71,31 @@ Use HR Nodes when your automation needs to:
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Automated Employee Onboarding  
+**✔ Automated Employee Onboarding**
+
 When a new hire form is submitted → create Google Workspace account → add to correct groups → notify department.
 
-### ✔ Access Level Automation  
+**✔ Access Level Automation**
+
 Employee transfer event → move user to new department → adjust permissions automatically.
 
-### ✔ Offboarding Workflow  
+**✔ Offboarding Workflow**
+
 Trigger HR exit procedure → disable account → archive data → revoke group memberships.
 
-### ✔ ERP-Directory Sync  
+**✔ ERP-Directory Sync**
+
 Odoo employee record updated → sync changes to Google Workspace.
 
-### ✔ Role-Based Automation  
+**✔ Role-Based Automation**
+
 When employee becomes team lead → update permissions → send notifications → add to relevant workflows.
 
 ---
 
-# Benefits of HR Nodes
+## Benefits of HR Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -97,7 +107,7 @@ When employee becomes team lead → update permissions → send notifications �
 
 ---
 
-# Summary
+## Summary
 
 HR Nodes provide the automation backbone for managing personnel data, user accounts, and organizational structures.  
 By integrating systems like Google Workspace Admin and Odoo, workflows become powerful tools for onboarding, offboarding, access control, and overall HR process optimization.

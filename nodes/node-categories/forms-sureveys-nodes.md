@@ -14,51 +14,57 @@ Whether you're handling form submissions, analyzing survey results, or capturing
 
 ---
 
-# What Problems Do Forms & Surveys Nodes Solve?
+## What Problems Do Forms & Surveys Nodes Solve?
 
 Forms and surveys often generate high volumes of real-time data.  
 Manually managing this data can slow teams down, especially when responses need to be validated, enriched, or routed quickly.
 
 Forms & Surveys Nodes help solve these challenges by:
 
-### ✔ Automating Response Collection  
+**✔ Automating Response Collection**
+
 Capture new form submissions or survey results and push them directly into workflows.
 
-### ✔ Triggering Workflows From User Input  
+**✔ Triggering Workflows From User Input**
+
 Start automations when a submission is received — perfect for onboarding, support requests, marketing campaigns, or feedback loops.
 
-### ✔ Centralizing Feedback  
+**✔ Centralizing Feedback**
+
 Combine results from multiple platforms into one unified system.
 
-### ✔ Enriching & Processing Data  
+**✔ Enriching & Processing Data**
+
 Automatically validate, categorize, or enhance responses before storing or forwarding them.
 
-### ✔ Generating Real-Time Insights  
+**✔ Generating Real-Time Insights**
+
 Push feedback into analytics dashboards or reporting tools.
 
-### ✔ Reducing Manual Work  
+**✔ Reducing Manual Work**
+
 Remove the need to export, import, or manually review submissions.
 
 ---
 
-# What’s Included in Forms & Surveys Nodes?
+## What’s Included in Forms & Surveys Nodes?
 
 This category includes widely used platforms for collecting and analyzing user responses:
 
-### **Form Builders**
+### Form Builders
 - **Jotform** — Create, manage, and process form submissions.
 
-### **Survey Platforms**
+### Survey Platforms
 - **SurveyMonkey** — Collect structured surveys, NPS results, and feedback data.
 
-### **Behavior & Feedback Analytics**
+### Behavior & Feedback Analytics
 - **Hotjar** — Capture user behavior insights, recordings, heatmaps, and feedback widgets.
 
 These nodes cover everything from submission-based triggers to behavioral analytics.
 
 ---
 
-# When Should You Use Forms & Surveys Nodes?
+## When Should You Use Forms & Surveys Nodes?
 
 Use this node type when your workflow needs to:
 
@@ -75,26 +81,31 @@ Forms & Surveys Nodes are key for building dynamic, data-driven automations.
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Automated Lead Capture  
+**✔ Automated Lead Capture**
+
 User submits a Jotform → enrich with CRM data → send welcome email → assign sales rep.
 
-### ✔ Survey-Driven Alerts  
+**✔ Survey-Driven Alerts**
+
 Low satisfaction score from SurveyMonkey → notify support → create ticket → escalate if needed.
 
-### ✔ Behavioral Feedback Workflow  
+**✔ Behavioral Feedback Workflow**
+
 Hotjar recording indicates friction → send alert → create internal task → route to UX team.
 
-### ✔ Centralized Form Storage  
+**✔ Centralized Form Storage**
+
 Collect submissions → convert to JSON → store in Google Sheets or database.
 
-### ✔ Personalized Follow-Up  
+**✔ Personalized Follow-Up**
+
 Survey response includes product interest → add user to targeted email segment.
 
 ---
 
-# Benefits of Forms & Surveys Nodes
+## Benefits of Forms & Surveys Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -106,7 +117,7 @@ Survey response includes product interest → add user to targeted email segment
 
 ---
 
-# Summary
+## Summary
 
 Forms & Surveys Nodes make it easy to convert user input into automated workflows.  
 From behavior analytics to structured survey data, these integrations help teams collect, react to, and analyze responses with speed and accuracy — all without manual effort.

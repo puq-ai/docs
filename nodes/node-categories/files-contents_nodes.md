@@ -14,39 +14,45 @@ These nodes connect to file storage services, document tools, content management
 
 ---
 
-# What Problems Do Files & Content Nodes Solve?
+## What Problems Do Files & Content Nodes Solve?
 
 Files & Content Nodes are ideal when your automation needs to:
 
-### ✔ Generate or update documents
+**✔ Generate or update documents**
+
 Create Google Docs, Slides, or Sheets dynamically from workflow output.
 
-### ✔ Store or manage files
+**✔ Store or manage files**
+
 Upload, download, convert, or organize files across services like Google Drive, OneDrive, or Box.
 
-### ✔ Publish content to websites or blog platforms
+**✔ Publish content to websites or blog platforms**
+
 Send new posts to WordPress, Ghost, Storyblok, or Strapi.
 
-### ✔ Fetch, transform, or enrich content
+**✔ Fetch, transform, or enrich content**
+
 Pull articles, summaries, metadata, media files, or SEO-ready content.
 
-### ✔ Automate content-heavy workflows
+**✔ Automate content-heavy workflows**
+
 Generate PDFs, process RSS feeds, synchronize music libraries, manage bookmarks, or distribute posts.
 
-### ✔ Structure digital assets for multi-channel output
+**✔ Structure digital assets for multi-channel output**
+
 Use headless CMS tools for sites, apps, and marketing pipelines.
 
 If a workflow involves **files**, **documents**, **articles**, **media**, or **CMS content**, this category brings everything together.
 
 ---
 
-# What’s Included in Files & Content Nodes?
+## What’s Included in Files & Content Nodes?
 
 Below is a structured overview of the platforms included.
 
 ---
 
-## **Cloud Storage & File Management**
+### Cloud Storage & File Management
 - Box  
 - Google Drive  
 - OneDrive  
@@ -58,7 +64,7 @@ Below is a structured overview of the platforms included.
 
 ---
 
-## **Content Management Systems (CMS)**
+### Content Management Systems (CMS)
 - WordPress  
 - Ghost  
 - Storyblok  
@@ -68,7 +74,7 @@ Below is a structured overview of the platforms included.
 
 ---
 
-## **Content Discovery & Metadata**
+### Content Discovery & Metadata
 - Google Books  
 - Hacker News  
 - Raindrop (bookmark manager)  
@@ -77,18 +83,18 @@ Below is a structured overview of the platforms included.
 
 ---
 
-## **Media Platforms**
+### Media Platforms
 - Spotify  
 
 ---
 
-## **Developer-Friendly Content Tools**
+### Developer-Friendly Content Tools
 - GitHub (content as code, markdown, repo-based storage)  
 - Disqus (comments and community content)  
 
 ---
 
-# When Should You Use Files & Content Nodes?
+## When Should You Use Files & Content Nodes?
 
 These nodes are designed for workflows that need to:
 
@@ -106,32 +112,39 @@ From marketing to engineering, this category powers content pipelines of every s
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Automated Blog Publishing
+**✔ Automated Blog Publishing**
+
 Create a post with workflow data → upload images → publish to WordPress or Ghost.
 
-### ✔ Document Generation Pipelines
+**✔ Document Generation Pipelines**
+
 Use workflow output to fill Google Docs or Slides templates.
 
-### ✔ File Conversion & Delivery
+**✔ File Conversion & Delivery**
+
 Convert a PDF to DOCX using CloudConvert → upload to Drive → send via email.
 
-### ✔ SEO Content Automation
+**✔ SEO Content Automation**
+
 Generate SEO-optimized draft content and push it to CMS tools.
 
-### ✔ Bookmark and Knowledge Management
+**✔ Bookmark and Knowledge Management**
+
 Pull Raindrop bookmarks or RSS entries into a database or Slack.
 
-### ✔ Headless CMS Syncing
+**✔ Headless CMS Syncing**
+
 Update Storyblok or Strapi content when new data is added to your CRM.
 
-### ✔ Media Library Automation
+**✔ Media Library Automation**
+
 Use Spotify nodes to reorganize playlists or sync track metadata.
 
 ---
 
-# Benefits of Files & Content Nodes
+## Benefits of Files & Content Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -143,7 +156,7 @@ Use Spotify nodes to reorganize playlists or sync track metadata.
 
 ---
 
-# Summary
+## Summary
 
 Files & Content Nodes enable automation across the entire content lifecycle — generating documents, managing files, publishing posts, controlling CMS entries, retrieving data, and enriching content.  
 If your workflow touches **files**, **documents**, **media**, or **digital content**, this category provides the essential tools to orchestrate it.

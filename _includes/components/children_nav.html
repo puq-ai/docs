@@ -79,12 +79,15 @@
 
 <hr>
 {% include toc_heading_custom.html %}
-<ul>
+<div class="children-grid{% if nav_children.size > 11 %} children-grid-compact{% endif %}">
   {% for nav_child in nav_children %}
-  <li>
-    <a href="{{ nav_child.url | relative_url }}">{{ nav_child.title }}</a>{% if nav_child.summary %} - {{ nav_child.summary }}{% endif %}
-  </li>
+  <a href="{{ nav_child.url | relative_url }}" class="child-card">
+    <span class="child-card-title">{{ nav_child.title }}</span>
+    {% if nav_child.description %}
+    <span class="child-card-desc">{{ nav_child.description | truncate: 100 }}</span>
+    {% endif %}
+  </a>
   {% endfor %}
-</ul>
+</div>
 
 {%- endif -%}

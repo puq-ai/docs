@@ -14,42 +14,50 @@ These nodes act as bridges between your workflow and dozens of external communic
 
 ---
 
-# What Problems Do Communication Nodes Solve?
+## What Problems Do Communication Nodes Solve?
 
 Communication Nodes are designed to support a wide range of messaging and notification needs:
 
-### ✔ Email Delivery & Marketing Automation
+**✔ Email Delivery & Marketing Automation**
+
 Send transactional emails, newsletters, campaign sequences, or automated notifications.
 
-### ✔ SMS & Voice Notifications
+**✔ SMS & Voice Notifications**
+
 Send alerts, warnings, verification codes, OTPs, or customer messages directly to mobile phones.
 
-### ✔ Push Notifications
+**✔ Push Notifications**
+
 Trigger rich push alerts for mobile and desktop apps.
 
-### ✔ Team Collaboration & Chat Automation
+**✔ Team Collaboration & Chat Automation**
+
 Send messages to Slack, Discord, Microsoft Teams, or Mattermost directly from your flows.
 
-### ✔ Customer Support Messaging
+**✔ Customer Support Messaging**
+
 Integrate with platforms like Intercom, LiveChat, Zendesk, or WhatsApp Business Cloud.
 
-### ✔ Social Media Interactions
+**✔ Social Media Interactions**
+
 Post updates, messages, or announcements to Twitter/X, LinkedIn, Facebook, Instagram, Reddit, and more.
 
-### ✔ Lead Nurturing & CRM Communication
+**✔ Lead Nurturing & CRM Communication**
+
 Sync with marketing CRMs like Mailchimp, Customer.io, ActiveCampaign-style tools, Iterable, or Vero.
 
-### ✔ Event, Webinar, and Community Engagement
+**✔ Event, Webinar, and Community Engagement**
+
 Automate communication with services like Zoom, Demio, or mailing systems like Constant Contact.
 
 ---
 
-# What’s Included in Communication Nodes?
+## What’s Included in Communication Nodes?
 
 Below is an overview of the platforms covered.  
 (You may insert a grid image or icons here later.)
 
-### **Email Providers**
+### Email Providers
 - Email (generic)
 - Gmail  
 - Mailgun  
@@ -62,7 +70,7 @@ Below is an overview of the platforms covered.
 - Postmark-style transactional tools  
 - Fathom (analytics-linked email events)  
 
-### **SMS / Voice / Phone**
+### SMS / Voice / Phone
 - Vonage  
 - Twilio  
 - Telnyx  
@@ -70,13 +78,13 @@ Below is an overview of the platforms covered.
 - Whatsable  
 - WhatsApp Business Cloud  
 
-### **Push Notifications**
+### Push Notifications
 - Pushbullet  
 - Pushcut  
 - Pushinator  
 - Pushover  
 
-### **Chat & Team Messaging**
+### Chat & Team Messaging
 - Slack  
 - Discord  
 - Microsoft Teams  
@@ -86,13 +94,13 @@ Below is an overview of the platforms covered.
 - SIGNL4  
 - Zulip  
 
-### **Customer Support Platforms**
+### Customer Support Platforms
 - Intercom  
 - Zendesk  
 - LiveChat  
 - ManyChat  
 
-### **Marketing & Engagement Tools**
+### Marketing & Engagement Tools
 - Customer.io  
 - Iterable  
 - Constant Contact  
@@ -102,7 +110,7 @@ Below is an overview of the platforms covered.
 - Taximail  
 - Unisender  
 
-### **Social Media & Community Platforms**
+### Social Media & Community Platforms
 - LinkedIn  
 - Twitter/X  
 - Facebook  
@@ -110,10 +118,10 @@ Below is an overview of the platforms covered.
 - Reddit  
 - Hacker News  
 
-### **Video & Webinar**
+### Video & Webinar
 - Zoom  
 
-### **Contacts & Personal Productivity**
+### Contacts & Personal Productivity
 - Google Contacts  
 - Microsoft Outlook  
 - Goify  
@@ -123,7 +131,7 @@ Below is an overview of the platforms covered.
 
 ---
 
-# When Should You Use Communication Nodes?
+## When Should You Use Communication Nodes?
 
 Communication Nodes become essential when your workflow must:
 
@@ -141,34 +149,41 @@ If your workflow needs to “tell” someone that something happened,
 
 ---
 
-# Typical Automation Scenarios
+## Typical Automation Scenarios
 
 Here are some common real-world use cases:
 
-### ✔ Transactional Emails  
+**✔ Transactional Emails**
+
 Send a confirmation email when a new record is created or a payment succeeds.
 
-### ✔ Real-Time Alerts  
+**✔ Real-Time Alerts**
+
 Post to Slack or Teams when a server goes down or an error occurs.
 
-### ✔ Automated Social Posting  
+**✔ Automated Social Posting**
+
 Publish tweets, LinkedIn updates, or Reddit posts when new content is generated.
 
-### ✔ Marketing Campaign Automation  
+**✔ Marketing Campaign Automation**
+
 Trigger onboarding emails or follow-up sequences with Customer.io or Mailchimp.
 
-### ✔ SMS Notifications  
+**✔ SMS Notifications**
+
 Send time-sensitive alerts, OTP codes, or appointment reminders.
 
-### ✔ Customer Support Routing  
+**✔ Customer Support Routing**
+
 Forward user messages to Intercom or Zendesk automatically.
 
-### ✔ Community Engagement  
+**✔ Community Engagement**
+
 Broadcast webinar links using Demio, Zoom, or Constant Contact.
 
 ---
 
-# Benefits of Communication Nodes
+## Benefits of Communication Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -180,7 +195,7 @@ Broadcast webinar links using Demio, Zoom, or Constant Contact.
 
 ---
 
-# Summary
+## Summary
 
 Communication Nodes allow your workflows to interact with people, platforms, and teams.  
 From sending emails to posting on social media, from push notifications to customer support messaging, this category provides the full communication backbone your automations need.

@@ -23,7 +23,7 @@ Use the JSON node when you need to:
 
 ---
 
-# Actions
+## Actions
 
 ## 1) Parse JSON
 
@@ -170,7 +170,7 @@ If you use a missing path and set **Default Value** to `0`, the output will be `
 
 ---
 
-# Best Practices
+## Best Practices
 
 - **Parse early, map later:** Convert JSON strings into structured data first, then use Data Selector / Parameter Mapping in later nodes.
 - **Use Extract for performance:** If you only need a single field, extracting is often clearer than mapping through a large object.
@@ -178,7 +178,7 @@ If you use a missing path and set **Default Value** to `0`, the output will be `
 
 ---
 
-# Quick Summary
+## Quick Summary
 
 - **Parse JSON** → string → structured data  
 - **Stringify JSON** → structured data → string  

@@ -1,8 +1,3 @@
-// Global smooth scrolling
-html {
-  scroll-behavior: smooth;
-}
-
 // Site Footer Styles
 .site-footer {
   display: flex;
@@ -79,6 +74,66 @@ html {
   display: block;
 }
 
+// Dark mode logo swap
+[data-theme="dark"] .site-logo {
+  background-image: url("/assets/images/puq-docs-logo-dark.svg") !important;
+}
+
+// ===================================
+// Search Highlight (post-navigation)
+// ===================================
+
+.search-term-highlight {
+  background-color: #f7d12e;
+  color: #1a1a1f;
+  border-radius: 2px;
+  padding: 1px 2px;
+  transition: background-color 0.5s ease;
+}
+
+.search-term-highlight.fade-out {
+  background-color: transparent;
+  color: inherit;
+}
+
+// ===================================
+// Sidebar Navigation Scrollbar
+// ===================================
+
+.site-nav {
+  scrollbar-width: thin;
+  scrollbar-color: $grey-lt-300 transparent;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $grey-lt-300;
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $grey-dk-000;
+  }
+}
+
+[data-theme="dark"] .site-nav {
+  scrollbar-color: $grey-dk-200 transparent;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $grey-dk-200;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $grey-dk-100;
+  }
+}
+
 // ===================================
 // Layout Utility Classes
 // ===================================
@@ -100,6 +155,16 @@ html {
 // ===================================
 
 $toc-width: 220px;
+
+// Anchor scroll offset - headings stop below the sticky header
+main h1[id],
+main h2[id],
+main h3[id],
+main h4[id],
+main h5[id],
+main h6[id] {
+  scroll-margin-top: calc(#{$header-height} + #{$sp-4});
+}
 
 // Wrapper - Flexbox layout
 .content-with-toc {
@@ -128,6 +193,7 @@ $toc-width: 220px;
   top: $header-height;
   max-height: calc(100vh - #{$header-height} - #{$sp-4});
   overflow-y: auto;
+  scroll-behavior: smooth;
   padding-top: $sp-4;
   padding-right: $sp-3;
 
@@ -172,7 +238,7 @@ $toc-width: 220px;
   color: $grey-dk-100;
   text-decoration: none;
   border-left: 2px solid transparent;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, border-left-color 0.15s ease, font-weight 0.15s ease;
 
   &:hover {
     color: $link-color;
@@ -260,10 +326,10 @@ $toc-width: 220px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba($purple-000, 0.06) 50%,
-    rgba($purple-000, 0.14) 100%
+    rgba($accent-000, 0.06) 50%,
+    rgba($accent-000, 0.14) 100%
   ) !important;
-  color: $purple-000 !important;
+  color: $accent-300 !important;
 }
 
 // Dark theme - minimal gradient
@@ -272,9 +338,231 @@ $toc-width: 220px;
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba($blue-000, 0.08) 50%,
-      rgba($blue-000, 0.18) 100%
+      rgba($accent-lt-000, 0.06) 50%,
+      rgba($accent-lt-000, 0.12) 100%
     ) !important;
-    color: $blue-000 !important;
+    color: $accent-lt-100 !important;
+  }
+}
+
+// ===================================
+// Heading Font Weights (bolder after size reduction)
+// ===================================
+
+h1,
+.text-alpha {
+  font-weight: 700;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-beta,
+.text-gamma,
+.text-delta,
+.text-epsilon,
+.text-zeta,
+#toctitle {
+  font-weight: 600;
+}
+
+// Heading font-size overrides (proportional scale)
+// Body 14→15px, h3 16→18px, h2 19→22px, h1 24→27px
+h2,
+.text-beta,
+#toctitle {
+  font-size: 1.1875rem !important; // 19px mobile
+
+  @include mq(sm) {
+    font-size: 1.375rem !important; // 22px desktop
+  }
+}
+
+h3,
+.text-gamma {
+  font-size: 1rem !important; // 16px mobile
+
+  @include mq(sm) {
+    font-size: 1.125rem !important; // 18px desktop
+  }
+}
+
+// ===================================
+// H4 Style Fix (remove uppercase/letter-spacing)
+// ===================================
+
+h4,
+.text-delta {
+  text-transform: none;
+  letter-spacing: normal;
+  @include fs-3; // 12px/14px (was fs-2: 11px/12px)
+}
+
+// ===================================
+// Table Dark Theme Overrides
+// ===================================
+
+[data-theme="dark"] {
+  .table-wrapper {
+    border-color: $grey-dk-200;
+  }
+
+  th {
+    background-color: rgba($grey-dk-200, 0.5);
+    color: $grey-lt-000;
+    border-color: $grey-dk-200;
+  }
+
+  td {
+    border-color: rgba($grey-dk-200, 0.5);
+  }
+
+  thead th {
+    border-bottom-color: $grey-dk-200;
+  }
+
+  tbody tr:hover td {
+    background-color: rgba($grey-dk-200, 0.35);
+  }
+}
+
+// ===================================
+// Children Navigation Card Grid
+// ===================================
+
+.children-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-3;
+  margin-top: $sp-4;
+
+  @include mq(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.child-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $sp-1;
+  min-height: 4.5rem;
+  padding: $sp-3 $sp-4;
+  padding-right: $sp-7;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  text-decoration: none;
+  color: $body-text-color;
+  background-color: $table-background-color;
+  position: relative;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &::after {
+    content: "\203A";
+    position: absolute;
+    right: $sp-3;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    color: $grey-dk-000;
+    transition: color 0.15s ease, transform 0.15s ease;
+    line-height: 1;
+  }
+
+  &:hover {
+    text-decoration: none;
+    border-color: $link-color;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    &::after {
+      color: $link-color;
+      transform: translateY(-50%) translateX(2px);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($accent-000, 0.25);
+  }
+}
+
+.child-card-title {
+  font-weight: 600;
+  color: $link-color;
+  line-height: 1.3;
+}
+
+.child-card-desc {
+  font-size: 0.75rem;
+  color: $grey-dk-000;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.children-grid-compact {
+  .child-card {
+    flex-direction: row;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: $sp-2 $sp-3;
+    padding-right: $sp-6;
+  }
+
+  .child-card-desc {
+    display: none;
+  }
+
+  @include mq(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+[data-theme="dark"] {
+  .child-card {
+    background-color: $grey-dk-250;
+    border-color: $grey-dk-200;
+
+    &::after {
+      color: $grey-dk-000;
+    }
+
+    &:hover {
+      border-color: $link-color;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+      &::after {
+        color: $link-color;
+      }
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba($accent-lt-000, 0.25);
+    }
+  }
+
+  .child-card-desc {
+    color: $grey-dk-000;
+  }
+}
+
+@media print {
+  .children-grid {
+    display: block;
+  }
+
+  .child-card {
+    display: block;
+    margin-bottom: $sp-2;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+
+    &::after {
+      display: none;
+    }
   }
 }

@@ -14,7 +14,7 @@ This guide explains how saving, publishing, enabling/disabling, and triggering w
 
 ---
 
-# Saving Before Publishing (Important)
+## Saving Before Publishing (Important)
 
 Before you publish a workflow, you **must click Save**.
 
@@ -35,7 +35,7 @@ This ensures your production workflow matches your design exactly.
 
 ---
 
-# Enabling and Disabling a Workflow
+## Enabling and Disabling a Workflow
 
 Every workflow has an **Enable / Disable** toggle that controls whether it is allowed to run.
 
@@ -60,7 +60,7 @@ This lets you control automation behavior without having to unpublish or delete 
 
 ---
 
-# How to Publish a Workflow
+## How to Publish a Workflow
 
 1. Open the workflow in the **Visual Builder**  
 2. Review nodes and logic  
@@ -72,11 +72,12 @@ Publishing deploys the saved version into an active environment.
 
 ---
 
-# What Happens When You Publish?
+## What Happens When You Publish?
 
 Publishing activates:
 
-### ✔ Trigger Nodes  
+**✔ Trigger Nodes**
+
 All configured triggers become ready to execute:
 - Integration-based triggers  
 - Webhooks  
@@ -85,16 +86,18 @@ All configured triggers become ready to execute:
 - Form submissions  
 - Manual triggers
 
-### ✔ Public Execution Endpoint  
+**✔ Public Execution Endpoint**
+
 Your workflow receives a stable endpoint URL that can trigger executions (optional to use).
 
-### ✔ Logs & Monitoring  
+**✔ Logs & Monitoring**
+
 Execution logs, inputs, and outputs are tracked immediately after publishing.
 
 ---
 
 
-# How Published Workflows Are Triggered
+## How Published Workflows Are Triggered
 
 Once a workflow is published (and enabled), it can run in multiple ways:
 
@@ -128,7 +131,7 @@ This is primarily used by developers or custom systems.
 
 ---
 
-# Updating a Published Workflow
+## Updating a Published Workflow
 
 To update a live workflow:
 
@@ -141,7 +144,7 @@ Publishing will replace the previous version instantly.
 
 ⚠️ If you forget to save, the old version remains deployed.
 
-# Monitoring Execution
+## Monitoring Execution
 
 Once published, you can monitor workflow activity:
 
@@ -153,7 +156,7 @@ Once published, you can monitor workflow activity:
 
 This helps validate and debug production automations.
 
-# Summary
+## Summary
 Publishing activates your workflow and makes it eligible to run via triggers.
 Key points to remember:
 

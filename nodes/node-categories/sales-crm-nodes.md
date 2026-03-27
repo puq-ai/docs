@@ -14,37 +14,43 @@ They connect your workflows to the most widely used CRM and sales engagement pla
 
 ---
 
-# What Problems Do Sales & CRM Nodes Solve?
+## What Problems Do Sales & CRM Nodes Solve?
 
 Sales & CRM Nodes are designed to automate the most critical customer-related processes:
 
-### ✔ Lead Generation & Enrichment  
+**✔ Lead Generation & Enrichment**
+
 Automatically capture new leads, enrich their information, and route them to the right team.
 
-### ✔ Deal & Pipeline Management  
+**✔ Deal & Pipeline Management**
+
 Create, update, or move deals across stages without manual intervention.
 
-### ✔ Contact & Account Sync  
+**✔ Contact & Account Sync**
+
 Ensure contact information stays consistent across all systems.
 
-### ✔ Customer Support Automation  
+**✔ Customer Support Automation**
+
 Assign tickets, update statuses, and track resolution progress.
 
-### ✔ Sales Notifications  
+**✔ Sales Notifications**
+
 Instantly notify sales reps when leads change state or high-value actions occur.
 
-### ✔ Sales Forecasting & Metrics  
+**✔ Sales Forecasting & Metrics**
+
 Push data into analytics tools for performance dashboards.
 
 By automating these tasks, Sales & CRM Nodes help teams move faster and deliver a better customer experience.
 
 ---
 
-# What’s Included in Sales & CRM Nodes?
+## What’s Included in Sales & CRM Nodes?
 
 This node type includes deep integrations with modern CRM systems, customer engagement tools, lead management solutions, and sales automation platforms.
 
-### **Full-Scale CRM Platforms**
+### Full-Scale CRM Platforms
 - Salesforce  
 - HubSpot  
 - Zoho CRM  
@@ -58,23 +64,23 @@ This node type includes deep integrations with modern CRM systems, customer enga
 - Ontraport  
 - FreshSales  
 
-### **Customer Support & Communication**
+### Customer Support & Communication
 - Intercom  
 - Zendesk  
 - Simla  
 - PandaDoc  
 - RogerRoger  
 
-### **Lead Enrichment & Data Providers**
+### Lead Enrichment & Data Providers
 - Dropcontact  
 - UpLead  
 - Humanic AI  
 - Webmetic  
 
-### **Scheduling & Appointment Management**
+### Scheduling & Appointment Management
 - Acuity Scheduling  
 
-### **Sales Toolkit & Miscellaneous**
+### Sales Toolkit & Miscellaneous
 - ActiveCampaign  
 - amoCRM  
 - Brevi  
@@ -83,7 +89,7 @@ These nodes cover every phase of the sales process from acquisition to onboardin
 
 ---
 
-# When Should You Use Sales & CRM Nodes?
+## When Should You Use Sales & CRM Nodes?
 
 Use this category anytime your workflow needs to interact with sales or customer-related data:
 
@@ -102,26 +108,31 @@ Sales & CRM Nodes are essential for unifying your operational, marketing, and sa
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Automated Lead Routing  
+**✔ Automated Lead Routing**
+
 New lead arrives → enrich with Dropcontact → assign to sales rep in Pipedrive → notify via Slack.
 
-### ✔ Deal Stage Automation  
+**✔ Deal Stage Automation**
+
 Proposal signed in PandaDoc → move deal to “Closed Won” in Salesforce → trigger onboarding workflow.
 
-### ✔ Support Ticket Sync  
+**✔ Support Ticket Sync**
+
 New Zendesk ticket → pull customer details from HubSpot → tag ticket → notify team.
 
-### ✔ Sales Forecasting  
+**✔ Sales Forecasting**
+
 Daily export from Salesmate → push metrics into analytics tools → generate automated reports.
 
-### ✔ Customer Lifecycle Management  
+**✔ Customer Lifecycle Management**
+
 Customer completes purchase → create account in Zoho CRM → send welcome email → add to retention workflow.
 
 ---
 
-# Benefits of Sales & CRM Nodes
+## Benefits of Sales & CRM Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -133,7 +144,7 @@ Customer completes purchase → create account in Zoho CRM → send welcome emai
 
 ---
 
-# Summary
+## Summary
 
 Sales & CRM Nodes help automate everything from lead capture to deal closure.  
 By connecting your workflows to leading CRM platforms, these nodes eliminate manual work, improve data quality, and enable your team to deliver a seamless customer experience — from first contact to long-term retention.

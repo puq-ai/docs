@@ -14,43 +14,51 @@ This category brings together platforms used for **project management**, **time 
 
 ---
 
-# What Problems Do Productivity Nodes Solve?
+## What Problems Do Productivity Nodes Solve?
 
 Productivity Nodes are helpful whenever a workflow needs to:
 
-### ✔ Create or update tasks automatically  
+**✔ Create or update tasks automatically**
+
 Generate tasks based on system events, new leads, errors, approvals, or checklist items.
 
-### ✔ Synchronize project management tools  
+**✔ Synchronize project management tools**
+
 Ensure platforms like Jira, Trello, Asana, Monday.com, ClickUp, or Notion stay aligned.
 
-### ✔ Manage schedules and availability  
+**✔ Manage schedules and availability**
+
 Create events, update meetings, modify calendars, or block time using Google Calendar, Outlook Calendar, or Calendly.
 
-### ✔ Generate or modify documents  
+**✔ Generate or modify documents**
+
 Produce Google Docs, update Sheets, populate Slides, or sync data with Webflow/Coda.
 
-### ✔ Collect and store data  
+**✔ Collect and store data**
+
 Save form responses (Jotform), move data into spreadsheets, or maintain records in tools like Airtable, Baserow, Grist, or Notion databases.
 
-### ✔ Build reports and dashboards  
+**✔ Build reports and dashboards**
+
 Push metrics to Power BI, generate QuickCharts, or update analytics services.
 
-### ✔ Automate content and media  
+**✔ Automate content and media**
+
 Manage YouTube posts, update Spotify playlists, or organize bookmarks via Raindrop.
 
-### ✔ Handle daily personal productivity  
+**✔ Handle daily personal productivity**
+
 Sync tasks between Todoist, Microsoft To Do, Google Tasks, Vikunja and similar tools.
 
 If your workflow needs to help you or your team stay organized, stay on schedule, or stay aligned — Productivity Nodes are the backbone.
 
 ---
 
-# What’s Included in Productivity Nodes?
+## What’s Included in Productivity Nodes?
 
 Below is an overview of the platforms covered in this category.
 
-### **Project & Task Management**
+### Project & Task Management
 - Asana  
 - ClickUp  
 - Jira  
@@ -64,11 +72,11 @@ Below is an overview of the platforms covered in this category.
 - Understand Tech  
 - Wekan  
 
-### **Forms & Data Collection**
+### Forms & Data Collection
 - Jotform  
 - Typeform-like capabilities through other integrations  
 
-### **Documents, Databases & Collaboration**
+### Documents, Databases & Collaboration
 - Airtable  
 - Baserow  
 - Coda  
@@ -79,26 +87,26 @@ Below is an overview of the platforms covered in this category.
 - Google Slides  
 - Webflow  
 
-### **Calendars & Scheduling**
+### Calendars & Scheduling
 - Google Calendar  
 - Outlook Calendar  
 - Calendly  
 - Cisco Webex Meetings  
 
-### **Email & Messaging Essentials**
+### Email & Messaging Essentials
 *(Only included when used for productivity contexts)*  
 - Gmail  
 - Microsoft Outlook  
 - Zulip  
 
-### **Reporting & Visualization**
+### Reporting & Visualization
 - Power BI  
 - QuickChart  
 
-### **Automation & Dev Tools**
+### Automation & Dev Tools
 - Travis CI  
 
-### **Tracking, Media & Miscellaneous**
+### Tracking, Media & Miscellaneous
 - Harvest (time tracking)  
 - DHL (shipment tracking)  
 - Raindrop (bookmark manager)  
@@ -109,7 +117,7 @@ Below is an overview of the platforms covered in this category.
 
 ---
 
-# When Should You Use Productivity Nodes?
+## When Should You Use Productivity Nodes?
 
 Productivity Nodes are ideal for workflows that must:
 
@@ -128,32 +136,39 @@ Essentially, if the goal is **organization, planning, documentation, or project 
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Auto-Create Tasks
+**✔ Auto-Create Tasks**
+
 When a form is submitted or an incident occurs, automatically create tasks in Asana, ClickUp, or Jira.
 
-### ✔ Calendar Automation
+**✔ Calendar Automation**
+
 Schedule a meeting based on workflow output or sync availability from another system.
 
-### ✔ Spreadsheet-Based Workflows
+**✔ Spreadsheet-Based Workflows**
+
 Update Google Sheets whenever new data arrives from APIs or databases.
 
-### ✔ Generate Reports
+**✔ Generate Reports**
+
 Send metrics to Power BI or produce custom visual charts using QuickChart.
 
-### ✔ Dynamic Document Generation
+**✔ Dynamic Document Generation**
+
 Write summaries, invoices, or reports directly into Google Docs or Coda.
 
-### ✔ Sync Project Boards
+**✔ Sync Project Boards**
+
 Keep Trello and Notion in sync when changes occur in your workflow.
 
-### ✔ Content & Media Automation
+**✔ Content & Media Automation**
+
 Update a YouTube playlist, organize bookmarks in Raindrop, or sync Spotify tracks.
 
 ---
 
-# Benefits of Productivity Nodes
+## Benefits of Productivity Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -165,6 +180,6 @@ Update a YouTube playlist, organize bookmarks in Raindrop, or sync Spotify track
 
 ---
 
-# Summary
+## Summary
 
 Productivity Nodes connect your workflows to the tools that manage your tasks, projects, documents, calendars, and data. By automating these systems, you eliminate manual work and maintain a seamlessly organized operational environment — all powered by your workflow engine.

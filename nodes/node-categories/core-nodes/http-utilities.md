@@ -26,29 +26,29 @@ You typically use this node type to:
 
 ---
 
-# Send HTTP Request
+## Send HTTP Request
 
 Send an enhanced HTTP request with authentication, retry logic, response validation, and comprehensive error handling.
 
 ---
 
-## Key Parameters
+### Key Parameters
 
-### HTTP Method
+#### HTTP Method
 GET, POST, PUT, PATCH, DELETE
 
-### URL
+#### URL
 Full request URL including protocol.
 
-### Headers
+#### Headers
 JSON headers sent with the request.
 
-### Query Parameters
+#### Query Parameters
 Parameters appended to the URL.
 
 ---
 
-## Authentication
+### Authentication
 
 Choose how the request authenticates:
 - None
@@ -57,13 +57,13 @@ Choose how the request authenticates:
 
 ---
 
-## Request Body
+### Request Body
 
 Define the payload format and content for POST/PUT/PATCH requests.
 
 ---
 
-## Reliability & Validation
+### Reliability & Validation
 
 - Timeout
 - Follow redirects
@@ -73,19 +73,19 @@ Define the payload format and content for POST/PUT/PATCH requests.
 
 ---
 
-## Retry Settings
+### Retry Settings
 
 Automatic retries on selected HTTP status codes with backoff support.
 
 ---
 
-# Download File
+## Download File
 
 Download files from URLs with validation and authentication support.
 
 ---
 
-## Key Parameters
+### Key Parameters
 
 - File URL
 - Custom filename
@@ -98,13 +98,13 @@ Download files from URLs with validation and authentication support.
 
 ---
 
-# HTTP Batch Request
+## HTTP Batch Request
 
 Execute multiple HTTP requests in parallel or sequence.
 
 ---
 
-## Key Parameters
+### Key Parameters
 
 - HTTP Requests array
 - Execution mode (Parallel / Sequential)

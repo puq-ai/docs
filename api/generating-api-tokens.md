@@ -1,25 +1,50 @@
 ---
-title: Generating API Tokens
-description: How to create and manage API tokens in puq.ai.
+title: Authentication
+description: How to create, use, and manage API keys for the puq.ai API.
 parent: API
 nav_order: 2
 ---
 
-# Generating API Tokens
+# Authentication
+
+---
+
+## Creating an API Key (Dashboard)
 
 1. Go to **Account Settings → API Tokens**
 2. Click **Generate New Token**
-3. Copy the token (it will only be shown once)
+3. Provide a name for your key
+4. Copy the token — it will only be shown once
 
-### Token Scopes
+---
 
-| Scope | Permission |
-|--------|-------------|
-| `read:flows` | Read workflows and executions |
-| `write:flows` | Create or update workflows |
-| `execute:flows` | Trigger workflows |
-| `admin` | Full access |
+## Using Your API Key
 
-⚠️ **Do not expose tokens** publicly or store them in client-side code.
+Include your key in the `Authorization` header with every request:
 
-### Example API Call
+```bash
+curl https://api.puq.ai/chat/completions \
+  -H "Authorization: Token YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai/gpt-4o",
+    "messages": [
+      {"role": "user", "content": "Hello!"}
+    ]
+  }'
+```
+
+Use the `Token` prefix:
+
+```
+Authorization: Token <api_key>
+```
+
+---
+
+## Permissions
+
+API keys grant access based on the **models** assigned to them. Each key can be configured to use specific models.
+
+Keys remain valid indefinitely while their status is active (`status=1`).
+

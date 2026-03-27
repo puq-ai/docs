@@ -19,7 +19,7 @@ Universal AI provides a streamlined interface over these providers, so you can i
 
 ---
 
-# Why Use Universal AI?
+## Why Use Universal AI?
 
 Universal AI nodes are ideal when your workflow needs:
 

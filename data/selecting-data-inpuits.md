@@ -34,7 +34,7 @@ Open the node and click on any configurable input field.
 
 If execution data exists, a **data selector panel** appears next to the input.
 
-![Click on Input Field]({{ '/assets/images/data/selecting-data-inputs/000001.png' | relative_url }}){: width="360" }
+![Click on Input Field]({{ '/assets/images/data/selecting-data-inputs/000001.png' | relative_url }}){: width="100%" }
 
 ---
 
@@ -47,7 +47,7 @@ The data selector lists all nodes that have produced data so far, including:
 
 Each node represents a possible data source.
 
-![Choose a Source Node]({{ '/assets/images/data/selecting-data-inputs/000002.jpeg' | relative_url }}){: width="360" }
+![Choose a Source Node]({{ '/assets/images/data/selecting-data-inputs/000002.jpeg' | relative_url }}){: width="60%" }
 
 ---
 
@@ -63,7 +63,7 @@ These fields may include:
 
 The available fields depend entirely on what the selected node returned during execution.
 
-![Data Selected]({{ '/assets/images/data/selecting-data-inputs/000003.jpeg' | relative_url }}){: width="360" }
+![Data Selected]({{ '/assets/images/data/selecting-data-inputs/000003.jpeg' | relative_url }}){: width="100%" }
 
 ---
 

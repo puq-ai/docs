@@ -22,3 +22,49 @@ $media-queries: (
   lg: 74rem,     // 1184px
   xl: 90rem,     // 1440px
 );
+
+// ===================================
+// Font Size Scale (Proportional Reduction)
+// ===================================
+
+$font-size-5: 0.9375rem;   // 15px (was 16px) - h3 mobile
+$font-size-6: 1.0625rem;   // 17px (was 18px) - h2 mobile, h3 desktop
+$font-size-7: 1.25rem;     // 20px (was 24px) - h2 desktop
+$font-size-8: 1.5rem;      // 24px (was 32px) - h1 mobile
+$font-size-9: 1.7rem;      // 27px (was 36px) - h1 desktop
+$font-size-10: 2rem;       // 32px (was 42px)
+$font-size-10-sm: 2.25rem; // 36px (was 48px)
+
+// ===================================
+// Color Palette - puq.ai Brand
+// Warm Charcoal + Professional Monochrome
+// ===================================
+
+// Accent scale (warm charcoal - primary interactive color)
+$accent-000: #4A3F35;   // Links, accents (light theme)
+$accent-100: #3A3028;   // Buttons (light theme)
+$accent-200: #5C5249;   // Buttons (dark theme)
+$accent-300: #2C2420;   // Deep accent, nav active (light)
+
+// Light accent (for dark backgrounds)
+$accent-lt-000: #D4CFC8; // Links, accents (dark theme)
+$accent-lt-100: #E8E2DB; // Emphasis, nav active (dark theme)
+
+// Blue scale (kept for callouts, labels, utility classes)
+$blue-000: #4285F4;
+$blue-100: #3B78DE;
+$blue-200: #2B5DB0;
+$blue-300: #1A3D7A;
+
+// Purple scale (restored to original for callouts/labels)
+$purple-000: #7253ed;
+$purple-100: #5e41d0;
+$purple-200: #4e26af;
+$purple-300: #381885;
+
+// Grey scale (deeper black tones)
+$grey-dk-300: #1a1a1f;
+$grey-dk-250: #252529;
+$grey-dk-200: #35353d;
+$grey-dk-100: #4a4a55;
+$grey-dk-000: #8a8a95;

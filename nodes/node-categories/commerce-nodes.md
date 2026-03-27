@@ -14,42 +14,49 @@ If your workflow needs to sell, bill, fulfill, or manage commerce-related data �
 
 ---
 
-# What Problems Do Commerce Nodes Solve?
+## What Problems Do Commerce Nodes Solve?
 
 Commerce Nodes unlock automation for every part of the digital commerce lifecycle:
 
-### ✔ Manage products and inventory  
+**✔ Manage products and inventory**
+
 Create, update, or sync product catalogs across one or multiple platforms.
 
-### ✔ Process orders and payments  
+**✔ Process orders and payments**
+
 Capture orders, verify transactions, initiate refunds, or send receipts.
 
-### ✔ Sync customer profiles  
+**✔ Sync customer profiles**
+
 Automatically update customer data in e-commerce CRM systems.
 
-### ✔ Support subscription and membership workflows  
+**✔ Support subscription and membership workflows**
+
 Handle recurring billing, renewals, upsells, and trial conversions.
 
-### ✔ Automate fulfillment  
+**✔ Automate fulfillment**
+
 Send orders to delivery providers, trigger packing flows, or track shipments.
 
-### ✔ Connect sales channels together  
+**✔ Connect sales channels together**
+
 Unify data from your store, CRM, email marketing system, and payment processor.
 
-### ✔ Generate and manage business documents  
+**✔ Generate and manage business documents**
+
 Create invoices, proposals, agreements, or contracts automatically.
 
 Commerce Nodes are ideal when you want to build reliable, real-time revenue workflows that reduce manual effort and increase operational accuracy.
 
 ---
 
-# What’s Included in Commerce Nodes?
+## What’s Included in Commerce Nodes?
 
 These platforms span online storefronts, sales CRMs, payment processors, fulfillment tools, and contract/document automation.
 
 ---
 
-## **E-Commerce Platforms**
+### E-Commerce Platforms
 - BigCommerce  
 - Shopify  
 - WooCommerce  
@@ -58,19 +65,19 @@ These platforms span online storefronts, sales CRMs, payment processors, fulfill
 
 ---
 
-## **Payment & Transaction Services**
+### Payment & Transaction Services
 - PayPal  
 - Wise  
 
 ---
 
-## **Fulfillment & Delivery**
+### Fulfillment & Delivery
 - Onfleet  
 - Odoo (commerce + ERP operations)
 
 ---
 
-## **Commerce Automation & Marketing**
+### Commerce Automation & Marketing
 - Kit (formerly ConvertKit)  
 - Klaviyo  
 - Action Network  
@@ -79,14 +86,14 @@ These platforms span online storefronts, sales CRMs, payment processors, fulfill
 
 ---
 
-## **Sales CRM & Enterprise Commerce**
+### Sales CRM & Enterprise Commerce
 - Salesforce  
 - Salesmate  
 - PandaDoc (contracts, quotes, proposals)  
 
 ---
 
-# When Should You Use Commerce Nodes?
+## When Should You Use Commerce Nodes?
 
 Use this category when your workflow must:
 
@@ -105,26 +112,31 @@ Commerce Nodes ensure your commerce ecosystem runs smoothly, consistently, and w
 
 ---
 
-# Example Use Cases
+## Example Use Cases
 
-### ✔ Automatic Order to Fulfillment Pipeline  
+**✔ Automatic Order to Fulfillment Pipeline**
+
 Shopify order → Onfleet delivery job → send confirmation email → update CRM.
 
-### ✔ Abandoned Cart Rescue  
+**✔ Abandoned Cart Rescue**
+
 Detect abandoned carts → send Klaviyo email → sync Salesforce lead.
 
-### ✔ Payment Verification  
+**✔ Payment Verification**
+
 PayPal payment completed → generate PandaDoc invoice → update CRM record.
 
-### ✔ Inventory Syncing  
+**✔ Inventory Syncing**
+
 BigCommerce catalog update → push new product data into WooCommerce or WordPress.
 
-### ✔ Subscription Management  
+**✔ Subscription Management**
+
 ConvertKit subscription event → apply CRM tags → notify sales team.
 
 ---
 
-# Benefits of Commerce Nodes
+## Benefits of Commerce Nodes
 
 | Benefit | Description |
 |--------|-------------|
@@ -136,7 +148,7 @@ ConvertKit subscription event → apply CRM tags → notify sales team.
 
 ---
 
-# Summary
+## Summary
 
 Commerce Nodes enable powerful automations for online stores, customer transactions, order fulfillment, and sales operations.  
 From payments to product management and CRM syncing, this category brings all commercial workflows together in one unified automation environment.

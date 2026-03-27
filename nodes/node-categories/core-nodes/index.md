@@ -6,13 +6,6 @@ has_children: true
 nav_order: 2
 ---
 
----
-title: Core Nodes
-description: Learn about the fundamental nodes that power workflows — from data validation to HTTP requests, loops, QR codes, and more.
-parent: nodes
-nav_order: 2
----
-
 # Core Nodes
 
 Core Nodes are the essential building blocks of any workflow. They provide utilities, data processing, validation, communication tools, and logic routing that allow you to build powerful automations step-by-step.
@@ -25,7 +18,7 @@ This page provides a complete overview of each Core Node category and the tools 
 
 Crypto nodes allow you to securely transform, sign, or generate data.
 
-### **Hash Data**
+### Hash Data
 Generate cryptographic hash values using popular algorithms such as SHA-256, SHA-1, MD5, and more.
 
 **Use cases:**
@@ -35,7 +28,7 @@ Generate cryptographic hash values using popular algorithms such as SHA-256, SHA
 
 ---
 
-### **HMAC Generation**
+### HMAC Generation
 Generate **HMAC signatures** for secure API authentication.
 
 **Use cases:**
@@ -45,7 +38,7 @@ Generate **HMAC signatures** for secure API authentication.
 
 ---
 
-### **Generate Random Data**
+### Generate Random Data
 Create secure random values.
 
 **Common outputs:**
@@ -59,7 +52,7 @@ Create secure random values.
 
 Process CSV files with ease.
 
-### **Read CSV**
+### Read CSV
 Convert CSV content into structured JSON data.
 
 **Use cases:**
@@ -67,7 +60,7 @@ Convert CSV content into structured JSON data.
 - Parse large data sets  
 - Automate report ingestion  
 
-### **Write CSV**
+### Write CSV
 Convert JSON objects into CSV files.
 
 **Use cases:**
@@ -102,10 +95,10 @@ Typical workflow:
 
 Control execution timing inside your workflow.
 
-### **Delay For**
+### Delay For
 Pause the workflow for a specified duration (seconds, minutes, hours, days).
 
-### **Delay Until**
+### Delay Until
 Schedule the workflow to continue at a future timestamp.
 
 **Use cases:**
@@ -120,7 +113,7 @@ Schedule the workflow to continue at a future timestamp.
 
 Interact with external APIs or download files.
 
-### **Send HTTP Request**
+### Send HTTP Request
 Supports:
 - GET / POST / PUT / DELETE  
 - Custom headers  
@@ -129,7 +122,7 @@ Supports:
 
 Perfect for integrating with third-party services.
 
-### **Download File**
+### Download File
 Download files from any URL and attach them to workflow output.
 
 **Use cases:**
@@ -141,7 +134,7 @@ Download files from any URL and attach them to workflow output.
 
 ## Image Tools
 
-### **Resize Image**
+### Resize Image
 Modify image dimensions (width, height, quality).
 
 **Use cases:**
@@ -154,13 +147,13 @@ Modify image dimensions (width, height, quality).
 
 Work with JSON objects easily.
 
-### **Parse JSON**
+### Parse JSON
 Convert a JSON string into a structured object.
 
-### **Stringify JSON**
+### Stringify JSON
 Convert structured data back into a JSON string.
 
-### **Extract JSON Value**
+### Extract JSON Value
 Pull a nested value using JSON paths.
 
 Example:
@@ -175,7 +168,7 @@ Extraction path:
 user.profile.email
 ```
 
-### **Merge JSON Object**
+### Merge JSON Object
 Combine multiple JSON objects into one.
 
 ---
@@ -209,11 +202,11 @@ Use cases:
 
 ## QR Code Tools
 
-### **Generate QR Code**
+### Generate QR Code
 
 Create a QR code from text, URLs, or dynamic data.
 
-### **Read QR Code**
+### Read QR Code
 
 Extract text from an uploaded QR code image.
 
@@ -243,7 +236,7 @@ Example conditions:
 
 ## RSS Reader
 
-### **RSS Read**
+### RSS Read
 
 Reads data from an RSS feed and returns structured items.
 
@@ -257,11 +250,11 @@ Use cases:
 ## Server Monitoring
 Tools for checking system health and connectivity.
 
-### **Server Health**
+### Server Health
 
 Monitor performance metrics with comparative checks.
 
-### **Monitor Port**
+### Monitor Port
 
 Check if a port is open and responding.
 
@@ -275,9 +268,9 @@ Use cases:
 ## SSH Tools
 Connect to remote servers.
 
-### **Execute Command**
+### Execute Command
 Run shell commands on a remote machine via SSH.
-### **Connection Test**
+### Connection Test
 Verify SSH connectivity before running commands.
 
 Use cases:
@@ -289,11 +282,11 @@ Use cases:
 
 ## TOTP Tools
 
-### **Generate TOTP Token**
+### Generate TOTP Token
 
 Create time-based one-time passwords.
 
-### **Verify TOTP Token**
+### Verify TOTP Token
 
 Validate a TOTP token against a shared secret.
 
@@ -306,11 +299,11 @@ Use cases:
 
 ## XML Parser
 
-### **Parse XML**
+### Parse XML
 
 Convert XML into JSON.
 
-### **Generate XML**
+### Generate XML
 
 Convert JSON into XML format.
 
@@ -321,7 +314,7 @@ Use cases:
 
 ---
 
-# Summary
+## Summary
 
 Core Nodes provide everything you need to:
 - Validate data
