@@ -1,15 +1,15 @@
 ---
-title: Model Router
-description: Introduction to puq.ai model router API usage.
+title: AI Router
+description: Introduction to puq.ai AI router API usage.
 nav_order: 7
 parent: API
 has_children: true
 has_toc: true
 ---
 
-# Overview Model Router
+# Overview AI Router
 
-The puq.ai AI Engine API provides access to AI models, audio processing, and image generation through a unified Model Router. You can manage your API keys and interact with various AI providers using a single base URL.
+The puq.ai AI Engine API provides access to AI models, audio processing, and image generation through a unified AI Router. You can manage your API keys and interact with various AI providers using a single base URL.
 
 
 ## Base URL

@@ -20,4 +20,4 @@ See [Common Concepts](common) for pagination, and error responses.
 - [Executions](executions) -- List and inspect execution history
 - [Credits](credits) -- Check credit balance
 - [Models](models) -- List available AI models
-- [Model Router](model-router) -- Model Router overview, key concepts and balance requirement
+- [AI Router](ai-router) -- AI Router overview, key concepts and balance requirement

@@ -25,13 +25,9 @@ All endpoints are relative to this base URL.
 All endpoints require an API key passed in `Token` header.
 
 ```bash
-curl https://api.puq.ai/v1/workflows \
+curl https://api.puq.ai/workflows \
   -H "Token: your-api-key-here"
 ```
-
-**Important:** The `/v1` External API uses a different authentication format than than Model Router API:
-- Model Router API: `Authorization: Token <api_key>`
-- External API (/v1): `Token: <api_key>`
 
 Generate API keys via `/keys` endpoint (requires JWT authentication) or through the dashboard under **Account Settings → API Tokens**.
 

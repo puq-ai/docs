@@ -77,7 +77,7 @@ Use logic nodes to make your automation smart:
 
 - **Routers** (if/else branches)  
 - **Loops** (repeat over lists)  
-- **Model Routers** (send text to different AI models)  
+- **AI Routers** (send text to different AI models)  
 - **Data Transformers**  
 - **Delays** and **Timers**  
 - **Error handling** and fallback paths  
