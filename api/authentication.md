@@ -2,7 +2,7 @@
 title: Authentication
 description: How to create, use, and manage API keys for the puq.ai API.
 parent: API
-nav_order: 2
+nav_order: 1
 ---
 
 # Authentication
@@ -42,9 +42,7 @@ Authorization: Token <api_key>
 
 ---
 
-## Permissions
+## API Key Lifecycle
 
-API keys grant access based on the **models** assigned to them. Each key can be configured to use specific models.
-
-Keys remain valid indefinitely while their status is active (`status=1`).
-
+- API keys **do not expire** as long as their status is active (`status=1`).
+- Keys can be created, listed, and deleted via the dashboard.
