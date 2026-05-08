@@ -563,9 +563,9 @@
 }
 
 .docs-topbar__search .search {
-  width: min(100%, 28rem) !important;
+  width: 100% !important;
   max-width: 28rem !important;
-  flex: 0 0 min(100%, 28rem) !important;
+  flex: 0 1 28rem !important;
   height: 2.35rem !important;
   padding: 0;
 }
@@ -603,7 +603,7 @@
 .docs-topbar__search .search-results {
   top: calc(100% + #{$sp-2});
   width: 100%;
-  max-height: min(24rem, calc(100vh - 10rem)) !important;
+  max-height: calc(100vh - 10rem) !important;
   padding: $sp-2;
   border: 1px solid rgba($grey-dk-000, 0.12);
   border-radius: 1.35rem;
@@ -632,9 +632,14 @@
     background-color: rgba($grey-dk-100, 0.34);
   }
 
+  @media (min-height: 34rem) {
+    max-height: 24rem !important;
+  }
+
   @include mq(md) {
     left: 50%;
-    width: min(46rem, calc(100vw - #{$sp-8}));
+    width: calc(100vw - #{$sp-8});
+    max-width: 46rem;
     transform: translateX(-50%);
   }
 }
@@ -720,7 +725,8 @@
     top: auto;
     left: auto;
     z-index: 45;
-    width: min(100%, 28rem) !important;
+    width: 100% !important;
+    max-width: 28rem !important;
     height: 2.35rem !important;
     padding: 0;
   }
