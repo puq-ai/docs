@@ -2,7 +2,8 @@
 
 .docs-shell {
   position: relative;
-  width: min(calc(100% - #{$sp-6}), #{$docs-shell-width});
+  width: calc(100% - #{$sp-6});
+  max-width: $docs-shell-width;
   margin: 0 auto;
 
   @include mq(md) {
@@ -33,9 +34,13 @@
 
   &.nav-open,
   &:has(.site-nav.nav-open) {
-    max-height: min(70vh, 36rem);
+    max-height: 70vh;
     border-bottom: $border $border-color;
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+
+    @media (min-height: 51.5rem) {
+      max-height: 36rem;
+    }
   }
 
   @include mq(md) {
@@ -99,7 +104,8 @@
   top: 0;
   z-index: 40;
   display: flex;
-  width: min(calc(100% - #{$sp-6}), #{$docs-shell-width});
+  width: calc(100% - #{$sp-6});
+  max-width: $docs-shell-width;
   margin: 0 auto;
   min-height: $header-height;
   align-items: center;
