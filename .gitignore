@@ -8,3 +8,5 @@ vendor/
 Thumbs.db
 Gemfile
 Gemfile.lock
+.codex
+AGENTS.md

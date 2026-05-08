@@ -18,7 +18,7 @@ description: Official documentation for puq.ai. Find guides, API references, and
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://docs.puq.ai" # the base hostname & protocol for your site, e.g. http://example.com
 repository: puq-ai/docs # for github-metadata
-logo: /assets/images/puq-docs-logo.svg
+logo: /assets/images/puq-logo.svg
 
 permalink: pretty
 
@@ -150,7 +150,7 @@ liquid:
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: 'Copyright &copy; 2026 puq.ai'
+footer_content: "Copyright &copy; 2026 puq.ai"
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
@@ -213,4 +213,4 @@ compress_html:
 
 sass:
   quiet_deps: true # https://github.com/just-the-docs/just-the-docs/issues/1541
-  silence_deprecations: ['import'] # https://github.com/just-the-docs/just-the-docs/issues/1607
+  silence_deprecations: ["import"] # https://github.com/just-the-docs/just-the-docs/issues/1607
