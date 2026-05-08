@@ -77,8 +77,9 @@
     {%- assign nav_children = nav_children | reverse -%}
   {%- endif -%}
 
-<hr>
+<hr class="children-nav-divider">
 {% include toc_heading_custom.html %}
+<nav class="children-nav" aria-labelledby="section-navigation-heading">
 <div class="children-grid{% if nav_children.size > 11 %} children-grid-compact{% endif %}">
   {% for nav_child in nav_children %}
   <a href="{{ nav_child.url | relative_url }}" class="child-card">
@@ -89,5 +90,6 @@
   </a>
   {% endfor %}
 </div>
+</nav>
 
 {%- endif -%}

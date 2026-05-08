@@ -113,17 +113,19 @@ If you already have a trigger and want to change it, click the node and select a
 - Always test trigger behavior before activating the workflow.
 - Use descriptive names for trigger nodes (e.g., “Daily Reporting Trigger”).
 - Avoid multiple triggers — each workflow should have only one.
--Validate input data if your trigger accepts external requests (like webhooks).
+- Validate input data if your trigger accepts external requests (like webhooks).
 - Use environment variables for secure tokens or webhook secrets.
 
 ## You're Ready to Build!
-* Now you know:
-* What a Trigger Node is
-* Why it is required
-* The most common trigger types
-* How to add and configure a trigger
-* How workflows execute from the trigger
-* Best practices to avoid common mistakes
+
+Now you know:
+
+- What a Trigger Node is
+- Why it is required
+- The most common trigger types
+- How to add and configure a trigger
+- How workflows execute from the trigger
+- Best practices to avoid common mistakes
 
 You can now create a new workflow and choose the trigger that best fits your automation needs.
 

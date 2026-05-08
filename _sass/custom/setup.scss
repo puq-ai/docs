@@ -3,12 +3,16 @@
 // puq.ai Documentation Site
 // ===================================
 
-// Content Area Width (56rem = 896px)
-$content-width: 56rem;
+// Centered docs shell width, tuned to the reference documentation layout.
+$docs-shell-width: 76rem;
+
+// Content Area Width (44rem = 704px)
+$content-width: 44rem;
 
 // Navigation Sidebar Widths
-$nav-width: 18rem;
-$nav-width-md: 16rem;
+$nav-width: 14.5rem;
+$nav-width-md: 14.25rem;
+$toc-width: 14rem;
 
 // Spacing / Gutters
 $gutter-spacing: 2.5rem;     // 40px - Desktop
@@ -47,8 +51,8 @@ $accent-200: #5C5249;   // Buttons (dark theme)
 $accent-300: #2C2420;   // Deep accent, nav active (light)
 
 // Light accent (for dark backgrounds)
-$accent-lt-000: #D4CFC8; // Links, accents (dark theme)
-$accent-lt-100: #E8E2DB; // Emphasis, nav active (dark theme)
+$accent-lt-000: #d8dee8; // Links, accents (dark theme)
+$accent-lt-100: #f4f7fb; // Emphasis, nav active (dark theme)
 
 // Blue scale (kept for callouts, labels, utility classes)
 $blue-000: #4285F4;
