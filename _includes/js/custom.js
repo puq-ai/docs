@@ -43,6 +43,44 @@
   }
 })();
 
+// Sidebar accordion toggles
+(function() {
+  'use strict';
+
+  function initSidebarAccordion() {
+    var sidebarNav = document.querySelector('.docs-section-tabs');
+    if (!sidebarNav) return;
+
+    sidebarNav.addEventListener('click', function(e) {
+      var toggle = e.target.closest ? e.target.closest('.docs-section-tabs__button') : null;
+      if (!toggle || !sidebarNav.contains(toggle)) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      var panelId = toggle.getAttribute('aria-controls');
+      var panel = panelId ? document.getElementById(panelId) : null;
+      var item = toggle.closest('.docs-section-tabs__item, .docs-section-tabs__subitem');
+      var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      var nextExpanded = !isExpanded;
+
+      toggle.setAttribute('aria-expanded', nextExpanded ? 'true' : 'false');
+      if (panel) {
+        panel.hidden = !nextExpanded;
+      }
+      if (item) {
+        item.classList.toggle('is-open', nextExpanded);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSidebarAccordion);
+  } else {
+    initSidebarAccordion();
+  }
+})();
+
 // Table of Contents - Active Heading Tracking
 (function() {
   'use strict';
@@ -84,7 +122,8 @@
     // Dynamic offset: read actual header height from DOM
     function getHeaderOffset() {
       var mainHeader = document.getElementById('main-header');
-      return mainHeader ? mainHeader.offsetHeight + 16 : 76;
+      var headerHeight = mainHeader ? mainHeader.offsetHeight : 60;
+      return headerHeight + 16;
     }
 
     // Keep the active TOC link visible within the scrollable TOC nav
@@ -103,12 +142,17 @@
 
     // Determine which heading is currently active based on scroll position
     function updateActiveHeading() {
-      if (isClickScrolling) { ticking = false; return; }
       var headerOffset = getHeaderOffset();
       var scrollY = window.scrollY || window.pageYOffset;
       var windowHeight = window.innerHeight;
       var docHeight = document.documentElement.scrollHeight;
       var activeIndex = 0;
+
+      if (tocNav) {
+        tocNav.classList.toggle('is-stuck', scrollY > 0 && tocNav.getBoundingClientRect().top <= headerOffset);
+      }
+
+      if (isClickScrolling) { ticking = false; return; }
 
       if (scrollY + windowHeight >= docHeight - 10) {
         activeIndex = headings.length - 1;

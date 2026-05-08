@@ -1,147 +1,142 @@
-// The basic two column layout
+// The docs shell layout
 
-.side-bar {
-  z-index: 0;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: $sidebar-color;
+.docs-shell {
+  position: relative;
+  width: min(calc(100% - #{$sp-6}), #{$docs-shell-width});
+  margin: 0 auto;
 
   @include mq(md) {
-    flex-flow: column nowrap;
-    position: fixed;
-    width: $nav-width-md;
-    height: 100%;
-    border-right: $border $border-color;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: $nav-width-md minmax(0, 1fr);
+    column-gap: $sp-5;
+    align-items: start;
   }
 
-  @include mq(lg) {
-    width: $nav-width;
-    min-width: $nav-width;
-  }
-
-  & + .main {
-    @include mq(md) {
-      margin-left: $nav-width-md;
-    }
-
-    @include mq(lg) {
-      // stylelint-disable function-name-case
-      // disable for Max(), we want to use the CSS max() function
-      margin-left: Max(
-        #{$nav-width},
-        calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width})
-      );
-      // stylelint-enable function-name-case
-    }
-
-    .main-header {
-      display: none;
-      background-color: $sidebar-color;
-
-      @include mq(md) {
-        display: flex;
-        background-color: $body-background-color;
-      }
-
-      &.nav-open {
-        display: block;
-
-        @include mq(md) {
-          display: flex;
-        }
-      }
-    }
+  @include mq(xl) {
+    grid-template-columns: $nav-width minmax(0, calc(#{$content-width} + #{$sp-6} + #{$toc-width}));
   }
 }
 
-.main {
-  margin: auto;
+.side-bar {
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  width: 100%;
+  max-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: $body-background-color;
+  border-bottom: 0;
+  transition: max-height 0.25s ease;
+
+  &.nav-open,
+  &:has(.site-nav.nav-open) {
+    max-height: min(70vh, 36rem);
+    border-bottom: $border $border-color;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  }
 
   @include mq(md) {
+    position: sticky;
+    left: auto;
+    grid-column: 1;
+    width: auto;
+    max-height: calc(100vh - #{$header-height});
+    height: calc(100vh - #{$header-height});
+    border-right: $border $border-color;
+    border-bottom: 0;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  @include mq(lg) {
+    width: auto;
+    min-width: 0;
+  }
+}
+
+.side-bar__panel {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: $sp-4 0 $sp-2;
+  overflow-y: auto;
+}
+
+.main {
+  width: 100%;
+  margin: 0 auto;
+
+  @include mq(md) {
+    grid-column: 2;
     position: relative;
-    max-width: $content-width;
+    margin: 0;
+    max-width: none;
+  }
+
+  @include mq(xl) {
+    grid-column: 2;
   }
 }
 
 .main-content-wrap {
-  padding-top: $gutter-spacing-sm;
+  padding-top: $sp-5;
   padding-bottom: $gutter-spacing-sm;
 
   @include container;
 
   @include mq(md) {
-    padding-top: $gutter-spacing;
+    padding-top: $sp-6;
+    padding-right: 0;
     padding-bottom: $gutter-spacing;
+    padding-left: 1.5rem;
   }
 }
 
 .main-header {
-  z-index: 0;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  width: min(calc(100% - #{$sp-6}), #{$docs-shell-width});
+  margin: 0 auto;
+  min-height: $header-height;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: $border $border-color;
-
-  @include mq(md) {
-    display: flex;
-    justify-content: space-between;
-    height: $header-height;
-  }
+  background-color: rgba($body-background-color, 0.94);
+  backdrop-filter: blur(14px);
 }
 
 .site-nav,
-.site-header,
 .site-footer {
   width: 100%;
-
-  @include mq(lg) {
-    width: $nav-width;
-  }
 }
 
 .site-nav {
   display: none;
 
-  &.nav-open {
+  &.nav-open,
+  .side-bar.nav-open & {
     display: block;
   }
 
   @include mq(md) {
     display: block;
-    padding-top: $sp-4;
     padding-bottom: $gutter-spacing-sm;
     overflow-y: auto;
     flex: 1 1 auto;
   }
 }
 
-.site-header {
-  display: flex;
-  min-height: $header-height;
-  align-items: center;
-
-  @include mq(md) {
-    height: $header-height;
-    max-height: $header-height;
-    border-bottom: $border $border-color;
-  }
-}
-
 .site-title {
   flex-grow: 1;
   display: flex;
-  height: 100%;
+  min-height: 100%;
   align-items: center;
-  padding-top: $sp-3;
-  padding-bottom: $sp-3;
   color: $body-heading-color;
-
-  @include container;
-
   @include fs-6;
-
-  @include mq(md) {
-    padding-top: $sp-2;
-    padding-bottom: $sp-2;
-  }
 }
 
 @if variable-exists(logo) {
@@ -160,12 +155,6 @@
   height: 100%;
   padding: $gutter-spacing-sm;
   align-items: center;
-}
-
-@include mq(md) {
-  .site-header .site-button {
-    display: none;
-  }
 }
 
 .site-title:hover {
@@ -201,9 +190,8 @@ body {
 // stylelint-enable selector-max-type
 
 .site-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: none;
+  flex: 0 0 auto;
   padding-top: $sp-4;
   padding-bottom: $sp-4;
   color: $grey-dk-000;
@@ -213,6 +201,7 @@ body {
   @include fs-2;
 
   @include mq(md) {
+    display: flex;
     position: static;
     justify-self: end;
   }

@@ -73,6 +73,25 @@ a:not([class]) {
   }
 }
 
+@media (max-width: 55.98rem) {
+  a,
+  button,
+  summary,
+  label[for],
+  [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    background-clip: padding-box;
+  }
+
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible),
+  summary:focus:not(:focus-visible),
+  label[for]:focus:not(:focus-visible),
+  [role="button"]:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
 code {
   font-family: $mono-font-family;
   font-size: 0.75em;

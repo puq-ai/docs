@@ -200,6 +200,8 @@
 // Breadcrumb nav
 
 .breadcrumb-nav {
+  padding: $sp-2 0 0;
+
   @include mq(md) {
     margin-top: -$sp-4;
   }

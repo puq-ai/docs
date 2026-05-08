@@ -1,0 +1,86 @@
+{%- assign docs_section_candidates = site.html_pages
+      | where_exp: "item", "item.title != nil"
+      | where_exp: "item", "item.parent == nil"
+      | where_exp: "item", "item.nav_exclude != true" -%}
+
+{%- assign docs_sections = "" | split: "" -%}
+{%- assign docs_section_order = "Getting Started|Workflows|Executions|API|Data|Connections|Nodes|Usage Help" | split: "|" -%}
+{%- for docs_title in docs_section_order -%}
+  {%- for docs_page in docs_section_candidates -%}
+    {%- if docs_page.title == docs_title -%}
+      {%- if docs_page.has_children == true or docs_page.url == '/getting-started/' -%}
+        {%- assign docs_sections = docs_sections | push: docs_page -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+{%- assign current_segments = page.url | split: '/' -%}
+{%- assign current_section_slug = current_segments[1] | default: '' -%}
+{%- if page.url == '/getting-started/' -%}
+  {%- assign current_section_slug = 'getting-started' -%}
+{%- endif -%}
+
+<nav id="site-nav" class="site-nav docs-section-tabs" aria-label="Documentation">
+  <ul class="docs-section-tabs__list">
+    {%- for docs_section in docs_sections -%}
+      {%- assign docs_section_segments = docs_section.url | split: '/' -%}
+      {%- assign docs_section_slug = docs_section_segments[1] | default: '' -%}
+      {%- if docs_section.url == '/getting-started/' -%}
+        {%- assign docs_section_slug = 'getting-started' -%}
+      {%- endif -%}
+      {%- assign docs_is_active = false -%}
+      {%- if page.url == docs_section.url or current_section_slug == docs_section_slug -%}
+        {%- assign docs_is_active = true -%}
+      {%- endif -%}
+      {%- assign docs_is_current = false -%}
+      {%- if page.url == docs_section.url -%}
+        {%- assign docs_is_current = true -%}
+      {%- endif -%}
+      {%- assign docs_section_has_children = false -%}
+      {%- assign docs_section_url_size = docs_section.url | size -%}
+      {%- for docs_child_candidate in site.html_pages -%}
+        {%- if docs_child_candidate.title != nil and docs_child_candidate.nav_exclude != true and docs_child_candidate.parent == docs_section.title -%}
+          {%- assign docs_child_prefix = docs_child_candidate.url | slice: 0, docs_section_url_size -%}
+          {%- if docs_section_url_size > 1 and docs_child_prefix == docs_section.url -%}
+            {%- assign docs_section_has_children = true -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- assign docs_section_panel_id = docs_section.url | replace: '/', '-' | prepend: 'sidebar-nav' -%}
+      <li class="docs-section-tabs__item{% if docs_is_active %} is-active-section is-open{% endif %}">
+        <div class="docs-section-tabs__row docs-section-tabs__row--top{% if docs_is_current %} is-current{% endif %}">
+          {%- if docs_section_has_children -%}
+            <a
+              href="{{ docs_section.url | relative_url }}"
+              class="docs-section-tabs__link{% if docs_is_current %} is-active{% endif %}"
+              {% if docs_is_current %}aria-current="page"{% endif %}
+            >
+              <span>{{ docs_section.title }}</span>
+            </a>
+            <button
+              type="button"
+              class="docs-section-tabs__button docs-section-tabs__button--top"
+              aria-label="Toggle {{ docs_section.title }} navigation"
+              aria-expanded="{% if docs_is_active %}true{% else %}false{% endif %}"
+              aria-controls="{{ docs_section_panel_id }}"
+            >
+              {% include components/sidebar_arrow.html %}
+            </button>
+          {%- else -%}
+            <a
+              href="{{ docs_section.url | relative_url }}"
+              class="docs-section-tabs__link{% if docs_is_current %} is-active{% endif %}"
+              {% if docs_is_current %}aria-current="page"{% endif %}
+            >
+              <span>{{ docs_section.title }}</span>
+            </a>
+          {%- endif -%}
+        </div>
+        {%- if docs_section_has_children -%}
+          {% include components/sidebar_children.html parent_title=docs_section.title parent_url=docs_section.url level=1 list_id=docs_section_panel_id is_open=docs_is_active %}
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

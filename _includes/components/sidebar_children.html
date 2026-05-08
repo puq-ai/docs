@@ -1,0 +1,92 @@
+{%- assign sidebar_parent_url = include.parent_url | default: "" -%}
+{%- assign sidebar_parent_url_size = sidebar_parent_url | size -%}
+{%- assign sidebar_child_candidates = site.html_pages
+      | where: "parent", include.parent_title
+      | where_exp: "item", "item.title != nil"
+      | where_exp: "item", "item.nav_exclude != true" -%}
+{%- assign sidebar_children = "" | split: "" -%}
+{%- for sidebar_child_candidate in sidebar_child_candidates -%}
+  {%- assign sidebar_child_candidate_ok = true -%}
+  {%- if sidebar_parent_url != "" -%}
+    {%- assign sidebar_child_candidate_prefix = sidebar_child_candidate.url | slice: 0, sidebar_parent_url_size -%}
+    {%- unless sidebar_parent_url_size > 1 and sidebar_child_candidate_prefix == sidebar_parent_url -%}
+      {%- assign sidebar_child_candidate_ok = false -%}
+    {%- endunless -%}
+  {%- endif -%}
+  {%- if sidebar_child_candidate_ok -%}
+    {%- assign sidebar_children = sidebar_children | push: sidebar_child_candidate -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- include components/nav/sorted.html pages=sidebar_children -%}
+{%- assign sidebar_children_sorted = nav_sorted -%}
+
+{%- if sidebar_children_sorted != empty -%}
+  <ul
+    class="docs-section-tabs__subnav docs-section-tabs__subnav--level-{{ include.level | default: 1 }}"
+    {% if include.list_id %}id="{{ include.list_id }}"{% endif %}
+    {% unless include.is_open %}hidden{% endunless %}
+  >
+    {%- for sidebar_child in sidebar_children_sorted -%}
+      {%- assign sidebar_current_level = include.level | default: 1 -%}
+      {%- assign sidebar_child_url_size = sidebar_child.url | size -%}
+      {%- assign sidebar_current_prefix = page.url | slice: 0, sidebar_child_url_size -%}
+      {%- assign sidebar_child_is_current = false -%}
+      {%- assign sidebar_child_is_open = false -%}
+      {%- if page.url == sidebar_child.url -%}
+        {%- assign sidebar_child_is_current = true -%}
+        {%- assign sidebar_child_is_open = true -%}
+      {%- elsif sidebar_child_url_size > 1 and sidebar_current_prefix == sidebar_child.url -%}
+        {%- assign sidebar_child_is_open = true -%}
+      {%- endif -%}
+      {%- assign sidebar_child_has_nested = false -%}
+      {%- if sidebar_child.has_children == true -%}
+        {%- assign sidebar_nested_candidates = site.html_pages
+              | where: "parent", sidebar_child.title
+              | where_exp: "item", "item.title != nil"
+              | where_exp: "item", "item.nav_exclude != true" -%}
+        {%- for sidebar_nested_candidate in sidebar_nested_candidates -%}
+          {%- assign sidebar_nested_prefix = sidebar_nested_candidate.url | slice: 0, sidebar_child_url_size -%}
+          {%- if sidebar_child_url_size > 1 and sidebar_nested_prefix == sidebar_child.url -%}
+            {%- assign sidebar_child_has_nested = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+      {%- assign sidebar_should_render_children = sidebar_child_has_nested -%}
+      {%- assign sidebar_child_panel_id = sidebar_child.url | replace: '/', '-' | prepend: 'sidebar-nav' -%}
+      <li class="docs-section-tabs__subitem{% if sidebar_child_is_current %} is-current{% endif %}{% if sidebar_child_is_open %} is-open{% endif %}">
+        <div class="docs-section-tabs__row docs-section-tabs__row--sub{% if sidebar_child_is_current %} is-current{% endif %}">
+          {%- if sidebar_child_has_nested -%}
+            <a
+              href="{{ sidebar_child.url | relative_url }}"
+              class="docs-section-tabs__sublink{% if sidebar_child_is_current %} is-active{% endif %}"
+              {% if sidebar_child_is_current %}aria-current="page"{% endif %}
+            >
+              <span>{{ sidebar_child.title }}</span>
+            </a>
+            <button
+              type="button"
+              class="docs-section-tabs__button docs-section-tabs__button--sub"
+              aria-label="Toggle {{ sidebar_child.title }} navigation"
+              aria-expanded="{% if sidebar_child_is_open %}true{% else %}false{% endif %}"
+              aria-controls="{{ sidebar_child_panel_id }}"
+            >
+              {% include components/sidebar_arrow.html %}
+            </button>
+          {%- else -%}
+            <a
+              href="{{ sidebar_child.url | relative_url }}"
+              class="docs-section-tabs__sublink{% if sidebar_child_is_current %} is-active{% endif %}"
+              {% if sidebar_child_is_current %}aria-current="page"{% endif %}
+            >
+              <span>{{ sidebar_child.title }}</span>
+            </a>
+          {%- endif -%}
+        </div>
+        {%- if sidebar_should_render_children -%}
+          {%- assign sidebar_next_level = sidebar_current_level | plus: 1 -%}
+          {% include components/sidebar_children.html parent_title=sidebar_child.title parent_url=sidebar_child.url level=sidebar_next_level list_id=sidebar_child_panel_id is_open=sidebar_child_is_open %}
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

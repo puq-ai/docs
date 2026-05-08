@@ -1,11 +1,25 @@
-<div id="main-header" class="main-header">
+<header id="main-header" class="main-header docs-topbar">
+  <div class="docs-topbar__brand">
+    <a href="{{ '/' | relative_url }}" class="site-title docs-site-title lh-tight">{% include title.html %}</a>
+  </div>
+
   {% if site.search_enabled != false %}
-    {% include components/search_header.html %}
-  {% else %}
-    <div></div>
+    <div class="docs-topbar__search">
+      {% include components/search_header.html %}
+    </div>
   {% endif %}
-  {% include header_custom.html %}
-  {% if site.aux_links %}
-    {% include components/aux_nav.html %}
-  {% endif %}
-</div>
+
+  <button id="menu-button" class="site-button btn-reset docs-menu-button" aria-label="Toggle menu" aria-pressed="false">
+    <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+  </button>
+
+  <div class="docs-topbar__actions">
+    {% include header_custom.html %}
+    {% if site.aux_links %}
+      {% include components/aux_nav.html %}
+    {% endif %}
+    <div class="theme-toggle-wrapper theme-toggle-wrapper--header">
+      {% include components/theme_toggle.html %}
+    </div>
+  </div>
+</header>

@@ -255,10 +255,8 @@ function searchLoaded(index, docs) {
       resultTitle.classList.add('search-result-title');
       resultLink.appendChild(resultTitle);
 
-      // note: the SVG svg-doc is only loaded as a Jekyll include if site.search_enabled is true; see _includes/icons/icons.html
       var resultDoc = document.createElement('div');
       resultDoc.classList.add('search-result-doc');
-      resultDoc.innerHTML = '<svg viewBox="0 0 24 24" class="search-result-icon"><use xlink:href="#svg-doc"></use></svg>';
       resultTitle.appendChild(resultDoc);
 
       var resultDocTitle = document.createElement('div');
@@ -386,13 +384,6 @@ function searchLoaded(index, docs) {
           }
         }
       }
-
-      {%- if site.search.rel_url != false %}
-      var resultRelUrl = document.createElement('span');
-      resultRelUrl.classList.add('search-result-rel-url');
-      resultRelUrl.innerText = doc.relUrl;
-      resultTitle.appendChild(resultRelUrl);
-      {%- endif %}
     }
 
     function addHighlightedText(parent, text, start, end, positions) {
