@@ -30,19 +30,19 @@ List all workflow runs with optional filtering and pagination.
 ```bash
 # All runs
 curl -X GET "https://api.puq.ai/v1/executions" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 
 # Filter by workflow
 curl -X GET "https://api.puq.ai/v1/executions?workflow_id=workflow_abc123" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 
 # Filter by status
 curl -X GET "https://api.puq.ai/v1/executions?status=SUCCEEDED" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 
 # Paginated
 curl -X GET "https://api.puq.ai/v1/executions?page=2&limit=50" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 ```
 
 ### Response
@@ -117,7 +117,7 @@ Get detailed information about a single execution, including all step executions
 
 ```bash
 curl -X GET "https://api.puq.ai/v1/executions/run_def456" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 ```
 
 ### Response
