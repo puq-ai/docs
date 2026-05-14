@@ -22,11 +22,11 @@ All endpoints are relative to this base URL.
 
 ## Authentication
 
-All endpoints require an API key passed in `Token` header.
+All endpoints require an API key passed in the `Authorization` header with the `Token` prefix.
 
 ```bash
-curl https://api.puq.ai/workflows \
-  -H "Token: your-api-key-here"
+curl https://api.puq.ai/v1/workflows \
+  -H "Authorization: Token your-api-key-here"
 ```
 
 Generate API keys via `/keys` endpoint (requires JWT authentication) or through the dashboard under **Account Settings → API Tokens**.

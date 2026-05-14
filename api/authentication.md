@@ -23,7 +23,7 @@ nav_order: 1
 Include your key in the `Authorization` header with every request:
 
 ```bash
-curl https://api.puq.ai/chat/completions \
+curl https://api.puq.ai/v1/chat/completions \
   -H "Authorization: Token YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

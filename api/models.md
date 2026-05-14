@@ -27,11 +27,11 @@ List all available AI models grouped by provider.
 ```bash
 # All models
 curl -X GET "https://api.puq.ai/v1/models" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 
 # Enabled models only
 curl -X GET "https://api.puq.ai/v1/models?enabled=1" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 ```
 
 ### Response

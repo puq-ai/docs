@@ -24,7 +24,7 @@ No parameters required.
 
 ```bash
 curl -X GET "https://api.puq.ai/v1/credits/balance" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 ```
 
 ### Response

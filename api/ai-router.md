@@ -41,7 +41,7 @@ Models always use the format `provider/model_name`. For example:
 - `openai/gpt-4o`
 - `openai/gpt-4o-mini`
 
-Use the [GET /router/models](endpoints#list-available-models) endpoint to see all available models.
+Use the `GET /v1/models` endpoint to see all available models.
 
 ---
 
@@ -58,11 +58,11 @@ Key management endpoints (`/keys`) are not balance-gated.
 
 ---
 
-# API Endpoin
+# API Endpoints
 
 ## Chat Completions
 
-`POST /chat/completions`
+`POST /v1/chat/completions`
 
 Generate chat completions using LLM models. Supports SSE streaming with `stream: true`.
 
@@ -79,7 +79,7 @@ Generate chat completions using LLM models. Supports SSE streaming with `stream:
 ### Example Request
 
 ```bash
-curl -X POST https://api.puq.ai/chat/completions \
+curl -X POST https://api.puq.ai/v1/chat/completions \
   -H "Authorization: Token YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -102,7 +102,7 @@ Set `stream: true` to receive the response as Server-Sent Events (SSE). Each eve
 
 ## Text-to-Speech (TTS)
 
-`POST /audio/speech`
+`POST /v1/audio/speech`
 
 Convert text to speech audio.
 
@@ -117,7 +117,7 @@ Convert text to speech audio.
 ### Example Request
 
 ```bash
-curl -X POST https://api.puq.ai/audio/speech \
+curl -X POST https://api.puq.ai/v1/audio/speech \
   -H "Authorization: Token YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -132,7 +132,7 @@ curl -X POST https://api.puq.ai/audio/speech \
 
 ## Speech-to-Text (STT)
 
-`POST /audio/transcriptions`
+`POST /v1/audio/transcriptions`
 
 Transcribe audio files to text. Uses `multipart/form-data` for file upload.
 
@@ -147,7 +147,7 @@ Transcribe audio files to text. Uses `multipart/form-data` for file upload.
 ### Example Request
 
 ```bash
-curl -X POST https://api.puq.ai/audio/transcriptions \
+curl -X POST https://api.puq.ai/v1/audio/transcriptions \
   -H "Authorization: Token YOUR_API_KEY" \
   -F file=@audio.mp3 \
   -F model="openai/whisper-1" \
@@ -158,7 +158,7 @@ curl -X POST https://api.puq.ai/audio/transcriptions \
 
 ## Image Generation
 
-`POST /images/generations`
+`POST /v1/images/generations`
 
 Generate images from text prompts.
 
@@ -173,11 +173,11 @@ Generate images from text prompts.
 ### Example Request
 
 ```bash
-curl -X POST https://api.puq.ai/images/generations \
+curl -X POST https://api.puq.ai/v1/images/generations \
   -H "Authorization: Token YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "openai/dall-e-3",
+    "model": "openai/gpt-image-1.5",
     "prompt": "A sunset over the mountains",
     "size": "1024x1024"
   }'

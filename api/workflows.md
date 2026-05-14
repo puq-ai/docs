@@ -24,7 +24,7 @@ No query parameters.
 
 ```bash
 curl -X GET "https://api.puq.ai/v1/workflows" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 ```
 
 ### Response
@@ -71,7 +71,7 @@ Get full details for a specific workflow.
 
 ```bash
 curl -X GET "https://api.puq.ai/v1/workflows/workflow_abc123" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 ```
 
 ### Response
@@ -118,7 +118,7 @@ interface WorkflowDetails {
 
 ---
 
-## POST /v1/workflows/{id}/status
+## PATCH /v1/workflows/{id}/status
 
 Enable or disable a workflow.
 
@@ -131,7 +131,7 @@ Enable or disable a workflow.
 
 ```bash
 curl -X PATCH "https://api.puq.ai/v1/workflows/workflow_abc123/status" \
-  -H "Token: your-api-key-here" \
+  -H "Authorization: Token your-api-key-here" \
   -H "Content-Type: application/json" \
   -d '{ "status": "enabled" }'
 ```
@@ -187,7 +187,7 @@ Publish a specific version as the active version for a workflow.
 
 ```bash
 curl -X POST "https://api.puq.ai/v1/workflows/workflow_abc123/publish" \
-  -H "Token: your-api-key-here" \
+  -H "Authorization: Token your-api-key-here" \
   -H "Content-Type: application/json" \
   -d '{
     "version_id": "version_xyz456",
@@ -256,7 +256,7 @@ List all versions for a specific workflow.
 
 ```bash
 curl -X GET "https://api.puq.ai/v1/workflows/workflow_abc123/versions?page=1&limit=20" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 ```
 
 ### Response
@@ -327,7 +327,7 @@ Get detailed information about a specific workflow version.
 
 ```bash
 curl -X GET "https://api.puq.ai/v1/workflows/versions/version_xyz456" \
-  -H "Token: your-api-key-here"
+  -H "Authorization: Token your-api-key-here"
 ```
 
 ### Response
