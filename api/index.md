@@ -21,3 +21,4 @@ See [Common Concepts](common) for pagination, and error responses.
 - [Credits](credits) -- Check credit balance
 - [Models](models) -- List available AI models
 - [AI Router](ai-router) -- AI Router overview, key concepts and balance requirement
+- [Coding Tools](coding-tools) -- Use the API with Claude Code, Codex, VS Code, and JetBrains Rider

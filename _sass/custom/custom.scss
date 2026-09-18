@@ -1443,3 +1443,66 @@ h4,
     }
   }
 }
+
+// ===================================
+// Callouts
+// Soft cards that match .child-card; the type shows as a small dot
+// next to the title instead of a colored bar.
+// ===================================
+
+$callout-tones: (
+  important: ($accent-000, $accent-lt-000),
+  note: ($grey-dk-100, #b5b5bf),
+  new: (#3f7d5a, #7fbf98),
+  highlight: (#8a6818, #d9b35a),
+  warning: (#b4533a, #e08a72),
+);
+
+@each $type, $tones in $callout-tones {
+  $tone: nth($tones, 1);
+  $tone-dark: nth($tones, 2);
+
+  p.#{$type},
+  blockquote.#{$type} {
+    padding: $sp-3 $sp-4;
+    border: 0;
+    border-radius: 0.85rem;
+    box-shadow: none;
+    color: $body-text-color;
+    background: $grey-lt-000;
+
+    &::before {
+      padding-bottom: $sp-1;
+      padding-left: 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      color: $tone;
+      background: radial-gradient(circle, currentColor 0 3px, transparent 3.5px) left center / 7px 7px no-repeat;
+    }
+  }
+
+  [data-theme="dark"] {
+    p.#{$type},
+    blockquote.#{$type} {
+      background: rgba($accent-lt-000, 0.07);
+
+      &::before {
+        color: $tone-dark;
+      }
+    }
+  }
+}
+
+p.warning,
+blockquote.warning {
+  background: rgba(#b4533a, 0.06);
+}
+
+[data-theme="dark"] {
+  p.warning,
+  blockquote.warning {
+    background: rgba(#e08a72, 0.08);
+  }
+}
