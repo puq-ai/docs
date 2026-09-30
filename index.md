@@ -45,6 +45,11 @@ Use ready-made templates for CRM automation, customer support routing, marketing
 
 **Read:** [Examples →](/examples)
 
+### puq code
+Use the puq code terminal agent to read, edit, and run code in your projects with AI models from many providers.
+
+**Read:** [puq code →](/puq-code)
+
 ---
 
 ## Who Can Use puq.ai?
