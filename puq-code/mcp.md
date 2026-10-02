@@ -3,6 +3,7 @@ title: MCP Servers
 description: Connect external tools to puq code with Model Context Protocol (MCP) servers.
 parent: puq code
 nav_order: 6
+last_modified_date: 2026-10-02
 ---
 
 # MCP Servers
@@ -23,10 +24,10 @@ Or edit the configuration file directly:
 
 | File | Scope |
 |------|-------|
-| `<project>/.puq-code/mcp.json` | This project |
-| `~/.puq-code/agent/mcp.json` | You, in every project |
+| `<project>/.puq/mcp.json` | This project |
+| `~/.puq/agent/mcp.json` | You, in every project |
 
-A `mcp.json` or `.mcp.json` in the project root is also read. puq code also reads MCP servers already configured for Claude Code, Codex, Gemini CLI, Cursor, Windsurf, VS Code, and OpenCode.
+A `mcp.json` or `.mcp.json` in the project root is also read. puq code can also read MCP servers configured for Claude Code, Codex, Gemini CLI, Cursor, Windsurf, VS Code, and OpenCode. Project configurations are discovered unless disabled. User-level configurations from Claude Code, Codex, Gemini CLI, Cursor, Windsurf, and OpenCode require the corresponding source in `enabledProviders`; see [Files from other tools]({% link puq-code/context-files-and-skills.md %}#files-from-other-tools).
 
 ---
 
@@ -34,7 +35,7 @@ A `mcp.json` or `.mcp.json` in the project root is also read. puq code also read
 
 ```json
 {
-  "$schema": "https://github.com/puq-ai/puq-code-releases/releases/latest/download/mcp-schema.json",
+  "$schema": "https://docs.puq.ai/puq-code/mcp-schema.json",
   "mcpServers": {
     "server-name": {
       "command": "npx",
@@ -44,11 +45,11 @@ A `mcp.json` or `.mcp.json` in the project root is also read. puq code also read
 }
 ```
 
-The `$schema` line gives autocomplete and validation in editors like VS Code.
+The optional `$schema` line gives autocomplete and validation in editors like VS Code. This documentation includes the [MCP schema]({{ '/puq-code/mcp-schema.json' | relative_url }}); omit `$schema` if your editor cannot fetch it. puq code does not need the schema URL to load the configuration.
 
 ### Local server (stdio)
 
-Starts a program on your machine. This is the default when `type` is omitted.
+Starts a program on your machine. A configuration with `command` and no explicit `type` is treated as stdio.
 
 ```json
 {
@@ -76,10 +77,10 @@ Fields: `command` (required), `args`, `env`, `cwd`.
 }
 ```
 
-Fields: `type: "http"` and `url` (required), `headers`. The older `type: "sse"` is also supported.
+Fields: `url` (required), `type: "http"` (recommended explicitly for editor validation), and optional `headers`. The older `type: "sse"` is also supported.
 
 {: .note }
-If you forget `"type": "http"` on a remote server, puq code treats it as a local server and reports that `command` is missing.
+Set `"type": "http"` explicitly for clarity and editor validation. At runtime, puq code infers HTTP when `url` is present without `command`, although the schema requires an explicit remote type. An explicit `"type": "stdio"` requires `command`.
 
 ### Common options
 
@@ -139,5 +140,5 @@ MCP tools appear to the agent as `mcp__<server>_<tool>`. You can control them wi
 ## Troubleshooting
 
 - **Server doesn't connect:** run `/mcp test <name>`. Check that the program or Docker image exists, required environment variables are set, the URL is reachable, and the token is valid.
-- **Server from another tool is missing:** run `/mcp list`. Check `disabledServers` in your user `mcp.json` and the `mcp.enableProjectConfig` setting.
+- **Server from another tool is missing:** run `/mcp list`. Check `enabledProviders` for user-level foreign sources, `disabledProviders`, `disabledServers` in your user `mcp.json`, and `mcp.enableProjectConfig`.
 - **Browser servers (Playwright, Puppeteer) are ignored:** puq code has a built-in browser tool and skips these servers. Set `browser.enabled: false` to use an MCP browser server instead.

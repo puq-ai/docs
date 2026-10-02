@@ -3,6 +3,7 @@ title: Configuration
 description: Configure puq code settings, profiles, and tool approval.
 parent: puq code
 nav_order: 4
+last_modified_date: 2026-10-02
 ---
 
 # Configuration
@@ -15,19 +16,27 @@ puq code settings are stored in YAML files. You can edit them directly, use the 
 
 | File | Scope |
 |------|-------|
-| `~/.puq-code/agent/config.yml` | Global (all projects) |
-| `<project>/.puq-code/config.yml` | Project only |
+| `~/.puq/agent/config.yml` | Global (all projects) |
+| `<project>/.puq/config.yml` | Project only |
 | `--config <file>` | Extra file for a single run |
+
+These paths show the default layout. Profiles, directory overrides, and Linux XDG settings can redirect configuration, credential, and session storage. `puq config path` prints the active agent configuration directory.
+
+### Migration from `.puq-code`
+
+Current releases use `.puq` for user and project configuration. On startup, the default global `~/.puq-code` directory is moved to `~/.puq` when the destination has no data. Legacy XDG roots named `puq-code` are also migrated where configured. Existing populated destinations are left separate instead of being merged or overwritten.
+
+Project-local `.puq-code` folders are not automatically renamed. Review and move their configuration into `<project>/.puq` yourself, preserving any settings already there. Run `puq config path` to inspect the active agent configuration directory, especially when using profiles or directory overrides.
 
 ### Precedence
 
 When the same setting is defined in several places, the highest one wins:
 
-1. Environment variable for the setting
+1. Environment override declared for the setting (fallback-only variables yield to configured values)
 2. Runtime flags (e.g. `--approval-mode`)
 3. `--config` files (later files win)
-4. Project `.puq-code/config.yml`
-5. Global `~/.puq-code/agent/config.yml`
+4. Project `.puq/config.yml`
+5. Global `~/.puq/agent/config.yml`
 6. Built-in default
 
 {: .note }
@@ -42,7 +51,7 @@ puq config list                          # show all settings
 puq config get disabledProviders         # show one setting's effective value
 puq config set tools.approvalMode write  # change a global setting
 puq config reset tools.approvalMode      # return to the default
-puq config path                          # show where config files live
+puq config path                          # show the active agent configuration directory
 ```
 
 Add `--json` for machine-readable output.
@@ -57,14 +66,14 @@ puq code classifies each tool call into a tier:
 - **write**: changes files but does not run arbitrary code
 - **exec**: runs commands or code, drives a browser, starts subagents
 
-The approval mode decides which tiers run automatically:
+The approval mode supplies the default for calls without a tool-specific or user policy:
 
 | Mode | Runs automatically | Asks first |
 |------|--------------------|------------|
 | `always-ask` | read | write, exec |
 | `write` | read, write | exec |
 | `auto` | read, write | exec (a safety check may approve it) |
-| `yolo` (default) | everything | nothing |
+| `yolo` (default) | all tiers when the resolved policy allows the call | calls whose resolved policy is `prompt` |
 
 Set the mode in `config.yml`:
 
@@ -84,7 +93,7 @@ Inside a session, press `Shift+Tab` to cycle between modes.
 
 ### Per-tool rules
 
-Override individual tools regardless of mode with `allow`, `deny`, or `prompt`:
+Set user policies for individual tools with `allow`, `deny`, or `prompt`:
 
 ```yaml
 tools:
@@ -95,8 +104,10 @@ tools:
     mcp__filesystem_delete: deny
 ```
 
+`deny` from either a tool or user settings blocks the call. Otherwise, a tool's explicit policy takes precedence over a user `allow` or `prompt` setting. Calls without an explicit tool policy use the user setting, then the mode default. Outside `yolo`, a tool can also require an approval check regardless of the user setting.
+
 {: .warning }
-In `yolo` mode (the default) every tool call runs without asking, including shell commands. In the other modes, dangerous commands (such as `rm -rf /`) always ask first. Approval only controls prompting: an approved command runs with your normal user permissions.
+In `yolo` mode (the default), shell commands and other calls run automatically unless the resolved policy requires a prompt or denies them. A user `prompt` setting can be overridden by an explicit tool `allow`; user `deny` still blocks the call. Recognized dangerous shell commands prompt in other modes, but that built-in check is skipped in `yolo`. Approval decides whether a call may run; it does not sandbox the command or reduce your user permissions.
 
 ---
 
@@ -109,13 +120,13 @@ puq --profile work                          # use the "work" profile
 puq --profile work --alias puq-work         # create a shell shortcut
 ```
 
-A profile stores its files in `~/.puq-code/profiles/<name>/agent/` instead of `~/.puq-code/agent/`. Project-level files (`<project>/.puq-code/`) apply to every profile.
+A profile stores its files in `~/.puq/profiles/<name>/agent/` instead of `~/.puq/agent/`. Project-level files (`<project>/.puq/`) apply to every profile.
 
 ---
 
 ## Keybindings
 
-Remap shortcuts in `~/.puq-code/agent/keybindings.yml`:
+Remap shortcuts in `~/.puq/agent/keybindings.yml`:
 
 ```yaml
 app.model.cycleForward: Ctrl+P
@@ -141,14 +152,16 @@ Or turn on **Vim Editing Mode** in `/settings` → Interaction → Input.
 
 ### Web search
 
-The agent can search the web. Without any setup it uses free search engines. For better results, add a key for a search provider:
+The agent can search the web. The default priority starts with `web/puq` when puq credentials are available, so search can use your puq balance. Other configured backends and free search engines are fallback options; the default is not a guarantee of free searches.
+
+You can add a key for a separate search provider:
 
 | Provider | Environment variable |
 |----------|----------------------|
 | Exa | `EXA_API_KEY` |
 | Brave | `BRAVE_API_KEY` |
 | Tavily | `TAVILY_API_KEY` |
-| Perplexity | `PERPLEXITY_API_KEY` (or `/login perplexity`) |
+| Perplexity | `PERPLEXITY_API_KEY` |
 | Firecrawl | `FIRECRAWL_API_KEY` |
 
 To force one provider, set the `web` model role:
@@ -169,7 +182,7 @@ secrets:
   enabled: true
 ```
 
-puq code detects secrets from environment variables (names containing `KEY`, `TOKEN`, `SECRET`, `PASSWORD`, …), common token formats (GitHub, OpenAI, AWS, JWT, private keys, …), and passwords in connection URLs. Add your own values in `~/.puq-code/agent/secrets.yml` or `<project>/.puq-code/secrets.yml`.
+puq code detects secrets from environment variables (names containing `KEY`, `TOKEN`, `SECRET`, `PASSWORD`, …), common token formats (GitHub, OpenAI, AWS, JWT, private keys, …), and passwords in connection URLs. Add your own values in `~/.puq/agent/secrets.yml` or `<project>/.puq/secrets.yml`.
 
 ### Memory
 

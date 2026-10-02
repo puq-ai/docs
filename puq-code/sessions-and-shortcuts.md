@@ -3,13 +3,14 @@ title: Sessions & Shortcuts
 description: Resume, fork, export, and share puq code sessions, and use keyboard shortcuts.
 parent: puq code
 nav_order: 8
+last_modified_date: 2026-10-02
 ---
 
 # Sessions & Shortcuts
 
 ## Sessions
 
-puq code saves every session automatically under `~/.puq-code/agent/sessions/`. Use `--no-session` to run without saving. To revert file changes made by the agent, see [Undoing changes](/puq-code/working-in-a-session/#undoing-changes).
+puq code saves every session automatically under `~/.puq/agent/sessions/`. Use `--no-session` to run without saving. To revert file changes made by the agent, see [Undoing changes](/puq-code/working-in-a-session/#undoing-changes).
 
 ### From the command line
 
@@ -77,7 +78,7 @@ Run `/hotkeys` to see all shortcuts for your version.
 | `Alt+A` or `Ctrl+S` | Open the Agent Hub (subagents) |
 | `Ctrl+C` | Clear the prompt (press `Up` to recover it); twice to exit |
 
-Change shortcuts in `~/.puq-code/agent/keybindings.yml` — see [Configuration](/puq-code/configuration/#keybindings).
+Change shortcuts in `~/.puq/agent/keybindings.yml` — see [Configuration](/puq-code/configuration/#keybindings).
 
 {: .note }
 On Windows Terminal, `Ctrl+V` and `Ctrl+Enter` may be captured by the terminal. Use `Alt+V` to paste images and `Ctrl+Q` to queue a follow-up.

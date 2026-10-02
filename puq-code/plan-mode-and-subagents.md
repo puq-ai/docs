@@ -3,6 +3,7 @@ title: Plan Mode & Subagents
 description: Plan changes before editing, and let puq code split work across subagents.
 parent: puq code
 nav_order: 9
+last_modified_date: 2026-10-02
 ---
 
 # Plan Mode & Subagents
@@ -32,7 +33,7 @@ When the agent proposes a plan, a **Plan Review** screen opens. Read the plan, a
 Use a stronger model for planning and a faster one for implementation:
 
 ```yaml
-# ~/.puq-code/agent/config.yml
+# ~/.puq/agent/config.yml
 modelRoles:
   plan: puq/claude-opus-4-6
   smol: puq/claude-haiku-4-5
@@ -68,8 +69,8 @@ Define your own agents as Markdown files:
 
 | Location | Scope |
 |----------|-------|
-| `~/.puq-code/agent/agents/<name>.md` | You, in every project |
-| `<project>/.puq-code/agents/<name>.md` | This project |
+| `~/.puq/agent/agents/<name>.md` | You, in every project |
+| `<project>/.puq/agents/<name>.md` | This project |
 
 ```markdown
 ---
@@ -104,8 +105,8 @@ Then ask: *"Use the reviewer agent to check my latest changes."*
 puq code ships with ready-made agents. Copy them into your config to read or customize them:
 
 ```sh
-puq agents unpack             # to ~/.puq-code/agent/agents
-puq agents unpack --project   # to ./.puq-code/agents
+puq agents unpack             # to ~/.puq/agent/agents
+puq agents unpack --project   # to ./.puq/agents
 ```
 
 ### Asking a specific model

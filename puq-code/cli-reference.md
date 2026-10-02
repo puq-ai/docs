@@ -3,6 +3,7 @@ title: CLI Reference
 description: Commands and flags for the puq command-line tool.
 parent: puq code
 nav_order: 2
+last_modified_date: 2026-10-02
 ---
 
 # CLI Reference
@@ -61,7 +62,7 @@ puq --continue "What did we discuss?"   # continue the previous session
 | `--slow <id>` | Reasoning model for thorough analysis |
 | `--plan <id>` | Model for planning |
 | `--models <a,b,c>` | Models available for `Ctrl+P` cycling |
-| `--api-key <key>` | puq API key for this run (not saved; requires `--model`) |
+| `--api-key <key>` | API key for the selected provider for this run (not saved; requires explicit model selection) |
 | `--thinking <level>` | `off`, `minimal`, `low`, `medium`, `high`, `xhigh`, `max`, or `auto` |
 | `--hide-thinking` | Hide thinking blocks in the UI (display only; the model still thinks) |
 
@@ -74,7 +75,7 @@ puq --continue "What did we discuss?"   # continue the previous session
 | `--no-pty` | Run bash commands without an interactive terminal (PTY) |
 | `--no-lsp` | Disable language-server features |
 | `--approval-mode <mode>` | `always-ask`, `write`, `auto`, or `yolo` (see [Configuration](/puq-code/configuration/#tool-approval)) |
-| `--auto-approve` | Approve all tool calls without asking |
+| `--auto-approve` | Use `yolo` approval mode (explicit policies can still prompt or deny; see [Configuration](/puq-code/configuration/#per-tool-rules)) |
 | `--max-time <duration>` | Stop after a duration (`600`, `10m`, `1h`) |
 
 ### Extensions, skills, and prompts

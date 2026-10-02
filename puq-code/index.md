@@ -4,6 +4,7 @@ description: puq code is the terminal coding agent from puq.ai. Learn how to ins
 nav_order: 9
 has_children: true
 has_toc: true
+last_modified_date: 2026-10-02
 ---
 
 # puq code
@@ -47,10 +48,10 @@ puq -p "Summarize the changes in the last commit"
 
 | Location | Purpose |
 |----------|---------|
-| `~/.puq-code/agent/config.yml` | Global settings |
-| `~/.puq-code/agent/mcp.json` | User-level MCP servers |
-| `~/.puq-code/agent/AGENTS.md` | User-level context file |
-| `~/.puq-code/agent/keybindings.yml` | Keyboard shortcut remaps |
-| `~/.puq-code/agent/sessions/` | Saved sessions |
-| `<project>/.puq-code/` | Project-level settings, context files, skills, and MCP servers |
-| `<project>/.puq-code/agents/`, `commands/`, `skills/` | Project-level custom agents, slash commands, and skills |
+| `~/.puq/agent/config.yml` | Global settings |
+| `~/.puq/agent/mcp.json` | User-level MCP servers |
+| `~/.puq/agent/AGENTS.md` | User-level context file |
+| `~/.puq/agent/keybindings.yml` | Keyboard shortcut remaps |
+| `~/.puq/agent/sessions/` | Saved sessions |
+| `<project>/.puq/` | Project-level settings, context files, skills, and MCP servers |
+| `<project>/.puq/agents/`, `commands/`, `skills/` | Project-level custom agents, slash commands, and skills |

@@ -3,24 +3,34 @@ title: Getting Started
 description: Set up puq code, log in to a model provider, and run your first session.
 parent: puq code
 nav_order: 1
+last_modified_date: 2026-10-02
 ---
 
 # Getting Started with puq code
 
-## 1. Verify the installation
+## 1. Install and verify
+
+Check the [official release repository](https://github.com/puq-ai/code/releases) for a build matching your operating system and architecture, and follow the instructions included with that release.
+
+{: .note }
+As of October 2, 2026, the public channel installer URL returns 404. If the release page has no downloadable assets, a public build is not available there yet. The commands below assume you already have a working installation; `puq update` cannot bootstrap a missing executable.
+
+After installation, open a terminal and check:
 
 ```sh
 puq --version
 ```
 
-If the command prints a version (for example `puq/18.3.2`), puq code is installed and on your `PATH`.
+If the command prints a version such as `puq/1.0.0`, puq code is installed and on your `PATH`. Development builds can include an additional version suffix.
 
 Keep puq code up to date with:
 
 ```sh
-puq update            # install the newest release (Homebrew/WinGet installs: prints the upgrade command)
+puq update            # update from the selected release channel
 puq update --plugins  # update installed plugins
 ```
+
+The default update channel is `stable`, which can lag behind the latest published release. Package-manager installations, native Windows binaries, and source checkouts can require the external upgrade or build steps reported by `puq update`.
 
 ### Optional components
 
@@ -45,7 +55,7 @@ puq completions fish > ~/.config/fish/completions/puq.fish
 
 ## 2. Log in with your puq API key
 
-puq code works only with a puq API key. With it you can use any model in the puq catalog (Anthropic, OpenAI, Google, and more).
+A puq API key gives you access to enabled models in the puq catalog, including models from Anthropic, OpenAI, Google, and other providers. Direct Anthropic API-key access is also supported; see [Models & Providers](/puq-code/models-and-providers/).
 
 **Log in from the terminal:**
 

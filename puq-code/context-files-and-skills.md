@@ -3,6 +3,7 @@ title: Context Files & Skills
 description: Give puq code project knowledge with AGENTS.md, RULES.md, and skills.
 parent: puq code
 nav_order: 5
+last_modified_date: 2026-10-02
 ---
 
 # Context Files & Skills
@@ -17,8 +18,8 @@ Use `AGENTS.md` for repository background: architecture, code style, build and t
 
 | File | Scope |
 |------|-------|
-| `~/.puq-code/agent/AGENTS.md` | You, in every project |
-| `<project>/.puq-code/AGENTS.md` | This project |
+| `~/.puq/agent/AGENTS.md` | You, in every project |
+| `<project>/.puq/AGENTS.md` | This project |
 | `<project>/AGENTS.md` | This project (also read by other tools) |
 
 Example:
@@ -33,7 +34,7 @@ Example:
 
 ### Files from other tools
 
-puq code also reads context files from other AI tools, so existing projects work without changes:
+puq code can also read context files from other AI tools:
 
 - `CLAUDE.md`, `.claude/CLAUDE.md`
 - `.gemini/GEMINI.md`
@@ -41,7 +42,18 @@ puq code also reads context files from other AI tools, so existing projects work
 - `~/.codex/AGENTS.md`, `.agents/AGENTS.md`
 - Cursor, Windsurf, and Cline rule files
 
-When several files apply at the same level, `.puq-code/AGENTS.md` wins. Only the nearest `.puq-code/` folder is used, so a `.puq-code/AGENTS.md` in a parent folder is not loaded as well. Plain `AGENTS.md` and `.agents/AGENTS.md` files are different: in a monorepo, those from parent folders and the current package are all loaded.
+Project sources are discovered by default unless disabled. User-level sources for Claude Code, Claude plugins, Codex, Gemini CLI, Cursor, Windsurf, OpenCode, and GitHub require opt-in through `enabledProviders`. For example, to load user-level Claude Code and Codex files such as `~/.codex/AGENTS.md`:
+
+```yaml
+# ~/.puq/agent/config.yml
+enabledProviders:
+  - claude
+  - codex
+```
+
+Native `.puq` and `.agent`/`.agents` sources remain enabled by default. `disabledProviders` takes precedence over opt-in. Explicit legacy capability settings or `CLAUDE_CONFIG_DIR` can also enable the applicable user source.
+
+When several files apply at the same level, `.puq/AGENTS.md` wins. Only the nearest `.puq/` folder is used, so a `.puq/AGENTS.md` in a parent folder is not loaded as well. Plain `AGENTS.md` and `.agents/AGENTS.md` files are different: in a monorepo, those from parent folders and the current package are all loaded.
 
 ### `@` imports
 
@@ -64,8 +76,8 @@ Shared release steps live in @../RELEASE.md.
 
 | File | Scope |
 |------|-------|
-| `~/.puq-code/agent/RULES.md` | You, in every project |
-| `<project>/.puq-code/RULES.md` | This project |
+| `~/.puq/agent/RULES.md` | You, in every project |
+| `<project>/.puq/RULES.md` | This project |
 
 ```markdown
 Never commit or push unless the user explicitly asks.
@@ -84,8 +96,8 @@ A skill is a folder with a `SKILL.md` file that teaches the agent a specific wor
 
 | Location | Scope |
 |----------|-------|
-| `~/.puq-code/agent/skills/<name>/SKILL.md` | You, in every project |
-| `<project>/.puq-code/skills/<name>/SKILL.md` | This project |
+| `~/.puq/agent/skills/<name>/SKILL.md` | You, in every project |
+| `<project>/.puq/skills/<name>/SKILL.md` | This project |
 
 Skills must be exactly one folder below `skills/`. Nested folders like `skills/team/<name>/SKILL.md` are not discovered.
 
@@ -121,7 +133,7 @@ description: Steps for publishing a new version of this package to npm.
 Disable a whole source (its context files, skills, MCP servers, and settings):
 
 ```yaml
-# .puq-code/config.yml
+# .puq/config.yml
 disabledProviders:
   - claude
 ```
