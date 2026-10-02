@@ -10,12 +10,23 @@ last_modified_date: 2026-10-02
 
 ## 1. Install and verify
 
-Check the [official release repository](https://github.com/puq-ai/code/releases) for a build matching your operating system and architecture, and follow the instructions included with that release.
+Install puq code with the official install script on macOS or Linux:
 
-{: .note }
-As of October 2, 2026, the public channel installer URL returns 404. If the release page has no downloadable assets, a public build is not available there yet. The commands below assume you already have a working installation; `puq update` cannot bootstrap a missing executable.
+```sh
+curl -fsSL https://puq.sh/install.sh | sh
+```
 
-After installation, open a terminal and check:
+To review the script before running it:
+
+```sh
+curl -fsSL https://puq.sh/install.sh -o install.sh
+less install.sh
+sh install.sh
+```
+
+Prebuilt binaries are also listed in the [release repository](https://github.com/puq-ai/code/releases) if you prefer a manual install.
+
+After installation, open a new terminal (so your `PATH` is refreshed) and check:
 
 ```sh
 puq --version

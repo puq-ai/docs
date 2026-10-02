@@ -28,6 +28,9 @@ With puq code you can:
 ## Quick Start
 
 ```sh
+# Install puq code (macOS / Linux)
+curl -fsSL https://puq.sh/install.sh | sh
+
 # Check that puq is installed
 puq --version
 
