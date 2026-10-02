@@ -484,11 +484,30 @@ jtd.getTheme = function() {
   return cssFileHref.substring(cssFileHref.lastIndexOf('-') + 1, cssFileHref.length - 4);
 }
 
-jtd.setTheme = function(theme) {
-  var cssFile = document.getElementById('jtd-theme-stylesheet');
-  if (cssFile) {
-    cssFile.setAttribute('href', '{{ "assets/css/just-the-docs-" | relative_url }}' + theme + '.css');
-  }
+var pendingThemeHref = null;
+
+// Load the new theme stylesheet next to the current one and swap on load,
+// so the page never renders without a theme stylesheet. `onApplied` runs once
+// the requested stylesheet is active (skipped if superseded by a later call).
+jtd.setTheme = function(theme, onApplied) {
+  var done = typeof onApplied === 'function' ? onApplied : function() {};
+  var current = document.getElementById('jtd-theme-stylesheet');
+  if (!current) { done(); return; }
+  var href = '{{ "assets/css/just-the-docs-" | relative_url }}' + theme + '.css';
+  pendingThemeHref = href;
+  if (current.getAttribute('href') === href) { done(); return; }
+  var next = document.createElement('link');
+  next.rel = 'stylesheet';
+  next.href = href;
+  next.onload = function() {
+    if (pendingThemeHref !== href) { next.remove(); return; }
+    var live = document.getElementById('jtd-theme-stylesheet');
+    if (live) live.remove();
+    next.id = 'jtd-theme-stylesheet';
+    done();
+  };
+  next.onerror = function() { next.remove(); };
+  current.after(next);
 }
 
 // Note: pathname can have a trailing slash on a local jekyll server

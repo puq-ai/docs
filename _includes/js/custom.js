@@ -1,21 +1,28 @@
 // Theme Toggle Implementation (Simplified)
 (function() {
+  // Theme most recently requested; data-theme only follows once its CSS is active.
+  var targetTheme = document.documentElement.getAttribute('data-theme') || 'light';
+
+  function applyTheme(newTheme) {
+    targetTheme = newTheme;
+    function setAttr() { document.documentElement.setAttribute('data-theme', newTheme); }
+    // Map 'light' to 'default' CSS file
+    var cssTheme = (newTheme === 'light') ? 'default' : newTheme;
+    if (window.jtd && typeof jtd.setTheme === 'function') {
+      jtd.setTheme(cssTheme, setAttr);
+    } else {
+      setAttr();
+    }
+  }
+
   function initThemeToggle() {
     var themeToggle = document.getElementById('theme-toggle');
     if (!themeToggle) return;
 
     themeToggle.addEventListener('click', function() {
-      var currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-      document.documentElement.setAttribute('data-theme', newTheme);
+      var newTheme = targetTheme === 'dark' ? 'light' : 'dark';
       localStorage.setItem('jtd-theme', newTheme);
-
-      // Update CSS file - map 'light' to 'default' CSS file
-      var cssTheme = (newTheme === 'light') ? 'default' : newTheme;
-      if (window.jtd && typeof jtd.setTheme === 'function') {
-        jtd.setTheme(cssTheme);
-      }
+      applyTheme(newTheme);
 
       themeToggle.setAttribute('aria-pressed', newTheme === 'dark' ? 'true' : 'false');
       themeToggle.setAttribute('aria-label', newTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
@@ -25,13 +32,7 @@
   // System preference change listener
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
     if (!localStorage.getItem('jtd-theme')) {
-      var newTheme = e.matches ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      // Map 'light' to 'default' CSS file
-      var cssTheme = (newTheme === 'light') ? 'default' : newTheme;
-      if (window.jtd && typeof jtd.setTheme === 'function') {
-        jtd.setTheme(cssTheme);
-      }
+      applyTheme(e.matches ? 'dark' : 'light');
     }
   });
 

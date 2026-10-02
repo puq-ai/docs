@@ -1,3 +1,7 @@
+<script>
+(function(){var theme=null;try{theme=localStorage.getItem("jtd-theme");}catch(e){}if(theme!=="dark"&&theme!=="light"){theme=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",theme);document.write('<link rel="stylesheet" href="{{ '/assets/css/just-the-docs-' | relative_url }}'+(theme==="dark"?"dark":"default")+'.css" id="jtd-theme-stylesheet">');})();
+</script>
+<noscript><link rel="stylesheet" href="{{ '/assets/css/just-the-docs-default.css' | relative_url }}" id="jtd-theme-stylesheet"></noscript>
 <style>
 /* Critical CSS - Logo FOUC prevention */
 .site-header {
@@ -23,6 +27,3 @@
   visibility: hidden;
 }
 </style>
-<script>
-(function(){var defined=document.getElementById("jtd-theme-stylesheet");if(!defined)return;var theme=localStorage.getItem("jtd-theme");if(!theme){theme=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",theme);var cssTheme=(theme==="light")?"default":theme;var href=defined.getAttribute("href");var newHref=href.replace(/just-the-docs-[^.]+\.css/,"just-the-docs-"+cssTheme+".css");if(href!==newHref){defined.setAttribute("href",newHref);}})();
-</script>
