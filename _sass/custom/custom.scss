@@ -110,7 +110,8 @@
 }
 
 .docs-site-title {
-  min-width: 8.75rem;
+  min-width: 0;
+  justify-content: center;
   position: relative;
   padding: $sp-3 0;
   border-radius: 0.85rem;
@@ -118,7 +119,7 @@
   overflow: hidden;
 
   @include mq(md) {
-    padding-right: $sp-2;
+    padding-right: $sp-3;
     padding-left: $sp-3;
   }
 
@@ -200,15 +201,19 @@
 }
 
 .docs-site-title .site-logo {
-  width: 8.75rem;
+  flex: 0 0 auto;
+  width: auto;
   height: 1.9rem;
   max-height: none;
+  aspect-ratio: 374.985 / 144.3; // match puq-logo.svg so the box hugs the artwork
+  background-position: center;
 }
 
 .docs-site-title .site-logo--icon {
   display: none;
   width: 2rem;
   height: 2rem;
+  aspect-ratio: 1;
   background-image: url("/assets/images/puq-docs-logo-icon.svg");
 }
 
