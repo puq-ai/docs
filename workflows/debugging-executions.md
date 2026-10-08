@@ -76,12 +76,12 @@ Retries use the *same trigger data*, making debugging deterministic and repeatab
 
 ## Live Testing Mode
 
-Use **Live Testing Mode** to verify execution behavior while building a workflow.
+Use **[Run Step](/workflows/testing-steps/)** to verify a single step's behavior while building a workflow, without running everything after it.
 
-Live Testing allows you to:
-- Trigger test runs manually  
-- View logs in real time  
+Run Step allows you to:
+- Trigger a test run of the workflow up to the selected step  
+- See that step's real input and output as formatted JSON  
 - Validate node outputs step by step  
 - Catch misconfigurations before publishing  
 
-This dramatically reduces deb
+This dramatically reduces debugging time.

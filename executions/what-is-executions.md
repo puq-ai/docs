@@ -25,8 +25,9 @@ Each execution stores detailed information about the workflow run:
   Indicates the current state of the execution:  
   - **Pending** — Waiting to start (often due to concurrency limits)  
   - **Running** — Nodes are actively being processed  
-  - **Success** — All nodes executed without errors  
-  - **Failed** — A node encountered an error  
+  - **Paused** — Waiting at a Delay or Request Approval step before continuing
+  - **Succeeded** — All nodes executed without errors  
+  - **Failed** — A node encountered an error, or the run timed out, exceeded its memory allowance, or was stopped. The reason is shown in the execution details.  
   - **Cancelled** — Execution was stopped manually  
 
 - **Start & End Time**  

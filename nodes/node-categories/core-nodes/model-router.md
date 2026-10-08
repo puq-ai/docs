@@ -1,125 +1,147 @@
 ---
 title: Model Router
-description: Generate AI-powered text responses using a unified AI Chat Model interface.
+description: Generate AI chat replies, images, speech, transcriptions, and video through puq.ai's built-in AI model router.
 parent: Core Nodes
 nav_order: 10
 ---
 
-# Model Router (AI Chat Model)
+# Model Router
 
-The **Model Router** node allows you to generate text responses using Large Language Models (LLMs) through a single, unified interface.  
-Instead of integrating each AI provider separately, puq.ai abstracts model selection and execution behind this node.
+The **Model Router** piece calls AI models — for chat, images, speech, transcription, and video — through puq.ai's own router, without connecting a separate provider account. It has five actions:
 
-This makes it easy to switch models, experiment with prompts, and control generation behavior without changing your workflow logic.
+- **AI Chat Model**
+- **Generate Image**
+- **Generate Speech**
+- **Transcribe Audio**
+- **Generate Video**
 
----
-
-## What the Model Router Does
-
-The Model Router:
-- Sends a prompt to a selected AI chat model
-- Generates a text-based response
-- Returns the result as structured output for downstream nodes
-- Centralizes AI usage across different providers
-
-It is typically used for:
-- Text generation
-- Summarization
-- Classification
-- Content transformation
-- Conversational responses
+It's found under the **Core** and **Universal AI** categories in the Add Step panel.
 
 ---
 
-## Configuration Fields
+## How It Works
 
-### Chat Model
-Select the AI model used for generation.
+1. Add a Model Router step and pick one of its five actions.
+2. Pick a model from that action's model dropdown — the list is fetched live from puq.ai's model catalog and only includes models that support that action.
+3. Fill in the action's fields (prompt, text, file, etc.).
+4. puq.ai sends the request to the matching provider and returns the result as the step's output.
+5. Usage is billed to your puq.ai account balance — see [Billing](#billing).
 
-This field determines:
-- Which provider is used
-- Model capabilities (context length, speed, quality)
-- Cost and performance characteristics
-
-> **Note:** Available models depend on your workspace configuration and enabled providers.
+See [AI Models](/models/) for the full list of available models and their capabilities.
 
 ---
 
-### Prompt
-The text input sent to the model.
+## AI Chat Model
 
-This can be:
-- Static text
-- Dynamic data mapped from previous nodes
-- Combined prompts using parameter mapping
+Generate a chat/text response from a prompt.
 
-**Example:**
-```
-Summarize the following customer feedback in one sentence.
-```
+| Setting | Required | Default | Description |
+|---------|----------|---------|-------------|
+| **Chat Model** | Yes | `openai/gpt-4o-mini` | Chat model to use for text generation |
+| **Prompt** | Yes | — | Prompt to generate |
+| **File** | No | — | Optional image, PDF, or text/code file (up to 20 MB) to include with the prompt, for models that support multimodal input |
+| **Max Tokens** | Yes | `2000` | Max tokens to generate |
+| **Temperature** | Yes | `0.5` | Temperature to generate |
 
----
+{: .note }
+Temperature is left out of the request automatically for reasoning models (the o1/o3/gpt-5 family) that reject a non-default value.
 
-### Max Tokens
-Defines the maximum number of tokens the model can generate.
-
-- Higher values → longer responses
-- Lower values → shorter, more controlled output
-- Prevents excessive or runaway generations
-
-Typical ranges:
-- Short responses: 200–500
-- Long content: 1000–3000
+**Output**: `content` — the model's reply (string). If the provider's response doesn't include the usual message content, the raw provider response is returned instead.
 
 ---
 
-### Temperature
-Controls randomness and creativity in the response.
+## Generate Image
 
-- **Low values (0.1–0.3):** Deterministic, factual, consistent
-- **Medium values (0.4–0.7):** Balanced responses
-- **High values (0.8–1.0):** Creative, varied output
+| Setting | Required | Default | Description |
+|---------|----------|---------|-------------|
+| **Image Model** | Yes | `openai/gpt-image-2` | Image model to use, in provider/model format |
+| **Prompt** | Yes | — | A text description of the desired image |
+| **Number of Images** | No | `1` | Number of images to generate (1–10) |
+| **Size** | No | Auto | Auto, 1024x1024, 1536x1024, or 1024x1536 — used only by GPT Image–style models |
+| **Quality** | No | Auto | Auto, Low, Medium, or High — used only by GPT Image–style models |
+| **Style** | No | Vivid | Vivid or Natural — used only by non-GPT-Image models |
+| **Response Format** | No | Base64 JSON | Base64 JSON or URL — used only by non-GPT-Image models |
+| **File Name** | No | — | Optional filename for the first saved image, for example `image.png` |
+| **Source Image** | No | — | Optional image to restage; used only by models that support an image input (for example `google/nano-banana-2`) |
+| **Aspect Ratio** | No | — | Optional ratio for models that size by ratio instead of pixels, for example `1:1`, `9:16`, `16:9` |
+
+{: .note }
+Choose **Base64 JSON** for **Response Format** if you want the generated image saved as a workflow file. Generated image data is capped at 16 MB.
+
+**Output** (main fields): `success`, `data` (raw provider data), and — when the image comes back as base64 — `file` (`filename`, `url`, `fileKey`, `contentType`, `size`) plus `image_url`, `filename`, `content_type`, and `size_bytes` for the first image, and `images` for all of them.
 
 ---
 
-## Output
+## Generate Speech
 
-The node outputs:
-- Generated text
-- Metadata (model used, token usage, timing)
+Convert text to spoken audio.
 
-This output can be:
-- Passed into other nodes
-- Stored
-- Further processed or validated
+| Setting | Required | Default | Description |
+|---------|----------|---------|-------------|
+| **Speech Model** | Yes | — | Text-to-speech model to use |
+| **Text** | Yes | — | Text to convert to speech |
+| **Voice** | No | — | Optional provider-specific voice name; leave empty to use the model's own default |
+| **Response Format** | No | — | Optional audio format such as `mp3`, `opus`, `aac`, or `flac` (provider-specific) |
+| **Speed** | No | — | Playback speed, typically `0.25`–`4.0` |
+
+Generated audio is capped at 25 MB.
+
+**Output**: `success`, `filename`, `content_type`, `size_bytes`, and `file` (`filename`, `url`, `fileKey`, `contentType`, `size`).
 
 ---
 
-## Common Use Cases
+## Transcribe Audio
 
-- Generate AI responses from user input
-- Enrich data with AI-generated summaries
-- Classify or rewrite text
-- Build conversational workflows
-- Create AI-powered decision points
+Transcribe spoken audio to text.
+
+| Setting | Required | Default | Description |
+|---------|----------|---------|-------------|
+| **Transcription Model** | Yes | — | Speech-to-text model to use |
+| **Audio File** | Yes | — | Audio file to transcribe (`.mp3`, `.mp4`, `.mpeg`, `.mpga`, `.m4a`, `.wav`, `.webm`, `.flac`, `.ogg`, up to 25 MB) |
+| **Language** | No | — | Optional ISO 639-1 language code, for example `en` |
+| **Prompt** | No | — | Optional text to guide the transcription style |
+| **Response Format** | No | — | `json`, `text`, `srt`, `verbose_json`, or `vtt` (provider-specific) |
+
+**Output**: `text` (the transcribed text) and `raw` (the full provider response).
+
+---
+
+## Generate Video
+
+| Setting | Required | Default | Description |
+|---------|----------|---------|-------------|
+| **Video Model** | Yes | — | Video generation model to use |
+| **Prompt** | Yes | — | A text description of the desired video |
+| **Duration (seconds)** | No | `5` | Requested clip length in seconds (provider-specific) |
+| **Size** | No | `1280x720` | Requested resolution (provider-specific) |
+| **Reference Image** | No | — | Optional starting image, for models that support image-to-video |
+
+Generated video is capped at 200 MB.
+
+**Output**: `success`, `filename`, `content_type`, `size_bytes`, `seconds`, and `file` (`filename`, `url`, `fileKey`, `contentType`, `size`).
+
+---
+
+## Choosing a Model
+
+Each action's model dropdown lists only the models that support that action, fetched live from puq.ai's model catalog:
+
+- If the catalog can't be loaded, the dropdown is disabled with "Failed to load models."
+- If no available model supports the action, it's disabled with a message such as "No chat completion models available."
+
+---
+
+## Billing
+
+Model Router actions run through your own account's request key (created automatically the first time you use one, visible under [API Keys](/account/api-keys/)) and are billed against your puq.ai [account balance](/account/billing/) — not a separate per-provider subscription.
+
+If your balance is too low, the step fails with **"Insufficient balance. Please top up your account."**
 
 ---
 
 ## Best Practices
 
-- Keep prompts explicit and well-scoped
-- Use lower temperatures for automation logic
-- Limit max tokens to control cost and latency
-- Combine with **Data Passing** and **Parameter Mapping** for dynamic prompts
-
----
-
-## Summary
-
-The Model Router node provides:
-- Unified access to AI chat models
-- Configurable generation behavior
-- Clean separation between AI logic and workflow structure
-- Easy experimentation and model switching
-
-It is the foundation for AI-powered automation inside puq.ai.
+- Keep prompts specific and well-scoped.
+- Use a lower **Temperature** for predictable, automation-style text and a higher one for creative content.
+- Watch the file size limits on **File**, **Audio File**, **Source Image**, and **Reference Image** — oversized files are rejected.
+- Check [AI Models](/models/) before building a workflow around a specific model, since availability depends on your workspace.

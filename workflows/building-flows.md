@@ -80,7 +80,7 @@ Use logic nodes to make your automation smart:
 - **AI Routers** (send text to different AI models)  
 - **Data Transformers**  
 - **Delays** and **Timers**  
-- **Error handling** and fallback paths  
+- **[Error handling](/workflows/error-handling/)** and fallback paths  
 
 These allow you to control exactly how data flows between steps.
 
@@ -89,7 +89,7 @@ Drag edges between nodes to define the order of operations.
 A flow runs top-to-bottom, following the connected paths.
 
 ### 5. Test Your Workflow  
-Use **Live Testing Mode** to run the workflow step-by-step.
+Use **[Run Step](/workflows/testing-steps/)** on any step to see its real input and output as you build, without running the whole workflow.
 
 You can:
 
@@ -109,7 +109,7 @@ Follow these best practices:
 **✔ Keep flows modular**
 
 One workflow should solve one clear problem.  
-For complex systems, break automations into subflows.
+For complex systems, break automations into subflows using [Workflow Call](/nodes/node-categories/core-nodes/workflow-call/).
 
 **✔ Name nodes clearly**
 
@@ -134,7 +134,7 @@ Avoid throttling or API blocks.
 
 **✔ Reuse global variables & environment secrets**
 
-Never hardcode credentials.
+Never hardcode credentials — store them as [Variables](/workflows/variables/) instead.
 
 ---
 

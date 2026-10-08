@@ -42,7 +42,7 @@ These metrics help you quickly understand overall system health without inspecti
 
 The Execution History table displays the following columns:
 
-- **Status** — Execution state (Success, Failed, Running, Stopped, Paused, Timeout, International Error)
+- **Status** — Execution state (Pending, Running, Paused, Succeeded, Failed, Cancelled — see [execution statuses](/executions/what-is-executions/#what-an-execution-contains))
 - **Workflow** — The workflow that was executed  
 - **Started** — Date and time when the execution began  
 - **Finished** — Date and time when the execution ended  

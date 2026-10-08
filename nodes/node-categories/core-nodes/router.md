@@ -36,15 +36,23 @@ Each branch represents a condition-based execution path.
 
 ---
 
-## Execute Mode
+## Execution Mode
 
-### Execute First Match
-In this mode:
-- Branches are evaluated **from top to bottom**
-- The first condition that evaluates to `true` is executed
-- Remaining branches are skipped
+Above the branch list, the step has an **Execution Mode** selector with two options:
+
+| Option | Description shown in the app |
+|--------|-------------------------------|
+| **Execute First Match** (default) | Runs the first branch whose condition matches. Put more specific conditions first. |
+| **Execute All Match** | Shown in the app as "Run every branch whose conditions are met". See the note below. |
+
+Branches are evaluated **from top to bottom**, and execution continues down the **first** branch whose condition matches (or the **Otherwise** branch if none match) — later branches are not executed. New Router steps start in **Execute First Match** mode.
 
 This mode is ideal when branches are **mutually exclusive**.
+
+{: .warning }
+**Execute All Match** can be selected, but the engine currently evaluates it the same way as **Execute First Match**: only the first matching branch runs. Do not rely on it to run several branches.
+
+A Router can have at most **32** branches.
 
 ---
 

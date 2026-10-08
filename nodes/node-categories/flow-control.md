@@ -103,12 +103,23 @@ Hold the workflow until a specific timestamp.
 
 ---
 
-## 4. Service-Based Flow Nodes
+## 4. Human Approval Nodes
 
-Some Flow Control nodes interface with popular platforms and tools.  
-Bunların bir kısmı veri yönetimi veya task yönetimi sağlar, ama workflow’un akışını etkiledikleri için Flow Control kategorisine girer.
+### Human in the Loop — Request Approval
+Pause the workflow until a person approves or rejects the request. The reviewer is notified by Email, Slack, Gmail, Telegram, or Discord, and the decision (`approved` / `rejected`) is passed to the next steps.
 
-Aşağıdaki liste *tam bir özellik listesi değil*, bu node tipinin neler yapabildiğini göstermek için örneklendirilmiş bir özet niteliğindedir.
+**Use cases:**
+- Approval → rejection → escalation flows
+- Reviewing AI output before it is sent
+- Confirming high-value or irreversible actions
+
+See [Human in the Loop](/nodes/node-categories/core-nodes/human-in-the-loop/).
+
+---
+
+## 5. Service-Based Flow Nodes
+
+Some Flow Control nodes interface with popular platforms and tools.
 
 ---
 
@@ -261,6 +272,48 @@ Workflow control examples:
 - Invoice status checks  
 - Delivery / courier status  
 - Security event responses  
+
+---
+
+## 6. Jumps, Code & Cross-Workflow Nodes
+
+These nodes change what runs next, or hand off to other workflows, without a traditional branch or loop.
+
+### Go to Step
+Jump back to a previously executed step to repeat part of the workflow. **Maximum Iterations** (default 100) caps how many times a given jump can fire in one execution; once it's reached, the jump is skipped and the workflow continues normally instead of failing.
+
+**Use cases:**
+- Retry a group of steps until a condition is met
+- Simple polling loops
+
+See [Go to Step](/nodes/node-categories/core-nodes/go-to-step/).
+
+### Code
+Run custom JavaScript to compute a value, reshape data, or implement logic a Router's conditions can't express.
+
+**Use cases:**
+- Computing a value used by a later Router's conditions
+- Custom validation or data transformation between steps
+
+See [Code](/nodes/node-categories/core-nodes/code/).
+
+### Respond to Webhook
+Send a custom HTTP response back to the caller of a workflow's Sync Webhook endpoint, then optionally keep running in the background.
+
+**Use cases:**
+- Building a request/response API endpoint on top of a workflow
+- Returning computed results or validation errors to the caller
+
+See [Respond to Webhook](/nodes/node-categories/core-nodes/respond-to-webhook/).
+
+### Workflow Call
+Trigger another one of your workflows via its webhook, with an optional JSON payload. The call starts the target workflow and moves on — it does not wait for the target to finish.
+
+**Use cases:**
+- Splitting a large workflow into smaller, reusable workflows
+- Fanning out to multiple workflows from one trigger
+
+See [Workflow Call](/nodes/node-categories/core-nodes/workflow-call/).
 
 ---
 

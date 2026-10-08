@@ -2,7 +2,7 @@
 title: Xero
 description: Learn how to connect to Xero in puq.ai
 parent: Connections
-nav_oreder: 17
+nav_order: 17
 ---
 
 # Xero

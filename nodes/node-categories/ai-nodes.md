@@ -51,9 +51,6 @@ They enable workflows that “think,” making deeper decisions and context-awar
 
 ## Categories of AI Nodes
 
-Aşağıda her node grubunun kapsadığı özellikler ve kullanım alanları yer alır.
-Verdiğin tüm örnekleri kullanarak dengeli bir şekilde özetledim.
-
 ---
 
 ## 1. Language Analysis Nodes
