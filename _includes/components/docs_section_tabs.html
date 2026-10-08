@@ -4,13 +4,11 @@
       | where_exp: "item", "item.nav_exclude != true" -%}
 
 {%- assign docs_sections = "" | split: "" -%}
-{%- assign docs_section_order = "Getting Started|Workflows|Executions|API|Data|Connections|Nodes|Usage Help|puq code" | split: "|" -%}
+{%- assign docs_section_order = "Getting Started|Workflows|Executions|Agents|Workflow Apps|puq Chat|AI Models|API|Data|Connections|Nodes|Usage Help|Account & Billing|Security|puq code|Support" | split: "|" -%}
 {%- for docs_title in docs_section_order -%}
   {%- for docs_page in docs_section_candidates -%}
     {%- if docs_page.title == docs_title -%}
-      {%- if docs_page.has_children == true or docs_page.url == '/getting-started/' -%}
-        {%- assign docs_sections = docs_sections | push: docs_page -%}
-      {%- endif -%}
+      {%- assign docs_sections = docs_sections | push: docs_page -%}
     {%- endif -%}
   {%- endfor -%}
 {%- endfor -%}

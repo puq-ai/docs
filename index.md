@@ -35,15 +35,40 @@ Generate and manage API tokens, invoke published flows, and integrate puq.ai wit
 
 **Read:** [API Overview →](/api)
 
+### Agents
+Build, run, and manage AI agents that can use tools, pieces, and workflows on your behalf.
+
+**Read:** [Agents →](/agents/)
+
+### Workflow Apps
+Browse published Apps or manage the workflow-powered Apps in your workspace.
+
+**Read:** [Workflow Apps →](/apps/)
+
+### puq Chat
+Talk to the puq.ai Assistant to build, edit, and run workflows from a conversation.
+
+**Read:** [puq Chat →](/chat/)
+
+### AI Models
+Browse puq.ai's model catalog, compare pricing, and try any model in the browser playground.
+
+**Read:** [AI Models →](/models/)
+
+### Account & Billing
+Manage your profile, API keys, encryption, plan, credit balance, and payment methods.
+
+**Read:** [Account & Billing →](/account/)
+
 ### Security
 Understand how puq.ai handles encryption, data storage, and access controls to keep your data safe.
 
-**Read:** [Security →](/security)
+**Read:** [Security →](/security/)
 
-### Examples
-Use ready-made templates for CRM automation, customer support routing, marketing content creation, and more.
+### Usage Help
+Step-by-step walkthroughs for common automation scenarios, from CRM automation to AI-powered workflows.
 
-**Read:** [Examples →](/examples)
+**Read:** [Usage Help →](/usage-help/)
 
 ### puq code
 Use the puq code terminal agent to read, edit, and run code in your projects with AI models from many providers.
@@ -86,10 +111,9 @@ Use the puq code terminal agent to read, edit, and run code in your projects wit
 - [Getting Started](/getting-started)  
 - [Building Flows](/workflows/building-flows)  
 - [Publishing & Scheduling](/workflows/publishing-flows)  
-- [Debugging Executions](/workflows/debugging)  
-- [API Tokens](/api/tokens)  
-- [Changelog](/changelog)  
-- [Support](/support)
+- [Debugging Executions](/workflows/debugging-executions/)  
+- [API Keys](/account/api-keys/)  
+- [Support](/support/)
 
 ---
 

@@ -84,6 +84,14 @@ puq.ai provides **two types of webhook endpoints**, each designed for different 
 
 ---
 
+## Customizing the Sync Response
+
+By default, the **Sync Endpoint** returns the output of the workflow's last step as JSON with a `200` status.
+
+To control the status code, body, and headers yourself — for example to build a real API endpoint — add a [Respond to Webhook](/nodes/node-categories/core-nodes/respond-to-webhook/) step. It only affects the Sync Endpoint: the Async Endpoint has already responded before any step runs, so a Respond to Webhook step has no visible effect on Async Endpoint callers.
+
+---
+
 ## Using Incoming Data
 
 Data sent to the webhook (headers, query parameters, body) is automatically captured and passed into the workflow execution.

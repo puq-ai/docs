@@ -14,6 +14,32 @@ This page provides a complete overview of each Core Node category and the tools 
 
 ---
 
+## Agent
+
+Run one of your [Agents](/agents/) as a single workflow step. The prompt can include data from earlier steps, and the agent's final answer is available to later steps.
+
+**Use cases:**
+- Multi-step research or reasoning inside a workflow
+- Letting an AI decide which tools to call for a task
+- Reusing the same agent across several workflows
+
+See [Agent](/nodes/node-categories/core-nodes/agent/) for details.
+
+---
+
+## Code
+
+Run custom JavaScript inside a workflow — once for the whole input, or once per item in an array — to transform data or implement logic no built-in node covers.
+
+**Use cases:**
+- Reshaping or combining data between steps
+- Custom calculations and validation
+- Looping through an array item by item
+
+See [Code](/nodes/node-categories/core-nodes/code/) for details.
+
+---
+
 ## Crypto Nodes
 
 Crypto nodes allow you to securely transform, sign, or generate data.
@@ -109,6 +135,18 @@ Schedule the workflow to continue at a future timestamp.
 
 ---
 
+## Go to Step
+
+Jump back to a previously executed step to repeat part of the workflow, up to a configurable **Maximum Iterations** limit (default 100). Once the limit is reached, the workflow continues past it instead of failing.
+
+**Use cases:**
+- Retry a group of steps until a condition is met
+- Simple polling loops
+
+See [Go to Step](/nodes/node-categories/core-nodes/go-to-step/) for details.
+
+---
+
 ## HTTP Utilities
 
 Interact with external APIs or download files.
@@ -129,6 +167,20 @@ Download files from any URL and attach them to workflow output.
 - Fetch reports  
 - Download images  
 - Sync files between systems  
+
+---
+
+## Human in the Loop
+
+### Request Approval
+Pause the workflow until a person approves or rejects the request. Reviewers are notified by Email, Slack, Gmail, Telegram, or Discord and decide on a public approval page. Supports custom button labels, reviewer editing, and timeouts with automatic decisions.
+
+**Use cases:**
+- Reviewing AI-generated content before publishing
+- Approving payments or refunds
+- Escalating cases to a human
+
+See [Human in the Loop](/nodes/node-categories/core-nodes/human-in-the-loop/) for details.
 
 ---
 
@@ -188,15 +240,16 @@ Use cases:
 
 ---
 
-## Model Router (AI Text Model)
+## Model Router
 
-Route text queries through an AI model or different model providers.
+Generate AI chat replies, images, speech, transcriptions, or video through puq.ai's built-in AI model router — five actions (AI Chat Model, Generate Image, Generate Speech, Transcribe Audio, Generate Video) billed to your account balance.
 
-Use cases:
-- Smart content analysis
-- Classification
-- AI-driven routing
-- Model fallback strategy
+**Use cases:**
+- Generating or summarizing text with an LLM
+- Creating images, voiceovers, or short video clips for content workflows
+- Transcribing uploaded or generated audio
+
+See [Model Router](/nodes/node-categories/core-nodes/model-router/) for details.
 
 ---
 
@@ -215,6 +268,18 @@ Use cases:
 - Authentication flows
 - Sharing links
 - Inventory management
+
+---
+
+## Respond to Webhook
+
+Send a custom HTTP response — status code, body, and headers — back to the caller of a workflow's Sync Webhook endpoint, so a workflow can act as an API endpoint.
+
+**Use cases:**
+- Returning validation results or computed data to the caller
+- Building a simple request/response API on top of a workflow
+
+See [Respond to Webhook](/nodes/node-categories/core-nodes/respond-to-webhook/) for details.
 
 ---
 
@@ -294,6 +359,18 @@ Use cases:
 - 2FA authentication flows
 - Secure user login
 - One-time access validation
+
+---
+
+## Workflow Call
+
+Trigger another one of your workflows by calling its webhook, with an optional JSON payload. The call starts the target workflow and returns immediately — it does not wait for the target to finish.
+
+**Use cases:**
+- Splitting a large workflow into smaller, reusable workflows
+- Fanning out to multiple workflows from one trigger
+
+See [Workflow Call](/nodes/node-categories/core-nodes/workflow-call/) for details.
 
 ---
 

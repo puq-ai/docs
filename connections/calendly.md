@@ -1,12 +1,12 @@
 ---
-title: Callendy
-description: Learn how to connect to Callendy in puq.ai
+title: Calendly
+description: Learn how to connect to Calendly in puq.ai
 parent: Connections
-nav_oreder: 3
+nav_order: 3
 ---
 
-# Callendy
-Learn how to connect to Callendly in puq.ai.
+# Calendly
+Learn how to connect to Calendly in puq.ai.
 
 ## Option 1
 If you logged into puq.ai with Gmail, you can use the Gmail account I used to log in (Use Default (puq.ai)).

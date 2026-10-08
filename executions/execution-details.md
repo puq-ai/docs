@@ -32,7 +32,7 @@ At the top of the Execution Details page, you’ll find high-level information a
 
 - **Workflow name**  
 - **Workflow version** used during execution  
-- **Execution status** (Success, Failed, Running, etc.)  
+- **Execution status** (Succeeded, Failed, Running, Paused, Cancelled, etc. — see [execution statuses](/executions/what-is-executions/#what-an-execution-contains))  
 - **Triggered by** (manual, API, schedule, or event)  
 - **Start and finish timestamps**  
 - **Total execution duration**  
@@ -47,7 +47,7 @@ Below the overview, the execution is displayed as a **step-by-step timeline**.
 
 For each step (node), you can see:
 - Execution order  
-- Step status (Success / Failed / Skipped)  
+- Step status (Succeeded / Failed / Skipped / Paused)  
 - Runtime for that step  
 
 Clicking a step expands its details.

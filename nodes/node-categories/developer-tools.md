@@ -107,7 +107,7 @@ Below is a structured breakdown of the platforms in this category.
 - GitLab  
 - CircleCI  
 - TravisCI  
-- Workflow Call  
+- [Workflow Call](/nodes/node-categories/core-nodes/workflow-call/)  
 - TheHive (automation/security orchestration)
 
 ---

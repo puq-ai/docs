@@ -16,13 +16,13 @@ Data selection is visual, contextual, and available once the workflow has been e
 
 ## When Can You Select Data?
 
-To select data for an input field:
+To select data for an input field, the node you want to pull from needs **sample data** — the recorded output of a previous run of that step. Sample data comes from any of:
 
-- The workflow must have been executed **at least once**
-- The execution must reach the node where you want to use data
-- Execution data must be available up to that point
+- A full workflow execution that reached that node
+- Testing just that node with **[Run Step](/workflows/testing-steps/)**, which saves its result as sample data without running the rest of the workflow
+- For triggers, puq.ai's built-in example payload for that trigger, shown automatically until a real event or test run produces one
 
-Once this condition is met, puq.ai exposes execution data directly inside the input field.
+Once any of these has produced data for a node, puq.ai exposes it directly inside the input field of every step after it.
 
 ---
 

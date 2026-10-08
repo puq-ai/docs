@@ -24,6 +24,12 @@ Each connection type may require different information, such as:
 - Username and password  
 - Custom headers or certificates  
 
+## Using Your Own OAuth2 Credentials
+
+For services that connect via OAuth2, puq.ai authorizes through a default shared app unless you
+register your own. See [Custom OAuth2 Apps](/connections/custom-oauth2-apps/) to use your own
+client ID and secret instead.
+
 ## Next Steps
 
 Detailed, step-by-step instructions for each supported connection type are provided in their respective documentation pages.  
