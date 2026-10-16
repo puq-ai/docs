@@ -52,9 +52,9 @@ This step is skipped if the workflow needs no connections.
 
 ## Credits and Pricing
 
-- **Fixed credits per run** is the flat price, in puq.ai credits, charged the moment someone's run starts.
-- At 0, runners see **No fixed App fee**, and the workflow's own usage (AI calls, external requests, and so on) is billed to them normally as **Workflow usage charged separately**.
-- Above 0, runners see **Workflow usage included** — the fixed price is meant to cover what the workflow itself spends.
+- **Fixed credits per run** is a flat price, in puq.ai credits, charged the moment a run starts. Because only you can run Apps you create, this price is charged to your own balance.
+- The fixed price never covers the workflow's own usage (AI calls, external requests, and so on). For Apps you create, that usage is always billed separately as the workflow runs — whether fixed credits are 0 or higher.
+- Only Apps published by the puq.ai team include workflow usage in their fixed price.
 
 ---
 
@@ -70,7 +70,7 @@ Open **My Apps** → the App → **Settings** (or the **Settings** button on the
 Changes apply immediately — there's no separate publish step. **Discard changes** reverts everything to what's saved; **Save changes** applies your edits.
 
 {: .warning }
-Changing an App's connections, output, or user fields takes effect for every run immediately, including for anyone who already has the App's link.
+Changing an App's connections, output, or user fields takes effect for every run immediately.
 
 ### Archiving an App
 At the bottom of Settings, click **Archive App** and confirm. This immediately stops the App's address from working. Past runs stay in your Run History and aren't deleted, and archiving can't be undone from the app.
@@ -80,5 +80,5 @@ At the bottom of Settings, click **Archive App** and confirm. This immediately s
 ## Best Practices
 
 - Test every step you plan to expose with Live Testing before creating the App — only tested steps are offered as the output or detected as input.
-- Keep fixed credits at 0 unless you specifically want to charge a flat fee per run; workflow usage is billed to the runner either way.
+- Keep fixed credits at 0 unless you specifically want a flat fee per run; workflow usage is billed separately either way.
 - Prefer "each runner connects their own account" for connections tied to a specific person (a personal Gmail inbox, for example), and reserve your own account for shared services the App should always use the same way.
