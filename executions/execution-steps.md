@@ -84,7 +84,7 @@ From here, you can:
 2. Review error details  
 3. Fix workflow configuration  
 4. Publish changes  
-5. Rerun the workflow  
+5. Run the workflow again
 
 This targeted approach avoids unnecessary rework.
 

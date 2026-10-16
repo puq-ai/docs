@@ -82,7 +82,7 @@ Maximum Iterations shares its limit with the [Loop](/nodes/node-categories/core-
    - Call failed → **Go to Step** back to the HTTP Request, Maximum Iterations: `5`
    - Call succeeded → continue the workflow
 
-After 5 failed attempts, Go to Step stops jumping and the workflow continues to whatever follows it — add a step after it to handle the "still failing" case explicitly.
+With Maximum Iterations `5`, Go to Step jumps back 5 times, so the HTTP Request runs 6 times in total (1 initial attempt + 5 retries). If the 6th attempt also fails, Go to Step stops jumping and the workflow continues to whatever follows it — add a step after it to handle the "still failing" case explicitly.
 
 ---
 

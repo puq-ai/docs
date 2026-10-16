@@ -51,7 +51,7 @@ Executions act as a **detailed audit trail** of your automation. They allow you 
 - Understand **branching logic** taken through Routers or Conditions
 - Debug failures by examining error messages and stack traces
 - Measure performance and identify slow steps
-- Replay (rerun) past executions for troubleshooting
+- Run the workflow again after a fix (a new execution starts from the trigger and runs every step again)
 - Validate how your logic behaves with real data
 
 Executions are especially important in production workflows, where reliability and traceability matter.

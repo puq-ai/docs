@@ -31,6 +31,7 @@ When a Delay node is reached during execution:
 - No further steps are executed until the delay condition is satisfied
 - Once the delay completes, execution continues automatically
 - Delay nodes do **not** block other workflows or executions
+- **Continue on failure** and **Retry on failure** are not available for Delay steps
 
 Delays are handled asynchronously and are safe to use in production workflows.
 

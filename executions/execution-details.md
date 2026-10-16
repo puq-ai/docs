@@ -92,9 +92,9 @@ When an execution fails:
 3. Inspect its input and output  
 4. Review error messages  
 5. Fix the workflow logic  
-6. Publish the changes and rerun the workflow  
+6. Publish the changes and run the workflow again  
 
-This approach eliminates guesswork and avoids recreating execution conditions manually.
+Running again starts a new execution from the trigger: every step runs again, including steps that succeeded in the failed execution. There is no option to resume from the failed step, so be careful with steps that have side effects (sending emails, creating records, charging payments).
 
 ---
 

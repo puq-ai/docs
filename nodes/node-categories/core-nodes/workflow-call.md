@@ -58,7 +58,7 @@ The `response` output below is the target's "run started" acknowledgement, not t
 
 - **No workflow selected** — fails with "Please select a workflow".
 - **Invalid JSON payload** — fails if **Payload (JSON)** is a string that isn't valid JSON.
-- **The call itself fails** (timeout, network error) — fails with "Failed to call workflow webhook: …". By default, **Retry on failure** is on for this step, so transient failures are retried automatically.
+- **The call itself fails** (timeout, network error) — fails with "Failed to call workflow webhook: …". With **Retry on failure** turned on for this step, transient failures are retried automatically.
 
 A target workflow that is unpublished, not found, or over its monthly run limit does **not** fail the Workflow Call step — it only shows up as `success: false` with the target's error in `response`, since the call itself still completed.
 
