@@ -1,6 +1,6 @@
 ---
 title: Debugging Executions
-description: Track, inspect, troubleshoot, and replay workflow runs in puq.ai.
+description: Track, inspect, and troubleshoot workflow runs in puq.ai.
 parent: Workflows
 nav_order: 4
 ---
@@ -68,9 +68,9 @@ Failed executions show:
 
 Great for quickly locating misconfigured nodes or invalid data.
 
-### 🔁 Retry Failed Executions  
-You can **retry** any failed run instantly.  
-Retries use the *same trigger data*, making debugging deterministic and repeatable.
+### 🔁 Running Again After a Fix  
+There is no option to retry or replay a past execution.  
+After fixing the problem, run the workflow again: this starts a new execution from the trigger and runs every step again, including steps that succeeded before. See [Execution Details](/executions/execution-details/).
 
 ---
 

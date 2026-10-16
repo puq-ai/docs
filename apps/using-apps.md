@@ -76,7 +76,7 @@ A connection marked **Required** must be ready before you can continue; an optio
 
 Above the Run button, puq.ai shows two things:
 - The **App price** — a flat number of credits charged once your run starts, or "No fixed App fee."
-- Whether **workflow usage** (the AI calls, requests, and other work the workflow itself performs) is **included** in that price or **charged separately** as the workflow runs.
+- Whether **workflow usage** (the AI calls, requests, and other work the workflow itself performs) is **included** in that price or **charged separately** as the workflow runs. Apps published by puq.ai include workflow usage in their price; for Apps you've published yourself, workflow usage is always charged separately, even when a fixed price is set.
 
 See [Billing](/account/billing/) for how your credit balance works.
 

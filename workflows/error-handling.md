@@ -15,10 +15,10 @@ Every **Code** and **Piece** (app action) step has two error-handling switches i
 
 Open any Code or app action step in the workflow builder. Below the step's inputs, the settings panel shows:
 
-- **Continue on Failure** — off by default
-- **Retry on Failure** — off by default
+- **Continue on Failure**
+- **Retry on Failure**
 
-Both are plain on/off switches. Neither option is available for **Trigger**, **Router**, **Loop**, **Agent**, **Delay**, or **Do Nothing** steps — only Code and Piece steps expose them. Some individual app actions hide one or both switches as well (see [Hidden Options](#hidden-options)).
+Both are plain on/off switches. Neither option is available for **Trigger**, **Router**, **Loop**, **Agent**, or **Do Nothing** steps — only Code and Piece steps expose them. Some individual app actions hide one or both switches as well (see [Hidden Options](#hidden-options)).
 
 ---
 
@@ -38,7 +38,7 @@ Retry on Failure is independent of Continue on Failure — you can retry a step 
 
 ## Continue on Failure
 
-By default, a failed step stops the workflow: the run ends with status **Failed** and no further steps execute.
+When **Continue on Failure** is off, a failed step stops the workflow: the run ends with status **Failed** and no further steps execute.
 
 Turning **Continue on Failure** on changes that: if the step (and its retries, if enabled) still fail, the step is recorded as **Failed**, but the workflow keeps going — the next step in the chain runs as if nothing happened.
 
@@ -60,8 +60,9 @@ A step that continues after failure is still shown as **Failed** in the executio
 
 Some steps don't show one or both switches:
 
-- **[Human in the Loop → Request Approval](/nodes/node-categories/core-nodes/human-in-the-loop/)** hides both Continue on Failure and Retry on Failure. A failed approval request always stops the workflow and cannot be retried.
-- A number of individual app actions hide **Continue on Failure** only, so they always stop the workflow on error, while still allowing **Retry on Failure**.
+- **[Human in the Loop → Request Approval](/nodes/node-categories/core-nodes/human-in-the-loop/)**, **[Respond to Webhook](/nodes/node-categories/core-nodes/respond-to-webhook/)**, **[Go to Step](/nodes/node-categories/core-nodes/go-to-step/)**, and **[Delay For / Delay Until](/nodes/node-categories/core-nodes/delay-utilities/)** hide both Continue on Failure and Retry on Failure. A failure on these steps always stops the workflow and is never retried.
+- Many app actions (more than half) hide **Continue on Failure** only, so they always stop the workflow on error, while still allowing **Retry on Failure**.
+- **Email Template** hides **Retry on Failure** only; Continue on Failure is still available.
 
 If a switch doesn't appear on a step, that step's behavior for that option is fixed and can't be changed.
 
@@ -71,5 +72,5 @@ If a switch doesn't appear on a step, that step's behavior for that option is fi
 
 - Turn on **Retry on Failure** for calls to external services that occasionally time out or rate-limit — the built-in backoff gives the service a moment to recover.
 - Turn on **Continue on Failure** only when the following steps can meaningfully handle a missing or error result — pair it with a Router that checks `{% raw %}{{step_name.error}}{% endraw %}`.
-- Leave both off (the default) for steps where any failure should stop the automation immediately, such as a step that charges a payment or sends a final confirmation.
+- Leave both off for steps where any failure should stop the automation immediately, such as a step that charges a payment or sends a final confirmation.
 - Use [Run Step](/workflows/testing-steps/) to see exactly what a step outputs on success before deciding how it should behave on failure.

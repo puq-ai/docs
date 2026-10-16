@@ -69,13 +69,17 @@ Define the payload format and content for POST/PUT/PATCH requests.
 - Follow redirects
 - SSL verification
 - Response validation
-- Expected status codes
+- Expected status codes (default `200, 201, 202, 204`)
+
+With any Response Validation other than **None**, a response whose status code is not in **Expected Status Codes** (for example `404`) fails the step with "Unexpected status code: …". Set Response Validation to **None** to accept any status code.
 
 ---
 
 ### Retry Settings
 
-Automatic retries on selected HTTP status codes with backoff support.
+Automatic retries on selected HTTP status codes with backoff support. By default the request is tried up to 3 times on network errors and on `429`, `500`, `502`, `503`, `504`.
+
+These retries happen inside a single step run. If you also turn on the step's **Retry on Failure** (up to 3 step attempts), the two multiply: with default settings a failing endpoint can receive up to 9 requests (3 step attempts × 3 request attempts).
 
 ---
 
